@@ -28,80 +28,112 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.txt_login = new DevExpress.XtraEditors.TextEdit();
+            this.txt_password = new DevExpress.XtraEditors.TextEdit();
+            this.btn_login = new DevExpress.XtraEditors.SimpleButton();
             this.formAssistant1 = new DevExpress.XtraBars.FormAssistant();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_login.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_password.Properties)).BeginInit();
             this.SuspendLayout();
             // 
-            // textEdit1
+            // txt_login
             // 
-            this.textEdit1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txt_login.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textEdit1.Location = new System.Drawing.Point(18, 20);
-            this.textEdit1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Properties.Appearance.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textEdit1.Properties.Appearance.Options.UseFont = true;
-            this.textEdit1.Properties.NullText = "Логин";
-            this.textEdit1.Size = new System.Drawing.Size(323, 28);
-            this.textEdit1.TabIndex = 0;
+            this.txt_login.Location = new System.Drawing.Point(13, 20);
+            this.txt_login.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt_login.Name = "txt_login";
+            this.txt_login.Properties.Appearance.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txt_login.Properties.Appearance.Options.UseFont = true;
+            this.txt_login.Properties.Appearance.Options.UseTextOptions = true;
+            this.txt_login.Properties.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.txt_login.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.txt_login.Properties.AppearanceDisabled.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.txt_login.Properties.AppearanceFocused.Options.UseTextOptions = true;
+            this.txt_login.Properties.AppearanceFocused.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.txt_login.Properties.AppearanceReadOnly.Options.UseTextOptions = true;
+            this.txt_login.Properties.AppearanceReadOnly.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.txt_login.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.txt_login.Properties.LookAndFeel.SkinName = "The Bezier";
+            this.txt_login.Properties.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
+            this.txt_login.Properties.NullText = "Логин";
+            this.txt_login.Size = new System.Drawing.Size(378, 44);
+            this.txt_login.TabIndex = 0;
             // 
-            // textEdit2
+            // txt_password
             // 
-            this.textEdit2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txt_password.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textEdit2.Location = new System.Drawing.Point(18, 58);
-            this.textEdit2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Properties.Appearance.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textEdit2.Properties.Appearance.Options.UseFont = true;
-            this.textEdit2.Properties.NullText = "Пароль";
-            this.textEdit2.Properties.PasswordChar = '*';
-            this.textEdit2.Size = new System.Drawing.Size(323, 28);
-            this.textEdit2.TabIndex = 1;
+            this.txt_password.Location = new System.Drawing.Point(13, 74);
+            this.txt_password.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt_password.Name = "txt_password";
+            this.txt_password.Properties.Appearance.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txt_password.Properties.Appearance.Options.UseFont = true;
+            this.txt_password.Properties.Appearance.Options.UseTextOptions = true;
+            this.txt_password.Properties.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.txt_password.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.txt_password.Properties.AppearanceDisabled.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.txt_password.Properties.AppearanceFocused.Options.UseTextOptions = true;
+            this.txt_password.Properties.AppearanceFocused.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.txt_password.Properties.AppearanceReadOnly.Options.UseTextOptions = true;
+            this.txt_password.Properties.AppearanceReadOnly.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.txt_password.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.txt_password.Properties.LookAndFeel.SkinName = "The Bezier";
+            this.txt_password.Properties.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
+            this.txt_password.Properties.NullText = "Пароль";
+            this.txt_password.Properties.PasswordChar = '*';
+            this.txt_password.Size = new System.Drawing.Size(378, 44);
+            this.txt_password.TabIndex = 1;
             // 
-            // simpleButton1
+            // btn_login
             // 
-            this.simpleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btn_login.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.simpleButton1.Appearance.Options.UseFont = true;
-            this.simpleButton1.Location = new System.Drawing.Point(18, 96);
-            this.simpleButton1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(323, 45);
-            this.simpleButton1.TabIndex = 2;
-            this.simpleButton1.Text = "Войти";
+            this.btn_login.Appearance.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btn_login.Appearance.Options.UseFont = true;
+            this.btn_login.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btn_login.Location = new System.Drawing.Point(13, 128);
+            this.btn_login.LookAndFeel.SkinName = "The Bezier";
+            this.btn_login.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
+            this.btn_login.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_login.Name = "btn_login";
+            this.btn_login.Size = new System.Drawing.Size(378, 56);
+            this.btn_login.TabIndex = 2;
+            this.btn_login.Text = "Войти";
+            this.btn_login.Click += new System.EventHandler(this.btn_login_Click);
             // 
             // Form1
             // 
+            this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(359, 155);
-            this.Controls.Add(this.simpleButton1);
-            this.Controls.Add(this.textEdit2);
-            this.Controls.Add(this.textEdit1);
+            this.ClientSize = new System.Drawing.Size(404, 198);
+            this.Controls.Add(this.btn_login);
+            this.Controls.Add(this.txt_password);
+            this.Controls.Add(this.txt_login);
             this.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form1";
-            this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
+            this.Opacity = 0.97D;
+            this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Полесье.Рабочее время";
+            ((System.ComponentModel.ISupportInitialize)(this.txt_login.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_password.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private DevExpress.XtraEditors.TextEdit textEdit1;
-        private DevExpress.XtraEditors.TextEdit textEdit2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.TextEdit txt_login;
+        private DevExpress.XtraEditors.TextEdit txt_password;
+        private DevExpress.XtraEditors.SimpleButton btn_login;
         private DevExpress.XtraBars.FormAssistant formAssistant1;
     }
 }

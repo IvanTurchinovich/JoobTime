@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Settings>
+  <update_xml>0</update_xml>
+  <conecction_id>sa</conecction_id>
+  <conection_pas>9293709b13</conection_pas>
+  <form_settings>False</form_settings>
+  <admin_login>admin</admin_login>
+  <admin_password>74123</admin_password>
+  <conection_ip>192.168.76.22,1433</conection_ip>
+  <login_save></login_save>
+  <login_save_on>true</login_save_on>
+  <group_params>-1</group_params>
+  <save_work_name>Разработка ПО</save_work_name>
+  <save_other>Изменение функции добавления записей в программе "Полесье.Рабочее время"</save_other>
+  <add_size_h>489</add_size_h>
+  <add_size_w>1000</add_size_w>
+</Settings>
