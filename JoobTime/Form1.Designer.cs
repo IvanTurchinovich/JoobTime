@@ -36,16 +36,20 @@
             // 
             // textEdit1
             // 
-            this.textEdit1.Location = new System.Drawing.Point(12, 12);
+            this.textEdit1.Location = new System.Drawing.Point(26, 12);
             this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(175, 20);
+            this.textEdit1.Properties.Appearance.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textEdit1.Properties.Appearance.Options.UseFont = true;
+            this.textEdit1.Size = new System.Drawing.Size(175, 28);
             this.textEdit1.TabIndex = 0;
             // 
             // textEdit2
             // 
-            this.textEdit2.Location = new System.Drawing.Point(12, 38);
+            this.textEdit2.Location = new System.Drawing.Point(26, 65);
             this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Size = new System.Drawing.Size(175, 20);
+            this.textEdit2.Properties.Appearance.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textEdit2.Properties.Appearance.Options.UseFont = true;
+            this.textEdit2.Size = new System.Drawing.Size(175, 28);
             this.textEdit2.TabIndex = 1;
             // 
             // Form1
