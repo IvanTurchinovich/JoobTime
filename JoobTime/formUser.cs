@@ -92,7 +92,7 @@ namespace JoobTime
 
         private void gridView1_CustomSummaryCalculate(object sender, DevExpress.Data.CustomSummaryEventArgs e)
         {
-            
+            _totalTimeSummary.to_time_span(sender,e);
         }
     }
 }
