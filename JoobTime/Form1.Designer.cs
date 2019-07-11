@@ -1,6 +1,6 @@
 ﻿namespace JoobTime
 {
-    partial class Form1
+    partial class formLogin
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formLogin));
             this.txt_login = new DevExpress.XtraEditors.TextEdit();
             this.txt_password = new DevExpress.XtraEditors.TextEdit();
             this.btn_login = new DevExpress.XtraEditors.SimpleButton();
             this.formAssistant1 = new DevExpress.XtraBars.FormAssistant();
+            this.check_showPassword = new DevExpress.XtraEditors.CheckButton();
             ((System.ComponentModel.ISupportInitialize)(this.txt_login.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_password.Properties)).BeginInit();
             this.SuspendLayout();
@@ -78,7 +79,7 @@
             this.txt_password.Properties.AppearanceReadOnly.Options.UseTextOptions = true;
             this.txt_password.Properties.AppearanceReadOnly.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.txt_password.Properties.NullText = "Пароль";
-            this.txt_password.Properties.PasswordChar = '*';
+            this.txt_password.Properties.UseSystemPasswordChar = true;
             this.txt_password.Size = new System.Drawing.Size(243, 28);
             this.txt_password.TabIndex = 1;
             // 
@@ -94,17 +95,28 @@
             this.btn_login.Location = new System.Drawing.Point(13, 96);
             this.btn_login.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_login.Name = "btn_login";
-            this.btn_login.Size = new System.Drawing.Size(245, 55);
+            this.btn_login.Size = new System.Drawing.Size(243, 50);
             this.btn_login.TabIndex = 2;
             this.btn_login.Text = "Войти";
             this.btn_login.Click += new System.EventHandler(this.btn_login_Click);
             // 
-            // Form1
+            // check_showPassword
+            // 
+            this.check_showPassword.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("checkButton1.ImageOptions.Image")));
+            this.check_showPassword.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.check_showPassword.Location = new System.Drawing.Point(228, 58);
+            this.check_showPassword.Name = "check_showPassword";
+            this.check_showPassword.Size = new System.Drawing.Size(28, 28);
+            this.check_showPassword.TabIndex = 3;
+            this.check_showPassword.CheckedChanged += new System.EventHandler(this.check_showPassword_CheckedChanged);
+            // 
+            // formLogin
             // 
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(269, 165);
+            this.ClientSize = new System.Drawing.Size(269, 160);
+            this.Controls.Add(this.check_showPassword);
             this.Controls.Add(this.btn_login);
             this.Controls.Add(this.txt_password);
             this.Controls.Add(this.txt_login);
@@ -112,7 +124,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Form1";
+            this.Name = "formLogin";
             this.Opacity = 0.97D;
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -129,6 +141,7 @@
         private DevExpress.XtraEditors.TextEdit txt_password;
         private DevExpress.XtraEditors.SimpleButton btn_login;
         private DevExpress.XtraBars.FormAssistant formAssistant1;
+        private DevExpress.XtraEditors.CheckButton check_showPassword;
     }
 }
 

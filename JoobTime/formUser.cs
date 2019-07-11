@@ -23,36 +23,47 @@ namespace JoobTime
         public formUser()
         {
             InitializeComponent();
-            get_time_dtEdit();
+            get_time_dtEdit(cmb_season.Text);
             load_dtTotal();
         }
 
-        public void get_time_dtEdit()
+        public void get_time_dtEdit(string season)
         {
-            int countday = DateTime.DaysInMonth(DateTime.Today.Year, DateTime.Today.Month);
-            DateTime date_start = new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1);
-            DateTime date_end = new DateTime(DateTime.Today.Year, DateTime.Today.Month, countday);
-            dEdit_start.DateTime = date_start;
-            dEdit_end.DateTime = date_end;
+            switch (season)
+            {
+                case "За месяц":
+                    int countday = DateTime.DaysInMonth(DateTime.Today.Year, DateTime.Today.Month);
+                    dEdit_start.DateTime = new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1);
+                    dEdit_end.DateTime = new DateTime(DateTime.Today.Year, DateTime.Today.Month, countday);
+                    break;
+                case "За день":
+                    dEdit_start.DateTime = DateTime.Now;
+                    dEdit_end.DateTime = DateTime.Now;
+                    break;
+            }
+            date_start = dEdit_start.DateTime.ToShortDateString();
+            date_end = dEdit_end.DateTime.ToShortDateString();
         }
 
         private void windowsUIButtonPanel1_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
         {
             if (e.Button.Properties.Tag.ToString() == "0")
             {
-                XtraMessageBox.Show("Обновить");
+                grid_total.Select();
                 load_dtTotal();
             }
             else if (e.Button.Properties.Tag.ToString() == "1")
             {
-                XtraMessageBox.Show("Домой");
+                formLogin FormLogin = new formLogin();
+                Hide();
+                FormLogin.Show();
             }
         }
 
         public void load_dtTotal()
         {
             string comand = @"SELECT* FROM[total] join work on work.id_work = total.id_work
-                     WHERE[id_tn] = '" + Form1.id_tn + "'"
+                     WHERE[id_tn] = '" + formLogin.id_tn + "'"
                       + "AND [date]>='" + date_start + "'"
                       + "AND [date]<='" + date_end + "'";
             dtTotal = _sql.sql_dt(comand,"t1");
@@ -72,6 +83,16 @@ namespace JoobTime
         private void dEdit_end_EditValueChanged(object sender, EventArgs e)
         {
             date_end = _date.convert(dEdit_end.DateTime);
+        }
+
+        private void comboBoxEdit1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            get_time_dtEdit(cmb_season.Text);
+        }
+
+        private void gridView1_CustomSummaryCalculate(object sender, DevExpress.Data.CustomSummaryEventArgs e)
+        {
+            
         }
     }
 }

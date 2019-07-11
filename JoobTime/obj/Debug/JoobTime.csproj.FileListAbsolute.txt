@@ -81,7 +81,6 @@ C:\Users\tig\source\repos\JoobTime\JoobTime\bin\Debug\es\DevExpress.Office.v18.1
 C:\Users\tig\source\repos\JoobTime\JoobTime\bin\Debug\ja\DevExpress.Office.v18.1.Core.resources.dll
 C:\Users\tig\source\repos\JoobTime\JoobTime\bin\Debug\ru\DevExpress.Office.v18.1.Core.resources.dll
 C:\Users\tig\source\repos\JoobTime\JoobTime\obj\Debug\JoobTime.csprojAssemblyReference.cache
-C:\Users\tig\source\repos\JoobTime\JoobTime\obj\Debug\JoobTime.Form1.resources
 C:\Users\tig\source\repos\JoobTime\JoobTime\obj\Debug\JoobTime.Properties.Resources.resources
 C:\Users\tig\source\repos\JoobTime\JoobTime\obj\Debug\JoobTime.csproj.GenerateResource.cache
 C:\Users\tig\source\repos\JoobTime\JoobTime\obj\Debug\JoobTime.exe.licenses
@@ -98,3 +97,4 @@ C:\Users\tig\source\repos\JoobTime\JoobTime\bin\Debug\es\DevExpress.Xpf.Core.v18
 C:\Users\tig\source\repos\JoobTime\JoobTime\bin\Debug\ja\DevExpress.Xpf.Core.v18.1.resources.dll
 C:\Users\tig\source\repos\JoobTime\JoobTime\bin\Debug\ru\DevExpress.Xpf.Core.v18.1.resources.dll
 C:\Users\tig\source\repos\JoobTime\JoobTime\obj\Debug\JoobTime.formUser.resources
+C:\Users\tig\source\repos\JoobTime\JoobTime\obj\Debug\JoobTime.formLogin.resources

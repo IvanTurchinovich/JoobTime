@@ -134,4 +134,15 @@
   <metadata name="formAssistant1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="checkButton1.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAAAD3RFWHRUaXRsZQBTaG93O0V5
+        ZTtJ4wclAAAA3ElEQVQ4T62TsQ3CMBBFTcUa1MyQOgtQsgwlBfR0SFBlEgrSRmIMJAYw/1l3kQkhEpji
+        K3f3/32fHTvEGEMJippZuNygqqowQK18L1yEu4GYGtyLPk8WInfCQ4gfAIcGbep1AwrnicahIdpk4ga4
+        uuhqqxz1vRmI0cC5jjwZsC8f+6B4KWxGpqEGhwYTemoMWis0fh+UdyMGXcY3xrf5BDjPEE0ZoLEp+glo
+        8DNYK55PbAEODVvozwCD/C+clK+ErU3CdoipwdH89hfcBNef7kF+ob67iSUv8S+P6QnqlNsgmruPOwAA
+        AABJRU5ErkJggg==
+</value>
+  </data>
 </root>

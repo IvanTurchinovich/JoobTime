@@ -12,16 +12,17 @@ using DevExpress.XtraEditors;
 
 namespace JoobTime
 {
-    public partial class Form1 : DevExpress.XtraEditors.XtraForm
+    public partial class formLogin : DevExpress.XtraEditors.XtraForm
     {
         Class_sql _sql = new Class_sql();
         DataTable dtWorker;
         public static string id_tn;
 
-        public Form1()
+        public formLogin()
         {
             InitializeComponent();
             load_dtWorker();
+            txt_login.Text = xlsx_.read_xlsx("login_save");
         }
 
         public void load_dtWorker()
@@ -44,18 +45,18 @@ namespace JoobTime
                 string status = rowWorkerInfo["status"].ToString();
                 if (ParolInfo == parol)
                 {
-                    XtraMessageBox.Show("Вы ввели верный пароль "+  login +"\\"+parol+"\\"+status);
                     id_tn = login;
                     showNextForm(status);
                 }
                 else
                 {
-                   XtraMessageBox.Show("Вы ввели неверный логин или пароль, попробуйте еще раз.", "Ошибка авторизации");
+                   XtraMessageBox.Show("Вы ввели неверный пароль, попробуйте еще раз.", "Ошибка авторизации");
                 }
+                xlsx_.write_xml("login_save",login);
             }
             else
             {
-                XtraMessageBox.Show("Вы ввели неверный логин или пароль, попробуйте еще раз.", "Ошибка авторизации");
+                XtraMessageBox.Show("Вы ввели неверный логин, попробуйте еще раз.", "Ошибка авторизации");
             }
         }
 
@@ -69,11 +70,24 @@ namespace JoobTime
             }
             else if (status == "r")
             {
-
+                XtraMessageBox.Show("Вы ввели верный пароль \\" + status);
             }
             else if (status == "admin")
             {
+                XtraMessageBox.Show("Вы ввели верный пароль " + status);
+            }
+        }
 
+        private void check_showPassword_CheckedChanged(object sender, EventArgs e)
+        {
+            switch (check_showPassword.Checked)
+            {
+                case true:
+                    txt_password.Properties.UseSystemPasswordChar = false;
+                    break;
+                case false:
+                    txt_password.Properties.UseSystemPasswordChar = true;
+                    break;
             }
         }
     }
