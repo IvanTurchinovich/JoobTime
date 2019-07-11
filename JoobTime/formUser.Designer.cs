@@ -28,15 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions3 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions4 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formUser));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions2 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             this.groupButton = new DevExpress.XtraEditors.GroupControl();
+            this.cmb_ReportPrint = new DevExpress.XtraEditors.ComboBoxEdit();
             this.btn_add = new DevExpress.XtraEditors.SimpleButton();
             this.btn_delete = new DevExpress.XtraEditors.SimpleButton();
             this.btn_edit = new DevExpress.XtraEditors.SimpleButton();
@@ -94,9 +95,9 @@
             this.gridColumn27 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn30 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cardView1 = new DevExpress.XtraGrid.Views.Card.CardView();
-            this.cmb_ReportPrint = new DevExpress.XtraEditors.ComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)(this.groupButton)).BeginInit();
             this.groupButton.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cmb_ReportPrint.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupDate)).BeginInit();
             this.groupDate.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dEdit_end.Properties.CalendarTimeProperties)).BeginInit();
@@ -111,7 +112,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.PBView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView_konstr)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cardView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmb_ReportPrint.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupButton
@@ -132,6 +132,40 @@
             this.groupButton.TabIndex = 0;
             this.groupButton.Text = "Управление";
             // 
+            // cmb_ReportPrint
+            // 
+            this.cmb_ReportPrint.EditValue = "Выберите отчет";
+            this.cmb_ReportPrint.Location = new System.Drawing.Point(7, 237);
+            this.cmb_ReportPrint.Name = "cmb_ReportPrint";
+            this.cmb_ReportPrint.Properties.Appearance.Options.UseTextOptions = true;
+            this.cmb_ReportPrint.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.cmb_ReportPrint.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.cmb_ReportPrint.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.cmb_ReportPrint.Properties.AppearanceDropDown.Options.UseTextOptions = true;
+            this.cmb_ReportPrint.Properties.AppearanceDropDown.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.cmb_ReportPrint.Properties.AppearanceFocused.Options.UseTextOptions = true;
+            this.cmb_ReportPrint.Properties.AppearanceFocused.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.cmb_ReportPrint.Properties.AppearanceItemDisabled.Options.UseTextOptions = true;
+            this.cmb_ReportPrint.Properties.AppearanceItemDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.cmb_ReportPrint.Properties.AppearanceItemHighlight.Options.UseTextOptions = true;
+            this.cmb_ReportPrint.Properties.AppearanceItemHighlight.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.cmb_ReportPrint.Properties.AppearanceItemSelected.Options.UseTextOptions = true;
+            this.cmb_ReportPrint.Properties.AppearanceItemSelected.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.cmb_ReportPrint.Properties.AppearanceReadOnly.Options.UseTextOptions = true;
+            this.cmb_ReportPrint.Properties.AppearanceReadOnly.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            this.cmb_ReportPrint.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.cmb_ReportPrint.Properties.Items.AddRange(new object[] {
+            "report1",
+            "report2",
+            "report3"});
+            this.cmb_ReportPrint.Properties.NullText = "SelectReport";
+            this.cmb_ReportPrint.Size = new System.Drawing.Size(240, 28);
+            this.cmb_ReportPrint.TabIndex = 27;
+            this.cmb_ReportPrint.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.comboBoxEdit1_ButtonClick);
+            // 
             // btn_add
             // 
             this.btn_add.Appearance.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -144,6 +178,7 @@
             this.btn_add.Size = new System.Drawing.Size(240, 55);
             this.btn_add.TabIndex = 3;
             this.btn_add.Text = "Добавить";
+            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
             // btn_delete
             // 
@@ -189,11 +224,11 @@
             // windowsUIButtonPanel1
             // 
             this.windowsUIButtonPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            windowsUIButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions3.Image")));
-            windowsUIButtonImageOptions4.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions4.Image")));
+            windowsUIButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions1.Image")));
+            windowsUIButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions2.Image")));
             this.windowsUIButtonPanel1.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("", true, windowsUIButtonImageOptions3, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "0", -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("", true, windowsUIButtonImageOptions4, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "1", -1, false)});
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("", true, windowsUIButtonImageOptions1, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "0", -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("", true, windowsUIButtonImageOptions2, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "1", -1, false)});
             this.windowsUIButtonPanel1.Location = new System.Drawing.Point(1142, 25);
             this.windowsUIButtonPanel1.Name = "windowsUIButtonPanel1";
             this.windowsUIButtonPanel1.Size = new System.Drawing.Size(109, 44);
@@ -1031,40 +1066,6 @@
             this.cardView1.Name = "cardView1";
             this.cardView1.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Auto;
             // 
-            // cmb_ReportPrint
-            // 
-            this.cmb_ReportPrint.EditValue = "Выберите отчет";
-            this.cmb_ReportPrint.Location = new System.Drawing.Point(7, 237);
-            this.cmb_ReportPrint.Name = "cmb_ReportPrint";
-            this.cmb_ReportPrint.Properties.Appearance.Options.UseTextOptions = true;
-            this.cmb_ReportPrint.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.cmb_ReportPrint.Properties.AppearanceDisabled.Options.UseTextOptions = true;
-            this.cmb_ReportPrint.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.cmb_ReportPrint.Properties.AppearanceDropDown.Options.UseTextOptions = true;
-            this.cmb_ReportPrint.Properties.AppearanceDropDown.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.cmb_ReportPrint.Properties.AppearanceFocused.Options.UseTextOptions = true;
-            this.cmb_ReportPrint.Properties.AppearanceFocused.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.cmb_ReportPrint.Properties.AppearanceItemDisabled.Options.UseTextOptions = true;
-            this.cmb_ReportPrint.Properties.AppearanceItemDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.cmb_ReportPrint.Properties.AppearanceItemHighlight.Options.UseTextOptions = true;
-            this.cmb_ReportPrint.Properties.AppearanceItemHighlight.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.cmb_ReportPrint.Properties.AppearanceItemSelected.Options.UseTextOptions = true;
-            this.cmb_ReportPrint.Properties.AppearanceItemSelected.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.cmb_ReportPrint.Properties.AppearanceReadOnly.Options.UseTextOptions = true;
-            this.cmb_ReportPrint.Properties.AppearanceReadOnly.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
-            this.cmb_ReportPrint.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
-            this.cmb_ReportPrint.Properties.Items.AddRange(new object[] {
-            "report1",
-            "report2",
-            "report3"});
-            this.cmb_ReportPrint.Properties.NullText = "SelectReport";
-            this.cmb_ReportPrint.Size = new System.Drawing.Size(240, 28);
-            this.cmb_ReportPrint.TabIndex = 27;
-            this.cmb_ReportPrint.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.comboBoxEdit1_ButtonClick);
-            // 
             // formUser
             // 
             this.Appearance.Options.UseFont = true;
@@ -1082,6 +1083,7 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.formUser_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.groupButton)).EndInit();
             this.groupButton.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.cmb_ReportPrint.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupDate)).EndInit();
             this.groupDate.ResumeLayout(false);
             this.groupDate.PerformLayout();
@@ -1097,7 +1099,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.PBView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView_konstr)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cardView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmb_ReportPrint.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

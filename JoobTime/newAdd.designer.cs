@@ -40,6 +40,7 @@
             this.lblTime = new System.Windows.Forms.Label();
             this.tmEdt_start = new DevExpress.XtraEditors.TimeSpanEdit();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.btn_add = new DevExpress.XtraEditors.SimpleButton();
             this.lUp_other = new DevExpress.XtraEditors.LookUpEdit();
             this.lUp_work = new DevExpress.XtraEditors.LookUpEdit();
             this.lUp_subunit = new DevExpress.XtraEditors.LookUpEdit();
@@ -47,7 +48,6 @@
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.btn_add = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tmEdt_end.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.date_AddRecord.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.date_AddRecord.Properties)).BeginInit();
@@ -64,7 +64,8 @@
             // 
             // tmEdt_end
             // 
-            this.tmEdt_end.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tmEdt_end.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tmEdt_end.EditValue = null;
             this.tmEdt_end.Location = new System.Drawing.Point(172, 111);
             this.tmEdt_end.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -91,7 +92,8 @@
             // 
             // date_AddRecord
             // 
-            this.date_AddRecord.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.date_AddRecord.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.date_AddRecord.EditValue = null;
             this.date_AddRecord.Location = new System.Drawing.Point(172, 31);
             this.date_AddRecord.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -209,7 +211,8 @@
             // 
             // tmEdt_start
             // 
-            this.tmEdt_start.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tmEdt_start.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tmEdt_start.EditValue = null;
             this.tmEdt_start.Location = new System.Drawing.Point(172, 71);
             this.tmEdt_start.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -258,6 +261,21 @@
             this.groupControl1.TabIndex = 30;
             this.groupControl1.Text = "Введите информацию о проделанной работе";
             // 
+            // btn_add
+            // 
+            this.btn_add.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_add.Appearance.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btn_add.Appearance.Options.UseFont = true;
+            this.btn_add.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_add.ImageOptions.Image")));
+            this.btn_add.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleRight;
+            this.btn_add.Location = new System.Drawing.Point(172, 249);
+            this.btn_add.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
+            this.btn_add.Name = "btn_add";
+            this.btn_add.Size = new System.Drawing.Size(240, 55);
+            this.btn_add.TabIndex = 23;
+            this.btn_add.Text = "Добавить";
+            // 
             // lUp_other
             // 
             this.lUp_other.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -286,6 +304,7 @@
             this.lUp_other.Properties.NullText = "";
             this.lUp_other.Properties.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.Contains;
             this.lUp_other.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.lUp_other.Properties.ValueMember = "other";
             this.lUp_other.Size = new System.Drawing.Size(432, 28);
             this.lUp_other.TabIndex = 6;
             // 
@@ -296,7 +315,6 @@
             this.lUp_work.Location = new System.Drawing.Point(172, 70);
             this.lUp_work.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lUp_work.Name = "lUp_work";
-            this.lUp_work.Properties.AllowDropDownWhenReadOnly = DevExpress.Utils.DefaultBoolean.True;
             this.lUp_work.Properties.Appearance.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lUp_work.Properties.Appearance.Options.UseFont = true;
             this.lUp_work.Properties.AppearanceDisabled.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -316,12 +334,11 @@
             this.lUp_work.Properties.DisplayMember = "work";
             this.lUp_work.Properties.NullText = "";
             this.lUp_work.Properties.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.Contains;
-            this.lUp_work.Properties.ShowDropDown = DevExpress.XtraEditors.Controls.ShowDropDown.Never;
             this.lUp_work.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.lUp_work.Properties.ValueMember = "id_work";
-            this.lUp_work.Properties.Click += new System.EventHandler(this.lUp_work_Properties_Click);
             this.lUp_work.Size = new System.Drawing.Size(432, 28);
             this.lUp_work.TabIndex = 5;
+            this.lUp_work.EditValueChanged += new System.EventHandler(this.lUp_work_EditValueChanged);
             // 
             // lUp_subunit
             // 
@@ -356,7 +373,8 @@
             // 
             // memoOther
             // 
-            this.memoOther.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.memoOther.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.memoOther.Location = new System.Drawing.Point(172, 135);
             this.memoOther.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.memoOther.Name = "memoOther";
@@ -407,19 +425,6 @@
             this.labelControl1.Size = new System.Drawing.Size(114, 22);
             this.labelControl1.TabIndex = 10;
             this.labelControl1.Text = "Подразделение";
-            // 
-            // btn_add
-            // 
-            this.btn_add.Appearance.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btn_add.Appearance.Options.UseFont = true;
-            this.btn_add.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_add.ImageOptions.Image")));
-            this.btn_add.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleRight;
-            this.btn_add.Location = new System.Drawing.Point(172, 249);
-            this.btn_add.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
-            this.btn_add.Name = "btn_add";
-            this.btn_add.Size = new System.Drawing.Size(240, 55);
-            this.btn_add.TabIndex = 23;
-            this.btn_add.Text = "Добавить";
             // 
             // newAdd
             // 

@@ -113,5 +113,12 @@ namespace JoobTime
                 }
             }
         }
+
+        private void btn_add_Click(object sender, EventArgs e)
+        {
+            newAdd.caption_f = "Добавить";
+            newAdd formAdd = new newAdd();
+            formAdd.ShowDialog();
+        }
     }
 }

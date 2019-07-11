@@ -3,6 +3,7 @@ using System.Data;
 using System.Windows.Forms;
 using System.Threading;
 using DevExpress.XtraEditors;
+using System.Linq;
 
 namespace JoobTime
 {
@@ -12,7 +13,7 @@ namespace JoobTime
         Class_sql _Sql = new Class_sql();
         public static string total_id;
         public static string caption_f;
-        private DataTable dtWork;
+        public DataTable dtWork;
         private DataTable dtSubunit;
         private DataTable dtOtherDistinkt;
         private DataTable dtWorker;
@@ -149,14 +150,14 @@ namespace JoobTime
         public newAdd()
         {
             InitializeComponent();
-
             load_dtWorker(formLogin.id_tn);
             load_dtWork(dtWorker.Rows[0]["id_Subunit"].ToString());
             load_dtSubunit();
-
+            form_size();
             if (caption_f == "Добавить")
             {
                 date_AddRecord.DateTime = DateTime.Now;
+                max_time();
             }
             else if (caption_f == "Изменить")
             {
@@ -168,7 +169,6 @@ namespace JoobTime
             }
             load_dtOtherDistinkt();
             timeToLabel();
-            form_size();
         }
 
         public void dataEditInComponent()
@@ -213,9 +213,18 @@ namespace JoobTime
         public void loadTextControl()
         {
             string work=xlsx_.read_xlsx("save_work_name");
-            lUp_work.Text = work;
+            var rowWorks = from DataRow row in dtWork.Rows
+                           where row["work"].ToString() == work
+                           select row;
+            if(rowWorks.Count()!=0)
+            {
+                DataRow row= rowWorks.ElementAt(0);
+                string wprk= row["id_work"].ToString();
+                lUp_work.EditValue = wprk;
+            }
+            
             string other = xlsx_.read_xlsx("save_other");
-            lUp_other.Text= other;
+            lUp_other.EditValue = other;
         }
 
         public void saveTextControl()
@@ -323,7 +332,7 @@ namespace JoobTime
         }
 
         private void add_Load(object sender, EventArgs e)
-        {            
+        {
             lUpSubunit_loadData();
             lUpWork_loadData();
             lUpOthers_loadData();
@@ -334,9 +343,7 @@ namespace JoobTime
             if (caption_f == "Добавить")
             {
                 loadTextControl();
-                max_time();
             }
-
         }
 
         private void dateEdit1_EditValueChanged_1(object sender, EventArgs e)
@@ -380,19 +387,14 @@ namespace JoobTime
             }
         }
 
-        private void lUp_work_EditValueChanged(object sender, EventArgs e)
-        {
-            dtOtherDistinkt.DefaultView.RowFilter="[work] ='"+lUp_work.Text+"'";
-        }
-
         private void lUp_other_Leave(object sender, EventArgs e)
         {
             memoOther.Text = lUp_other.Text;
         }
 
-        private void lUp_work_Properties_Click(object sender, EventArgs e)
+        private void lUp_work_EditValueChanged(object sender, EventArgs e)
         {
-            
+            dtOtherDistinkt.DefaultView.RowFilter = "[work] ='" + lUp_work.Text + "'";
         }
     }
 }

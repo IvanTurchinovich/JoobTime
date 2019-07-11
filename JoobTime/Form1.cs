@@ -98,5 +98,15 @@ namespace JoobTime
                 btn_login_Click(sender, e);
             }
         }
+
+        private void formLogin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void formLogin_Load(object sender, EventArgs e)
+        {
+            txt_password.Select();
+        }
     }
 }
