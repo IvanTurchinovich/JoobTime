@@ -70,7 +70,7 @@ namespace JoobTime
             }
             else if (status == "r")
             {
-                XtraMessageBox.Show("Вы ввели верный пароль \\" + status);
+                XtraMessageBox.Show("Вы ввели верный пароль \\" + status+" Но форма руководителя еще не готова");
             }
             else if (status == "admin")
             {
