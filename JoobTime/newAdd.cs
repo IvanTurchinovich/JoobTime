@@ -2,8 +2,9 @@
 using System.Data;
 using System.Windows.Forms;
 using System.Threading;
+using DevExpress.XtraEditors;
 
-namespace joob_time_v1._1
+namespace JoobTime
 {
     public partial class newAdd : DevExpress.XtraEditors.XtraForm
     {
@@ -21,7 +22,7 @@ namespace joob_time_v1._1
         {
             DateTime selectDate = date_AddRecord.DateTime.Date;
             string query = @"SELECT [time_span] FROM [total] 
-                              WHERE [id_tn]='" + Form1.TN + "'"
+                              WHERE [id_tn]='" +formLogin.id_tn + "'"
                              + "AND [date]='" + _Date.convert(date_AddRecord.DateTime) + "'";
             DataTable dtHours = _Sql.sql_dt(query, "t1");
 
@@ -43,7 +44,7 @@ namespace joob_time_v1._1
         public void max_time()
         {
             string query = @"select max(total.time_end) from total where date='" +
-                           date_AddRecord.DateTime.ToShortDateString() + "' and id_tn=" + Form1.TN;
+                           date_AddRecord.DateTime.ToShortDateString() + "' and id_tn=" + formLogin.id_tn;
             DataTable dtMaxDate = _Sql.sql_dt(query, "t1");
             if (dtMaxDate.Rows[0][0].ToString()!="" || !string.IsNullOrEmpty(dtMaxDate.Rows[0][0].ToString()))
             {
@@ -110,7 +111,7 @@ namespace joob_time_v1._1
 
         public void load_dtOtherDistinkt()
         {
-            string comand= @"select distinct other, work  from total where id_tn=" + Form1.TN
+            string comand= @"select distinct other, work  from total where id_tn=" + formLogin.id_tn
                             + " AND [date]>='" + extremeDay(date_AddRecord.DateTime,true) + "'"
                             + " AND [date]<='" + extremeDay(date_AddRecord.DateTime, false) + "'";
             dtOtherDistinkt = _Sql.sql_dt(comand,"t1");
@@ -149,7 +150,7 @@ namespace joob_time_v1._1
         {
             InitializeComponent();
 
-            load_dtWorker(Form1.TN);
+            load_dtWorker(formLogin.id_tn);
             load_dtWork(dtWorker.Rows[0]["id_Subunit"].ToString());
             load_dtSubunit();
 
@@ -198,10 +199,8 @@ namespace joob_time_v1._1
             }
             else
             {
-                msgbox.msg = "Не все поля заполнены!";
-                msgbox.tmr = false;
-                msgbox msg = new msgbox();
-                msg.Show();
+                //msgbox.msg = "Не все поля заполнены!";
+                XtraMessageBox.Show("Не все поля заполнены!","Ошибка добавления/изменения записи");
             }
         }
 
@@ -273,10 +272,8 @@ namespace joob_time_v1._1
                                                    )", fio, position, subunit, id_work, work, date, time_start, time_end, other, time_add, id_tn, time_span, id_subunit_worker);
             if (_Sql.UpdateComand(comand))
             {
-                msgbox.msg = "Запись добавлена успешно.";
-                msgbox.tmr = true;
-                msgbox msg = new msgbox();
-                msg.Show();
+                //msgbox.msg = "Запись добавлена успешно.";
+                XtraMessageBox.Show("Запись добавлена успешно.", "Добавление записи");
             }
         }
 
@@ -305,11 +302,8 @@ namespace joob_time_v1._1
                                WHERE id=              {9}",subunit,id_work,work,date,time_start,time_end,other,time_add, time_span,total_id);
             if (_Sql.UpdateComand(comand))
             {
-                msgbox.msg = "Запись успешно изменена.";
-                msgbox.tmr = true;
-                msgbox msg = new msgbox();
-                msg.Show();
-                Close();
+                //msgbox.msg = "Запись успешно изменена.";
+                XtraMessageBox.Show("Запись успешно изменена.", "Изменение записи");
             }
         }
 
@@ -335,7 +329,7 @@ namespace joob_time_v1._1
             lUpOthers_loadData();
             lUp_subunit.Text = dtWorker.Rows[0]["subunit"].ToString();
             Text = caption_f;
-            btnAdd.Text = caption_f;
+            btn_add.Text = caption_f;
             tmEdt_start.Select();
             if (caption_f == "Добавить")
             {

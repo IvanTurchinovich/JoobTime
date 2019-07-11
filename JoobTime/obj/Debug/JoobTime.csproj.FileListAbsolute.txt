@@ -98,3 +98,4 @@ C:\Users\tig\source\repos\JoobTime\JoobTime\bin\Debug\ja\DevExpress.Xpf.Core.v18
 C:\Users\tig\source\repos\JoobTime\JoobTime\bin\Debug\ru\DevExpress.Xpf.Core.v18.1.resources.dll
 C:\Users\tig\source\repos\JoobTime\JoobTime\obj\Debug\JoobTime.formUser.resources
 C:\Users\tig\source\repos\JoobTime\JoobTime\obj\Debug\JoobTime.formLogin.resources
+C:\Users\tig\source\repos\JoobTime\JoobTime\obj\Debug\JoobTime.newAdd.resources
