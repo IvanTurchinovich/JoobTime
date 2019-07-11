@@ -26,7 +26,35 @@ namespace JoobTime
             }
             if (e.SummaryProcess == DevExpress.Data.CustomSummaryProcess.Finalize)
             {
-                e.TotalValue = ts.TotalHours;//.ToString().Substring(3)+ts.Minutes.ToString();
+                var strin_f = ts.TotalHours.ToString();
+                string itog;
+                if (strin_f.Contains(','))
+                {
+                    var len = strin_f.IndexOf(',', 0);
+                    if (ts.Minutes.ToString().Length > 1)
+                    {
+                        itog = strin_f.Substring(0, len) + ":" + ts.Minutes;
+                        e.TotalValue = itog;
+                    }
+                    else
+                    {
+                        itog = strin_f.Substring(0, len) + ":0" + ts.Minutes;
+                        e.TotalValue = itog;
+                    }
+                }
+                else
+                {
+                    if (ts.Minutes.ToString().Length > 1)
+                    {
+                        itog = strin_f + ":" + ts.Minutes;
+                        e.TotalValue = itog;
+                    }
+                    else
+                    {
+                        itog = strin_f + ":0" + ts.Minutes;
+                        e.TotalValue = itog;
+                    }
+                }
             }
         }
     }

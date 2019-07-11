@@ -118,15 +118,13 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btn_print.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="editorButtonImageOptions2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAAADHRFWHRUaXRsZQBQcmludDvI
-        NjLqAAAA2klEQVRYR+2WUQqAIAyGPZjQa1fvHkLHMBcsyGb+LkUkH3wp577925zGe296rq7OKfAJMIYC
-        1lqvWUhxQwponJNNCwATDkbWqVgRQDBYwtqEaMkhpwBxHu+P00c+Foa7UhA+7gmpawMQ0C4BpAqtCgA7
-        5CD/BxCnF1YAqeS3PakWhgG0d0DObgKMo0D3IiSA+PIA5sE1Cz53QQLg7da8AbcCyA0llQJOom2kgJO6
-        YJUmYoMaoKm7PgDA6zQnPf8vf5CAAEVvQ6SFx3gTIpFo90AKaA9H7CZAdwUOyZEfbPaRU88AAAAASUVO
-        RK5CYII=
+        NjLqAAAAcklEQVQ4T7VTWxIAMQRzMPe/lt3tLJO2tKaPDz+GiAQSEdqJqpmZJRM48BoAvUy8KAwrBkr5
+        SwL9KYDWWtMpgGiy5ZV+xyCjvleDe6csbDVbBohELLt6l6m2hhqgCwMAu4OpjS3Iz6AHwMKsE/d+YeWt
+        Hw/NBo9OKI4HAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="btn_add.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -173,7 +171,7 @@
         34xMD996XyblAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="windowsUIButtonImageOptions7.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="windowsUIButtonImageOptions3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAAAJ3RFWHRUaXRsZQBSZWZyZXNo
@@ -187,7 +185,7 @@
         /lnuOeMtxzSV1RqwG8Avj5M+At23rgIAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="windowsUIButtonImageOptions8.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="windowsUIButtonImageOptions4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAAAC3RFWHRUaXRsZQBIb21lOx50

@@ -94,5 +94,24 @@ namespace JoobTime
         {
             _totalTimeSummary.to_time_span(sender,e);
         }
+
+        private void comboBoxEdit1_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            if (e.Button.Kind == DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph)
+            {
+                switch (cmb_ReportPrint.Text)
+                {
+                    case "report1":
+                        MessageBox.Show("report1");
+                        break;
+                    case "report2":
+                        MessageBox.Show("report2");
+                        break;
+                    case "report3":
+                        MessageBox.Show("report3");
+                        break;
+                }
+            }
+        }
     }
 }

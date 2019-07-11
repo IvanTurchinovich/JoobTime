@@ -82,6 +82,7 @@
             this.txt_password.Properties.UseSystemPasswordChar = true;
             this.txt_password.Size = new System.Drawing.Size(243, 28);
             this.txt_password.TabIndex = 1;
+            this.txt_password.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_password_KeyDown);
             // 
             // btn_login
             // 

@@ -28,11 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions3 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions4 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formUser));
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions7 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions8 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.groupButton = new DevExpress.XtraEditors.GroupControl();
-            this.btn_print = new DevExpress.XtraEditors.SimpleButton();
             this.btn_add = new DevExpress.XtraEditors.SimpleButton();
             this.btn_delete = new DevExpress.XtraEditors.SimpleButton();
             this.btn_edit = new DevExpress.XtraEditors.SimpleButton();
@@ -90,6 +94,7 @@
             this.gridColumn27 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn30 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cardView1 = new DevExpress.XtraGrid.Views.Card.CardView();
+            this.cmb_ReportPrint = new DevExpress.XtraEditors.ComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)(this.groupButton)).BeginInit();
             this.groupButton.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupDate)).BeginInit();
@@ -106,6 +111,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.PBView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView_konstr)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cardView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmb_ReportPrint.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupButton
@@ -114,7 +120,7 @@
             this.groupButton.Appearance.Options.UseFont = true;
             this.groupButton.AppearanceCaption.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupButton.AppearanceCaption.Options.UseFont = true;
-            this.groupButton.Controls.Add(this.btn_print);
+            this.groupButton.Controls.Add(this.cmb_ReportPrint);
             this.groupButton.Controls.Add(this.btn_add);
             this.groupButton.Controls.Add(this.btn_delete);
             this.groupButton.Controls.Add(this.btn_edit);
@@ -125,19 +131,6 @@
             this.groupButton.Size = new System.Drawing.Size(256, 613);
             this.groupButton.TabIndex = 0;
             this.groupButton.Text = "Управление";
-            // 
-            // btn_print
-            // 
-            this.btn_print.Appearance.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btn_print.Appearance.Options.UseFont = true;
-            this.btn_print.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_print.ImageOptions.Image")));
-            this.btn_print.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleRight;
-            this.btn_print.Location = new System.Drawing.Point(7, 241);
-            this.btn_print.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
-            this.btn_print.Name = "btn_print";
-            this.btn_print.Size = new System.Drawing.Size(240, 55);
-            this.btn_print.TabIndex = 6;
-            this.btn_print.Text = "Печать";
             // 
             // btn_add
             // 
@@ -196,11 +189,11 @@
             // windowsUIButtonPanel1
             // 
             this.windowsUIButtonPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            windowsUIButtonImageOptions7.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions7.Image")));
-            windowsUIButtonImageOptions8.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions8.Image")));
+            windowsUIButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions3.Image")));
+            windowsUIButtonImageOptions4.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions4.Image")));
             this.windowsUIButtonPanel1.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("", true, windowsUIButtonImageOptions7, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "0", -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("", true, windowsUIButtonImageOptions8, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "1", -1, false)});
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("", true, windowsUIButtonImageOptions3, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "0", -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("", true, windowsUIButtonImageOptions4, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "1", -1, false)});
             this.windowsUIButtonPanel1.Location = new System.Drawing.Point(1142, 25);
             this.windowsUIButtonPanel1.Name = "windowsUIButtonPanel1";
             this.windowsUIButtonPanel1.Size = new System.Drawing.Size(109, 44);
@@ -285,81 +278,47 @@
             // 
             this.gridView1.Appearance.ColumnFilterButton.Options.UseTextOptions = true;
             this.gridView1.Appearance.ColumnFilterButton.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.gridView1.Appearance.EvenRow.BackColor = System.Drawing.Color.White;
-            this.gridView1.Appearance.EvenRow.Options.UseBackColor = true;
             this.gridView1.Appearance.EvenRow.Options.UseTextOptions = true;
             this.gridView1.Appearance.EvenRow.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.gridView1.Appearance.FocusedCell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(198)))), ((int)(((byte)(255)))));
-            this.gridView1.Appearance.FocusedCell.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.gridView1.Appearance.FocusedCell.Options.UseBackColor = true;
-            this.gridView1.Appearance.FocusedCell.Options.UseFont = true;
             this.gridView1.Appearance.FocusedCell.Options.UseTextOptions = true;
             this.gridView1.Appearance.FocusedCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridView1.Appearance.FocusedCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.gridView1.Appearance.FocusedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(198)))), ((int)(((byte)(255)))));
-            this.gridView1.Appearance.FocusedRow.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(171)))), ((int)(((byte)(226)))));
-            this.gridView1.Appearance.FocusedRow.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.gridView1.Appearance.FocusedRow.Options.UseBackColor = true;
-            this.gridView1.Appearance.FocusedRow.Options.UseFont = true;
             this.gridView1.Appearance.FocusedRow.Options.UseTextOptions = true;
             this.gridView1.Appearance.FocusedRow.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridView1.Appearance.FocusedRow.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.gridView1.Appearance.GroupRow.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.gridView1.Appearance.GroupRow.ForeColor = System.Drawing.Color.Black;
+            this.gridView1.Appearance.GroupRow.FontStyleDelta = System.Drawing.FontStyle.Bold;
             this.gridView1.Appearance.GroupRow.Options.UseFont = true;
-            this.gridView1.Appearance.GroupRow.Options.UseForeColor = true;
             this.gridView1.Appearance.GroupRow.Options.UseTextOptions = true;
             this.gridView1.Appearance.GroupRow.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.gridView1.Appearance.HeaderPanel.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.gridView1.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gridView1.Appearance.HeaderPanel.FontStyleDelta = System.Drawing.FontStyle.Bold;
             this.gridView1.Appearance.HeaderPanel.Options.UseTextOptions = true;
             this.gridView1.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridView1.Appearance.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridView1.Appearance.HideSelectionRow.Options.UseTextOptions = true;
             this.gridView1.Appearance.HideSelectionRow.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.gridView1.Appearance.OddRow.BackColor = System.Drawing.Color.AliceBlue;
-            this.gridView1.Appearance.OddRow.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.gridView1.Appearance.OddRow.Options.UseBackColor = true;
-            this.gridView1.Appearance.OddRow.Options.UseFont = true;
-            this.gridView1.Appearance.Preview.BackColor = System.Drawing.Color.LightBlue;
-            this.gridView1.Appearance.Preview.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.gridView1.Appearance.Preview.ForeColor = System.Drawing.Color.Black;
-            this.gridView1.Appearance.Preview.Options.UseBackColor = true;
-            this.gridView1.Appearance.Preview.Options.UseFont = true;
-            this.gridView1.Appearance.Preview.Options.UseForeColor = true;
             this.gridView1.Appearance.Preview.Options.UseTextOptions = true;
             this.gridView1.Appearance.Preview.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.gridView1.Appearance.Row.BackColor = System.Drawing.Color.AliceBlue;
-            this.gridView1.Appearance.Row.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.gridView1.Appearance.Row.ForeColor = System.Drawing.Color.Black;
-            this.gridView1.Appearance.Row.Options.UseBackColor = true;
-            this.gridView1.Appearance.Row.Options.UseFont = true;
-            this.gridView1.Appearance.Row.Options.UseForeColor = true;
             this.gridView1.Appearance.Row.Options.UseTextOptions = true;
             this.gridView1.Appearance.Row.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.gridView1.Appearance.SelectedRow.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.gridView1.Appearance.SelectedRow.Options.UseFont = true;
             this.gridView1.Appearance.SelectedRow.Options.UseTextOptions = true;
             this.gridView1.Appearance.SelectedRow.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.gridView1.Appearance.TopNewRow.ForeColor = System.Drawing.Color.White;
-            this.gridView1.Appearance.TopNewRow.Options.UseForeColor = true;
             this.gridView1.Appearance.ViewCaption.Font = new System.Drawing.Font("Century Gothic", 8.25F);
             this.gridView1.Appearance.ViewCaption.Options.UseFont = true;
             this.gridView1.AppearancePrint.EvenRow.BackColor = System.Drawing.Color.White;
-            this.gridView1.AppearancePrint.EvenRow.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridView1.AppearancePrint.EvenRow.Font = new System.Drawing.Font("Times New Roman", 9.75F);
             this.gridView1.AppearancePrint.EvenRow.Options.UseBackColor = true;
             this.gridView1.AppearancePrint.EvenRow.Options.UseFont = true;
             this.gridView1.AppearancePrint.EvenRow.Options.UseTextOptions = true;
             this.gridView1.AppearancePrint.EvenRow.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.gridView1.AppearancePrint.FooterPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.gridView1.AppearancePrint.FooterPanel.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridView1.AppearancePrint.FooterPanel.Font = new System.Drawing.Font("Times New Roman", 9.75F);
             this.gridView1.AppearancePrint.FooterPanel.Options.UseBackColor = true;
             this.gridView1.AppearancePrint.FooterPanel.Options.UseFont = true;
             this.gridView1.AppearancePrint.GroupFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.gridView1.AppearancePrint.GroupFooter.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridView1.AppearancePrint.GroupFooter.Font = new System.Drawing.Font("Times New Roman", 9.75F);
             this.gridView1.AppearancePrint.GroupFooter.Options.UseBackColor = true;
             this.gridView1.AppearancePrint.GroupFooter.Options.UseFont = true;
-            this.gridView1.AppearancePrint.GroupRow.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridView1.AppearancePrint.GroupRow.Font = new System.Drawing.Font("Times New Roman", 9.75F);
             this.gridView1.AppearancePrint.GroupRow.Options.UseFont = true;
             this.gridView1.AppearancePrint.HeaderPanel.BackColor = System.Drawing.Color.LightSkyBlue;
             this.gridView1.AppearancePrint.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
@@ -368,12 +327,12 @@
             this.gridView1.AppearancePrint.HeaderPanel.Options.UseTextOptions = true;
             this.gridView1.AppearancePrint.HeaderPanel.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.gridView1.AppearancePrint.OddRow.BackColor = System.Drawing.Color.White;
-            this.gridView1.AppearancePrint.OddRow.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridView1.AppearancePrint.OddRow.Font = new System.Drawing.Font("Times New Roman", 9.75F);
             this.gridView1.AppearancePrint.OddRow.Options.UseBackColor = true;
             this.gridView1.AppearancePrint.OddRow.Options.UseFont = true;
             this.gridView1.AppearancePrint.Preview.Options.UseTextOptions = true;
             this.gridView1.AppearancePrint.Preview.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.gridView1.AppearancePrint.Row.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridView1.AppearancePrint.Row.Font = new System.Drawing.Font("Times New Roman", 9.75F);
             this.gridView1.AppearancePrint.Row.Options.UseFont = true;
             this.gridView1.AppearancePrint.Row.Options.UseTextOptions = true;
             this.gridView1.AppearancePrint.Row.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
@@ -390,8 +349,10 @@
             this.colid_tn,
             this.gridColumn1});
             this.gridView1.CustomizationFormBounds = new System.Drawing.Rectangle(1226, 354, 210, 354);
+            this.gridView1.DetailHeight = 111;
+            this.gridView1.FixedLineWidth = 1;
             this.gridView1.GridControl = this.grid_total;
-            this.gridView1.GroupRowHeight = 27;
+            this.gridView1.GroupRowHeight = 8;
             this.gridView1.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Custom, "time_span", null, "[Времени всего {0}]", "2")});
             this.gridView1.HorzScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Never;
@@ -416,22 +377,26 @@
             // 
             this.id.Caption = "ID";
             this.id.FieldName = "id";
+            this.id.MinWidth = 10;
             this.id.Name = "id";
             this.id.OptionsColumn.FixedWidth = true;
+            this.id.Width = 35;
             // 
             // colFIO
             // 
             this.colFIO.Caption = "ФИО";
             this.colFIO.FieldName = "FIO";
+            this.colFIO.MinWidth = 10;
             this.colFIO.Name = "colFIO";
-            this.colFIO.Width = 104;
+            this.colFIO.Width = 49;
             // 
             // colposition
             // 
             this.colposition.Caption = "Должность";
             this.colposition.FieldName = "position";
+            this.colposition.MinWidth = 10;
             this.colposition.Name = "colposition";
-            this.colposition.Width = 104;
+            this.colposition.Width = 49;
             // 
             // colsubunit
             // 
@@ -440,17 +405,14 @@
             this.colsubunit.Caption = "Подразделение";
             this.colsubunit.ColumnEdit = this.repositoryItemMemoEdit1;
             this.colsubunit.FieldName = "subunit";
+            this.colsubunit.MinWidth = 10;
             this.colsubunit.Name = "colsubunit";
-            this.colsubunit.Visible = true;
-            this.colsubunit.VisibleIndex = 6;
-            this.colsubunit.Width = 279;
+            this.colsubunit.Width = 79;
             // 
             // repositoryItemMemoEdit1
             // 
             this.repositoryItemMemoEdit1.Appearance.Options.UseTextOptions = true;
             this.repositoryItemMemoEdit1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.repositoryItemMemoEdit1.AppearanceFocused.Options.UseTextOptions = true;
-            this.repositoryItemMemoEdit1.AppearanceFocused.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.repositoryItemMemoEdit1.Name = "repositoryItemMemoEdit1";
             // 
             // colwork
@@ -460,43 +422,50 @@
             this.colwork.Caption = "Вид работ";
             this.colwork.ColumnEdit = this.repositoryItemMemoEdit1;
             this.colwork.FieldName = "work";
+            this.colwork.MinWidth = 10;
             this.colwork.Name = "colwork";
             this.colwork.Visible = true;
             this.colwork.VisibleIndex = 1;
-            this.colwork.Width = 326;
+            this.colwork.Width = 296;
             // 
             // coldate
             // 
-            this.coldate.AppearanceCell.Options.UseTextOptions = true;
+            this.coldate.AppearanceHeader.Options.UseTextOptions = true;
+            this.coldate.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.coldate.Caption = "Дата";
             this.coldate.FieldName = "date";
+            this.coldate.MinWidth = 10;
             this.coldate.Name = "coldate";
             this.coldate.OptionsColumn.FixedWidth = true;
             this.coldate.Visible = true;
             this.coldate.VisibleIndex = 0;
-            this.coldate.Width = 86;
+            this.coldate.Width = 93;
             // 
             // coltime_begin
             // 
-            this.coltime_begin.AppearanceCell.Options.UseTextOptions = true;
+            this.coltime_begin.AppearanceHeader.Options.UseTextOptions = true;
+            this.coltime_begin.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.coltime_begin.Caption = "Время начала";
             this.coltime_begin.FieldName = "time_begin";
+            this.coltime_begin.MinWidth = 120;
             this.coltime_begin.Name = "coltime_begin";
             this.coltime_begin.OptionsColumn.FixedWidth = true;
             this.coltime_begin.Visible = true;
             this.coltime_begin.VisibleIndex = 3;
-            this.coltime_begin.Width = 94;
+            this.coltime_begin.Width = 120;
             // 
             // coltime_end
             // 
-            this.coltime_end.AppearanceCell.Options.UseTextOptions = true;
+            this.coltime_end.AppearanceHeader.Options.UseTextOptions = true;
+            this.coltime_end.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.coltime_end.Caption = "Время окончания";
             this.coltime_end.FieldName = "time_end";
+            this.coltime_end.MinWidth = 120;
             this.coltime_end.Name = "coltime_end";
             this.coltime_end.OptionsColumn.FixedWidth = true;
             this.coltime_end.Visible = true;
             this.coltime_end.VisibleIndex = 4;
-            this.coltime_end.Width = 104;
+            this.coltime_end.Width = 120;
             // 
             // colother
             // 
@@ -505,30 +474,35 @@
             this.colother.Caption = "Доп. информация";
             this.colother.ColumnEdit = this.repositoryItemMemoEdit1;
             this.colother.FieldName = "other";
+            this.colother.MinWidth = 10;
             this.colother.Name = "colother";
             this.colother.Visible = true;
             this.colother.VisibleIndex = 2;
-            this.colother.Width = 640;
+            this.colother.Width = 484;
             // 
             // colid_tn
             // 
             this.colid_tn.Caption = "Табельный номер";
             this.colid_tn.FieldName = "id_tn";
+            this.colid_tn.MinWidth = 10;
             this.colid_tn.Name = "colid_tn";
+            this.colid_tn.Width = 35;
             // 
             // gridColumn1
             // 
+            this.gridColumn1.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn1.Caption = "Времени затрачено";
             this.gridColumn1.ColumnEdit = this.repositoryItemTimeEdit1;
             this.gridColumn1.FieldName = "time_span";
-            this.gridColumn1.ImageOptions.Alignment = System.Drawing.StringAlignment.Far;
+            this.gridColumn1.MinWidth = 120;
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.OptionsColumn.FixedWidth = true;
             this.gridColumn1.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Custom, "time_span", "", "1")});
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 5;
-            this.gridColumn1.Width = 103;
+            this.gridColumn1.Width = 120;
             // 
             // repositoryItemTimeEdit1
             // 
@@ -550,104 +524,33 @@
             // 
             // PBView
             // 
-            this.PBView.Appearance.ColumnFilterButton.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.PBView.Appearance.ColumnFilterButton.Options.UseFont = true;
             this.PBView.Appearance.ColumnFilterButton.Options.UseTextOptions = true;
             this.PBView.Appearance.ColumnFilterButton.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.PBView.Appearance.ColumnFilterButtonActive.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.PBView.Appearance.ColumnFilterButtonActive.Options.UseFont = true;
-            this.PBView.Appearance.CustomizationFormHint.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.PBView.Appearance.CustomizationFormHint.Options.UseFont = true;
-            this.PBView.Appearance.DetailTip.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.PBView.Appearance.DetailTip.Options.UseFont = true;
-            this.PBView.Appearance.Empty.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.PBView.Appearance.Empty.Options.UseFont = true;
-            this.PBView.Appearance.EvenRow.BackColor = System.Drawing.Color.White;
-            this.PBView.Appearance.EvenRow.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.PBView.Appearance.EvenRow.Options.UseBackColor = true;
-            this.PBView.Appearance.EvenRow.Options.UseFont = true;
             this.PBView.Appearance.EvenRow.Options.UseTextOptions = true;
-            this.PBView.Appearance.EvenRow.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.PBView.Appearance.EvenRow.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.PBView.Appearance.FilterCloseButton.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.PBView.Appearance.FilterCloseButton.Options.UseFont = true;
-            this.PBView.Appearance.FilterPanel.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.PBView.Appearance.FilterPanel.Options.UseFont = true;
-            this.PBView.Appearance.FixedLine.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.PBView.Appearance.FixedLine.Options.UseFont = true;
             this.PBView.Appearance.FocusedCell.Options.UseTextOptions = true;
             this.PBView.Appearance.FocusedCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.PBView.Appearance.FocusedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(198)))), ((int)(((byte)(255)))));
-            this.PBView.Appearance.FocusedRow.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(171)))), ((int)(((byte)(226)))));
-            this.PBView.Appearance.FocusedRow.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.PBView.Appearance.FocusedRow.Options.UseBackColor = true;
-            this.PBView.Appearance.FocusedRow.Options.UseFont = true;
+            this.PBView.Appearance.FocusedCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.PBView.Appearance.FocusedRow.Options.UseTextOptions = true;
             this.PBView.Appearance.FocusedRow.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.PBView.Appearance.FocusedRow.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.PBView.Appearance.FooterPanel.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.PBView.Appearance.FooterPanel.Options.UseFont = true;
-            this.PBView.Appearance.GroupButton.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.PBView.Appearance.GroupButton.Options.UseFont = true;
-            this.PBView.Appearance.GroupFooter.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.PBView.Appearance.GroupFooter.Options.UseFont = true;
-            this.PBView.Appearance.GroupPanel.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.PBView.Appearance.GroupPanel.Options.UseFont = true;
-            this.PBView.Appearance.GroupRow.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.PBView.Appearance.GroupRow.ForeColor = System.Drawing.Color.Black;
+            this.PBView.Appearance.GroupRow.FontStyleDelta = System.Drawing.FontStyle.Bold;
             this.PBView.Appearance.GroupRow.Options.UseFont = true;
-            this.PBView.Appearance.GroupRow.Options.UseForeColor = true;
             this.PBView.Appearance.GroupRow.Options.UseTextOptions = true;
-            this.PBView.Appearance.GroupRow.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.PBView.Appearance.GroupRow.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.PBView.Appearance.HeaderPanel.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.PBView.Appearance.HeaderPanel.Options.UseFont = true;
+            this.PBView.Appearance.HeaderPanel.FontStyleDelta = System.Drawing.FontStyle.Bold;
             this.PBView.Appearance.HeaderPanel.Options.UseTextOptions = true;
             this.PBView.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.PBView.Appearance.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.PBView.Appearance.HideSelectionRow.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.PBView.Appearance.HideSelectionRow.Options.UseFont = true;
             this.PBView.Appearance.HideSelectionRow.Options.UseTextOptions = true;
             this.PBView.Appearance.HideSelectionRow.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.PBView.Appearance.HorzLine.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.PBView.Appearance.HorzLine.Options.UseFont = true;
-            this.PBView.Appearance.OddRow.BackColor = System.Drawing.Color.AliceBlue;
-            this.PBView.Appearance.OddRow.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.PBView.Appearance.OddRow.Options.UseBackColor = true;
-            this.PBView.Appearance.OddRow.Options.UseFont = true;
-            this.PBView.Appearance.OddRow.Options.UseTextOptions = true;
-            this.PBView.Appearance.OddRow.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.PBView.Appearance.Preview.BackColor = System.Drawing.Color.LightBlue;
-            this.PBView.Appearance.Preview.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.PBView.Appearance.Preview.ForeColor = System.Drawing.Color.Black;
-            this.PBView.Appearance.Preview.Options.UseBackColor = true;
-            this.PBView.Appearance.Preview.Options.UseFont = true;
-            this.PBView.Appearance.Preview.Options.UseForeColor = true;
             this.PBView.Appearance.Preview.Options.UseTextOptions = true;
             this.PBView.Appearance.Preview.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.PBView.Appearance.Row.BackColor = System.Drawing.Color.AliceBlue;
-            this.PBView.Appearance.Row.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.PBView.Appearance.Row.ForeColor = System.Drawing.Color.Black;
-            this.PBView.Appearance.Row.Options.UseBackColor = true;
-            this.PBView.Appearance.Row.Options.UseFont = true;
-            this.PBView.Appearance.Row.Options.UseForeColor = true;
             this.PBView.Appearance.Row.Options.UseTextOptions = true;
-            this.PBView.Appearance.Row.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.PBView.Appearance.Row.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.PBView.Appearance.RowSeparator.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.PBView.Appearance.RowSeparator.Options.UseFont = true;
-            this.PBView.Appearance.SelectedRow.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.PBView.Appearance.SelectedRow.Options.UseFont = true;
             this.PBView.Appearance.SelectedRow.Options.UseTextOptions = true;
-            this.PBView.Appearance.SelectedRow.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.PBView.Appearance.SelectedRow.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.PBView.Appearance.TopNewRow.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.PBView.Appearance.TopNewRow.ForeColor = System.Drawing.Color.White;
-            this.PBView.Appearance.TopNewRow.Options.UseFont = true;
-            this.PBView.Appearance.TopNewRow.Options.UseForeColor = true;
-            this.PBView.Appearance.VertLine.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.PBView.Appearance.VertLine.Options.UseFont = true;
-            this.PBView.Appearance.ViewCaption.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.PBView.Appearance.ViewCaption.Font = new System.Drawing.Font("Century Gothic", 8.25F);
             this.PBView.Appearance.ViewCaption.Options.UseFont = true;
             this.PBView.AppearancePrint.EvenRow.BackColor = System.Drawing.Color.White;
             this.PBView.AppearancePrint.EvenRow.Font = new System.Drawing.Font("Times New Roman", 9.75F);
@@ -854,78 +757,31 @@
             // gridView_konstr
             // 
             this.gridView_konstr.Appearance.ColumnFilterButton.Options.UseTextOptions = true;
-            this.gridView_konstr.Appearance.ColumnFilterButton.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.gridView_konstr.Appearance.Empty.Options.UseTextOptions = true;
-            this.gridView_konstr.Appearance.Empty.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.gridView_konstr.Appearance.EvenRow.BackColor = System.Drawing.Color.White;
-            this.gridView_konstr.Appearance.EvenRow.Options.UseBackColor = true;
+            this.gridView_konstr.Appearance.ColumnFilterButton.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.gridView_konstr.Appearance.EvenRow.Options.UseTextOptions = true;
-            this.gridView_konstr.Appearance.EvenRow.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridView_konstr.Appearance.EvenRow.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.gridView_konstr.Appearance.FixedLine.Options.UseTextOptions = true;
-            this.gridView_konstr.Appearance.FixedLine.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.gridView_konstr.Appearance.FocusedCell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(198)))), ((int)(((byte)(255)))));
-            this.gridView_konstr.Appearance.FocusedCell.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.gridView_konstr.Appearance.FocusedCell.Options.UseBackColor = true;
-            this.gridView_konstr.Appearance.FocusedCell.Options.UseFont = true;
             this.gridView_konstr.Appearance.FocusedCell.Options.UseTextOptions = true;
             this.gridView_konstr.Appearance.FocusedCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridView_konstr.Appearance.FocusedCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.gridView_konstr.Appearance.FocusedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(198)))), ((int)(((byte)(255)))));
-            this.gridView_konstr.Appearance.FocusedRow.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(171)))), ((int)(((byte)(226)))));
-            this.gridView_konstr.Appearance.FocusedRow.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.gridView_konstr.Appearance.FocusedRow.Options.UseBackColor = true;
-            this.gridView_konstr.Appearance.FocusedRow.Options.UseFont = true;
             this.gridView_konstr.Appearance.FocusedRow.Options.UseTextOptions = true;
             this.gridView_konstr.Appearance.FocusedRow.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridView_konstr.Appearance.GroupRow.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.gridView_konstr.Appearance.GroupRow.ForeColor = System.Drawing.Color.Black;
+            this.gridView_konstr.Appearance.FocusedRow.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.gridView_konstr.Appearance.GroupRow.FontStyleDelta = System.Drawing.FontStyle.Bold;
             this.gridView_konstr.Appearance.GroupRow.Options.UseFont = true;
-            this.gridView_konstr.Appearance.GroupRow.Options.UseForeColor = true;
             this.gridView_konstr.Appearance.GroupRow.Options.UseTextOptions = true;
             this.gridView_konstr.Appearance.GroupRow.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.gridView_konstr.Appearance.HeaderPanel.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.gridView_konstr.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gridView_konstr.Appearance.HeaderPanel.FontStyleDelta = System.Drawing.FontStyle.Bold;
             this.gridView_konstr.Appearance.HeaderPanel.Options.UseTextOptions = true;
             this.gridView_konstr.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridView_konstr.Appearance.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridView_konstr.Appearance.HideSelectionRow.BorderColor = System.Drawing.Color.Red;
-            this.gridView_konstr.Appearance.HideSelectionRow.Options.UseBorderColor = true;
             this.gridView_konstr.Appearance.HideSelectionRow.Options.UseTextOptions = true;
-            this.gridView_konstr.Appearance.HideSelectionRow.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridView_konstr.Appearance.HideSelectionRow.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.gridView_konstr.Appearance.OddRow.BackColor = System.Drawing.Color.AliceBlue;
-            this.gridView_konstr.Appearance.OddRow.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.gridView_konstr.Appearance.OddRow.Options.UseBackColor = true;
-            this.gridView_konstr.Appearance.OddRow.Options.UseFont = true;
-            this.gridView_konstr.Appearance.OddRow.Options.UseTextOptions = true;
-            this.gridView_konstr.Appearance.OddRow.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridView_konstr.Appearance.OddRow.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.gridView_konstr.Appearance.Preview.BackColor = System.Drawing.Color.LightBlue;
-            this.gridView_konstr.Appearance.Preview.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.gridView_konstr.Appearance.Preview.ForeColor = System.Drawing.Color.Black;
-            this.gridView_konstr.Appearance.Preview.Options.UseBackColor = true;
-            this.gridView_konstr.Appearance.Preview.Options.UseFont = true;
-            this.gridView_konstr.Appearance.Preview.Options.UseForeColor = true;
-            this.gridView_konstr.Appearance.Row.BackColor = System.Drawing.Color.AliceBlue;
-            this.gridView_konstr.Appearance.Row.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.gridView_konstr.Appearance.Row.ForeColor = System.Drawing.Color.Black;
-            this.gridView_konstr.Appearance.Row.Options.UseBackColor = true;
-            this.gridView_konstr.Appearance.Row.Options.UseFont = true;
-            this.gridView_konstr.Appearance.Row.Options.UseForeColor = true;
+            this.gridView_konstr.Appearance.Preview.Options.UseTextOptions = true;
+            this.gridView_konstr.Appearance.Preview.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.gridView_konstr.Appearance.Row.Options.UseTextOptions = true;
-            this.gridView_konstr.Appearance.Row.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridView_konstr.Appearance.Row.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.gridView_konstr.Appearance.SelectedRow.BorderColor = System.Drawing.Color.Red;
-            this.gridView_konstr.Appearance.SelectedRow.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.gridView_konstr.Appearance.SelectedRow.Options.UseBorderColor = true;
             this.gridView_konstr.Appearance.SelectedRow.Options.UseTextOptions = true;
-            this.gridView_konstr.Appearance.SelectedRow.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridView_konstr.Appearance.SelectedRow.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.gridView_konstr.Appearance.TopNewRow.ForeColor = System.Drawing.Color.White;
-            this.gridView_konstr.Appearance.TopNewRow.Options.UseForeColor = true;
-            this.gridView_konstr.Appearance.TopNewRow.Options.UseTextOptions = true;
-            this.gridView_konstr.Appearance.TopNewRow.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.gridView_konstr.Appearance.ViewCaption.Font = new System.Drawing.Font("Century Gothic", 8.25F);
             this.gridView_konstr.Appearance.ViewCaption.Options.UseFont = true;
             this.gridView_konstr.AppearancePrint.EvenRow.BackColor = System.Drawing.Color.White;
@@ -1175,6 +1031,40 @@
             this.cardView1.Name = "cardView1";
             this.cardView1.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Auto;
             // 
+            // cmb_ReportPrint
+            // 
+            this.cmb_ReportPrint.EditValue = "Выберите отчет";
+            this.cmb_ReportPrint.Location = new System.Drawing.Point(7, 237);
+            this.cmb_ReportPrint.Name = "cmb_ReportPrint";
+            this.cmb_ReportPrint.Properties.Appearance.Options.UseTextOptions = true;
+            this.cmb_ReportPrint.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.cmb_ReportPrint.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.cmb_ReportPrint.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.cmb_ReportPrint.Properties.AppearanceDropDown.Options.UseTextOptions = true;
+            this.cmb_ReportPrint.Properties.AppearanceDropDown.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.cmb_ReportPrint.Properties.AppearanceFocused.Options.UseTextOptions = true;
+            this.cmb_ReportPrint.Properties.AppearanceFocused.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.cmb_ReportPrint.Properties.AppearanceItemDisabled.Options.UseTextOptions = true;
+            this.cmb_ReportPrint.Properties.AppearanceItemDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.cmb_ReportPrint.Properties.AppearanceItemHighlight.Options.UseTextOptions = true;
+            this.cmb_ReportPrint.Properties.AppearanceItemHighlight.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.cmb_ReportPrint.Properties.AppearanceItemSelected.Options.UseTextOptions = true;
+            this.cmb_ReportPrint.Properties.AppearanceItemSelected.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.cmb_ReportPrint.Properties.AppearanceReadOnly.Options.UseTextOptions = true;
+            this.cmb_ReportPrint.Properties.AppearanceReadOnly.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            this.cmb_ReportPrint.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.cmb_ReportPrint.Properties.Items.AddRange(new object[] {
+            "report1",
+            "report2",
+            "report3"});
+            this.cmb_ReportPrint.Properties.NullText = "SelectReport";
+            this.cmb_ReportPrint.Size = new System.Drawing.Size(240, 28);
+            this.cmb_ReportPrint.TabIndex = 27;
+            this.cmb_ReportPrint.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.comboBoxEdit1_ButtonClick);
+            // 
             // formUser
             // 
             this.Appearance.Options.UseFont = true;
@@ -1207,6 +1097,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.PBView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView_konstr)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cardView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmb_ReportPrint.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1214,7 +1105,6 @@
         #endregion
 
         private DevExpress.XtraEditors.GroupControl groupButton;
-        private DevExpress.XtraEditors.SimpleButton btn_print;
         private DevExpress.XtraEditors.SimpleButton btn_delete;
         private DevExpress.XtraEditors.SimpleButton btn_edit;
         private DevExpress.XtraEditors.SimpleButton btn_add;
@@ -1272,5 +1162,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn30;
         private DevExpress.XtraGrid.Views.Card.CardView cardView1;
         private DevExpress.XtraEditors.ComboBoxEdit cmb_season;
+        private DevExpress.XtraEditors.ComboBoxEdit cmb_ReportPrint;
     }
 }
