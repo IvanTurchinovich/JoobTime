@@ -100,7 +100,7 @@ namespace JoobTime
 
         public void load_dtWork(string id_position)
         {
-            string comand = "select*from work where id_position=" + id_position;
+            string comand = "select id_work, work from work where id_position=" + id_position;
             dtWork = _Sql.sql_dt(comand,"t1");
         }
 
@@ -216,15 +216,14 @@ namespace JoobTime
             var rowWorks = from DataRow row in dtWork.Rows
                            where row["work"].ToString() == work
                            select row;
-            if(rowWorks.Count()!=0)
+            if (rowWorks.Count() != 0)
             {
-                DataRow row= rowWorks.ElementAt(0);
-                string wprk= row["id_work"].ToString();
-                lUp_work.EditValue = wprk;
+                DataRow row1 = rowWorks.ElementAt(0);
+                lUp_work.EditValue = Convert.ToInt32(row1["id_work"].ToString());
             }
-            
             string other = xlsx_.read_xlsx("save_other");
             lUp_other.EditValue = other;
+           
         }
 
         public void saveTextControl()
@@ -395,6 +394,11 @@ namespace JoobTime
         private void lUp_work_EditValueChanged(object sender, EventArgs e)
         {
             dtOtherDistinkt.DefaultView.RowFilter = "[work] ='" + lUp_work.Text + "'";
+        }
+
+        private void btn_add_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
