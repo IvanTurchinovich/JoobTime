@@ -120,5 +120,19 @@ namespace JoobTime
             newAdd formAdd = new newAdd();
             formAdd.ShowDialog();
         }
+
+        private void formUser_Activated(object sender, EventArgs e)
+        {
+            load_dtTotal();
+        }
+
+        private void btn_edit_Click(object sender, EventArgs e)
+        {
+            string totalId = gridView1.GetFocusedRowCellValue("id").ToString();
+            newAdd.total_id= totalId;
+            newAdd.caption_f = "Изменить";
+            newAdd formAdd = new newAdd();
+            formAdd.ShowDialog();
+        }
     }
 }

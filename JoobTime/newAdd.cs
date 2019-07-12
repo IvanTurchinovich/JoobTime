@@ -164,66 +164,45 @@ namespace JoobTime
                 load_dtTotal(total_id);
                 if (dtTotal.Rows.Count != 0)
                 {
-                    dataEditInComponent();
+                    loadTextControl(caption_f);
                 }
             }
             load_dtOtherDistinkt();
             timeToLabel();
         }
 
-        public void dataEditInComponent()
-        {
-            date_AddRecord.DateTime = Convert.ToDateTime(dtTotal.Rows[0]["date"].ToString());
-            tmEdt_start.TimeSpan = TimeSpan.Parse(dtTotal.Rows[0]["time_begin"].ToString());
-            tmEdt_end.TimeSpan = TimeSpan.Parse(dtTotal.Rows[0]["time_end"].ToString());
-            lUp_subunit.Text = dtTotal.Rows[0]["subunit"].ToString();
-            lUp_work.Text= dtTotal.Rows[0]["work"].ToString();
-            lUp_other.Text=dtTotal.Rows[0]["other"].ToString();
-        }
-
-        private void simpleButton1_Click(object sender, EventArgs e)
-        {
-            if (lUp_subunit.Text != "" && lUp_work.Text != "" && tmEdt_end.Text != "" && tmEdt_start.Text != "" && tmEdt_start.TimeSpan < tmEdt_end.TimeSpan && date_AddRecord.Text != "")
-            {
-                if (caption_f == "Добавить")
-                {
-                
-                        addNewRecord();
-                        saveTextControl();
-                        editStartTime();               
-                }
-                else if (caption_f == "Изменить")
-                {
-                    changeRecord();
-                }
-            }
-            else
-            {
-                //msgbox.msg = "Не все поля заполнены!";
-                XtraMessageBox.Show("Не все поля заполнены!","Ошибка добавления/изменения записи");
-            }
-        }
-
         public void editStartTime()
         {
             tmEdt_start.TimeSpan = tmEdt_end.TimeSpan;
-            tmEdt_end.Text = null;
+            tmEdt_end.EditValue= null;
         }
 
-        public void loadTextControl()
+        public void loadTextControl(string addEdit)
         {
-            string work=xlsx_.read_xlsx("save_work_name");
-            var rowWorks = from DataRow row in dtWork.Rows
-                           where row["work"].ToString() == work
-                           select row;
-            if (rowWorks.Count() != 0)
+            switch (addEdit)
             {
-                DataRow row1 = rowWorks.ElementAt(0);
-                lUp_work.EditValue = Convert.ToInt32(row1["id_work"].ToString());
+                case "Добавить":
+                    string work = xlsx_.read_xlsx("save_work_name");
+                    var rowWorks = from DataRow row in dtWork.Rows
+                                   where row["work"].ToString() == work
+                                   select row;
+                    if (rowWorks.Count() != 0)
+                    {
+                        DataRow row1 = rowWorks.ElementAt(0);
+                        lUp_work.EditValue = Convert.ToInt32(row1["id_work"].ToString());
+                    }
+                    string other = xlsx_.read_xlsx("save_other");
+                    lUp_other.EditValue = other;
+                    break;
+                case "Изменить":
+                    date_AddRecord.DateTime = Convert.ToDateTime(dtTotal.Rows[0]["date"].ToString());
+                    tmEdt_start.TimeSpan = TimeSpan.Parse(dtTotal.Rows[0]["time_begin"].ToString());
+                    tmEdt_end.TimeSpan = TimeSpan.Parse(dtTotal.Rows[0]["time_end"].ToString());
+                    lUp_subunit.Text = dtTotal.Rows[0]["subunit"].ToString();
+                    lUp_work.EditValue = Convert.ToInt32(dtTotal.Rows[0]["work"].ToString());
+                    lUp_other.EditValue = dtTotal.Rows[0]["other"].ToString();
+                    break;
             }
-            string other = xlsx_.read_xlsx("save_other");
-            lUp_other.EditValue = other;
-           
         }
 
         public void saveTextControl()
@@ -339,10 +318,8 @@ namespace JoobTime
             Text = caption_f;
             btn_add.Text = caption_f;
             tmEdt_start.Select();
-            if (caption_f == "Добавить")
-            {
-                loadTextControl();
-            }
+            loadTextControl(caption_f);
+            
         }
 
         private void dateEdit1_EditValueChanged_1(object sender, EventArgs e)
@@ -382,7 +359,7 @@ namespace JoobTime
         {
             if (e.KeyCode == Keys.Enter)
             {
-                simpleButton1_Click(this, EventArgs.Empty);
+                btn_add_Click(this, EventArgs.Empty);
             }
         }
 
@@ -398,7 +375,28 @@ namespace JoobTime
 
         private void btn_add_Click(object sender, EventArgs e)
         {
+            if (lUp_subunit.Text != "" && lUp_work.Text != "" && tmEdt_end.Text != "" && tmEdt_start.Text != "" && tmEdt_start.TimeSpan < tmEdt_end.TimeSpan && date_AddRecord.Text != "")
+            {
+                if (caption_f == "Добавить")
+                {
 
+                    addNewRecord();
+                    saveTextControl();
+                    editStartTime();
+                    timeToLabel();
+                    memoOther.Text = "";
+                }
+                else if (caption_f == "Изменить")
+                {
+                    changeRecord();
+                }
+            }
+            else
+            {
+                //msgbox.msg = "Не все поля заполнены!";
+                XtraMessageBox.Show("Не все поля заполнены!", "Ошибка добавления/изменения записи");
+            }
         }
+
     }
 }

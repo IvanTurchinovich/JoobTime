@@ -358,6 +358,7 @@
             this.memoOther.TabIndex = 7;
             this.memoOther.ToolTip = "Это поле должно быть заполнено обязательно. Если в поле с выбором примечаний нет " +
     "нужного вам варианта, запишите текст в это поле. ";
+            this.memoOther.KeyDown += new System.Windows.Forms.KeyEventHandler(this.memoOther_KeyDown);
             // 
             // labelControl6
             // 
