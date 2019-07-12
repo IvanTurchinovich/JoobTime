@@ -25,6 +25,7 @@ namespace JoobTime
             InitializeComponent();
             get_time_dtEdit(cmb_season.Text);
             load_dtTotal();
+            selectGridView();
         }
 
         public void get_time_dtEdit(string season)
@@ -136,11 +137,18 @@ namespace JoobTime
             formAdd.ShowDialog();
         }
 
+        public void selectGridView()
+        {
+            string nameView = xlsx_.read_xlsx("gridName");
+            grid_total.MainView.Name = nameView;
+        }
+
         private void windowsUIButtonPanel1_ButtonChecked(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
         {
             if (e.Button.Properties.Tag.ToString()=="2" )
             {
                 grid_total.MainView = gridView_konstr;
+                xlsx_.write_xml(grid_total.MainView.Name, "gridName");
             }
         }
 
@@ -156,6 +164,7 @@ namespace JoobTime
                 {
                     grid_total.MainView = gridView1;
                 }
+                xlsx_.write_xml(grid_total.MainView.Name, "gridName");
             }
         }
     }
