@@ -28,14 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formUser));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions5 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions6 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions10 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions11 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions12 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             this.groupButton = new DevExpress.XtraEditors.GroupControl();
             this.cmb_ReportPrint = new DevExpress.XtraEditors.ComboBoxEdit();
             this.btn_add = new DevExpress.XtraEditors.SimpleButton();
@@ -153,10 +154,10 @@
             this.cmb_ReportPrint.Properties.AppearanceItemSelected.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.cmb_ReportPrint.Properties.AppearanceReadOnly.Options.UseTextOptions = true;
             this.cmb_ReportPrint.Properties.AppearanceReadOnly.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
             this.cmb_ReportPrint.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.cmb_ReportPrint.Properties.Items.AddRange(new object[] {
             "report1",
             "report2",
@@ -225,17 +226,22 @@
             // windowsUIButtonPanel1
             // 
             this.windowsUIButtonPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            windowsUIButtonImageOptions5.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions5.Image")));
-            windowsUIButtonImageOptions6.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions6.Image")));
+            windowsUIButtonImageOptions10.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions10.Image")));
+            windowsUIButtonImageOptions11.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions11.Image")));
+            windowsUIButtonImageOptions12.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions12.Image")));
             this.windowsUIButtonPanel1.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("", true, windowsUIButtonImageOptions5, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "0", -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("", true, windowsUIButtonImageOptions6, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "1", -1, false)});
-            this.windowsUIButtonPanel1.Location = new System.Drawing.Point(1142, 25);
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("", true, windowsUIButtonImageOptions10, DevExpress.XtraBars.Docking2010.ButtonStyle.CheckButton, "Пресс-форма\r\nВключить\\выключить отображение пресс-форм", -1, true, null, true, false, true, "2", -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUISeparator(),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("", true, windowsUIButtonImageOptions11, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "Обновить", -1, true, null, true, false, true, "0", -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("", true, windowsUIButtonImageOptions12, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "Вернуться на форму авторизации", -1, true, null, true, false, true, "1", -1, false)});
+            this.windowsUIButtonPanel1.Location = new System.Drawing.Point(1072, 25);
             this.windowsUIButtonPanel1.Name = "windowsUIButtonPanel1";
-            this.windowsUIButtonPanel1.Size = new System.Drawing.Size(109, 44);
+            this.windowsUIButtonPanel1.Size = new System.Drawing.Size(179, 44);
             this.windowsUIButtonPanel1.TabIndex = 5;
             this.windowsUIButtonPanel1.Text = "windowsUIButtonPanel1";
             this.windowsUIButtonPanel1.ButtonClick += new DevExpress.XtraBars.Docking2010.ButtonEventHandler(this.windowsUIButtonPanel1_ButtonClick);
+            this.windowsUIButtonPanel1.ButtonUnchecked += new DevExpress.XtraBars.Docking2010.ButtonEventHandler(this.windowsUIButtonPanel1_ButtonUnchecked);
+            this.windowsUIButtonPanel1.ButtonChecked += new DevExpress.XtraBars.Docking2010.ButtonEventHandler(this.windowsUIButtonPanel1_ButtonChecked);
             // 
             // labelControl2
             // 
@@ -454,6 +460,7 @@
             // colwork
             // 
             this.colwork.AppearanceCell.Options.UseTextOptions = true;
+            this.colwork.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.colwork.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colwork.Caption = "Вид работ";
             this.colwork.ColumnEdit = this.repositoryItemMemoEdit1;
@@ -466,11 +473,13 @@
             // 
             // coldate
             // 
+            this.coldate.AppearanceCell.Options.UseTextOptions = true;
+            this.coldate.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.coldate.AppearanceHeader.Options.UseTextOptions = true;
             this.coldate.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.coldate.Caption = "Дата";
             this.coldate.FieldName = "date";
-            this.coldate.MinWidth = 10;
+            this.coldate.MinWidth = 120;
             this.coldate.Name = "coldate";
             this.coldate.OptionsColumn.FixedWidth = true;
             this.coldate.Visible = true;
@@ -479,6 +488,8 @@
             // 
             // coltime_begin
             // 
+            this.coltime_begin.AppearanceCell.Options.UseTextOptions = true;
+            this.coltime_begin.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.coltime_begin.AppearanceHeader.Options.UseTextOptions = true;
             this.coltime_begin.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.coltime_begin.Caption = "Время начала";
@@ -492,6 +503,8 @@
             // 
             // coltime_end
             // 
+            this.coltime_end.AppearanceCell.Options.UseTextOptions = true;
+            this.coltime_end.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.coltime_end.AppearanceHeader.Options.UseTextOptions = true;
             this.coltime_end.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.coltime_end.Caption = "Время окончания";
@@ -506,6 +519,7 @@
             // colother
             // 
             this.colother.AppearanceCell.Options.UseTextOptions = true;
+            this.colother.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.colother.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colother.Caption = "Доп. информация";
             this.colother.ColumnEdit = this.repositoryItemMemoEdit1;
@@ -526,6 +540,8 @@
             // 
             // gridColumn1
             // 
+            this.gridColumn1.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn1.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridColumn1.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn1.Caption = "Времени затрачено";
@@ -655,6 +671,7 @@
             this.PBView.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn20, DevExpress.Data.ColumnSortOrder.Descending),
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn21, DevExpress.Data.ColumnSortOrder.Descending)});
+            this.PBView.CustomSummaryCalculate += new DevExpress.Data.CustomSummaryEventHandler(this.gridView1_CustomSummaryCalculate);
             // 
             // gridColumn15
             // 
@@ -685,8 +702,6 @@
             this.gridColumn18.ColumnEdit = this.repositoryItemMemoEdit1;
             this.gridColumn18.FieldName = "subunit";
             this.gridColumn18.Name = "gridColumn18";
-            this.gridColumn18.Visible = true;
-            this.gridColumn18.VisibleIndex = 7;
             this.gridColumn18.Width = 130;
             // 
             // gridColumn19
@@ -706,6 +721,7 @@
             this.gridColumn20.AppearanceCell.Options.UseTextOptions = true;
             this.gridColumn20.Caption = "Дата";
             this.gridColumn20.FieldName = "date";
+            this.gridColumn20.MinWidth = 120;
             this.gridColumn20.Name = "gridColumn20";
             this.gridColumn20.OptionsColumn.FixedWidth = true;
             this.gridColumn20.Visible = true;
@@ -717,6 +733,7 @@
             this.gridColumn21.AppearanceCell.Options.UseTextOptions = true;
             this.gridColumn21.Caption = "Время начала";
             this.gridColumn21.FieldName = "time_begin";
+            this.gridColumn21.MinWidth = 120;
             this.gridColumn21.Name = "gridColumn21";
             this.gridColumn21.OptionsColumn.FixedWidth = true;
             this.gridColumn21.Visible = true;
@@ -728,6 +745,7 @@
             this.gridColumn22.AppearanceCell.Options.UseTextOptions = true;
             this.gridColumn22.Caption = "Время окончания";
             this.gridColumn22.FieldName = "time_end";
+            this.gridColumn22.MinWidth = 120;
             this.gridColumn22.Name = "gridColumn22";
             this.gridColumn22.OptionsColumn.FixedWidth = true;
             this.gridColumn22.Visible = true;
@@ -781,7 +799,9 @@
             // 
             this.gridColumn29.Caption = "Время добавления";
             this.gridColumn29.FieldName = "add_time";
+            this.gridColumn29.MinWidth = 120;
             this.gridColumn29.Name = "gridColumn29";
+            this.gridColumn29.OptionsColumn.FixedWidth = true;
             // 
             // gridColumn31
             // 
@@ -888,6 +908,7 @@
             this.gridView_konstr.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn7, DevExpress.Data.ColumnSortOrder.Descending),
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn8, DevExpress.Data.ColumnSortOrder.Descending)});
+            this.gridView_konstr.CustomSummaryCalculate += new DevExpress.Data.CustomSummaryEventHandler(this.gridView1_CustomSummaryCalculate);
             // 
             // gridColumn2
             // 
@@ -929,8 +950,6 @@
             this.gridColumn5.Caption = "Подразделение";
             this.gridColumn5.FieldName = "subunit";
             this.gridColumn5.Name = "gridColumn5";
-            this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 8;
             this.gridColumn5.Width = 63;
             // 
             // gridColumn6
@@ -952,6 +971,7 @@
             this.gridColumn8.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridColumn8.Caption = "Время начала";
             this.gridColumn8.FieldName = "time_begin";
+            this.gridColumn8.MinWidth = 120;
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.OptionsColumn.FixedWidth = true;
             this.gridColumn8.Visible = true;
@@ -964,6 +984,7 @@
             this.gridColumn7.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridColumn7.Caption = "Дата";
             this.gridColumn7.FieldName = "date";
+            this.gridColumn7.MinWidth = 120;
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.OptionsColumn.FixedWidth = true;
             this.gridColumn7.Visible = true;
@@ -977,6 +998,7 @@
             this.gridColumn9.Caption = "Время окончания";
             this.gridColumn9.ColumnEdit = this.repositoryItemTimeEdit1;
             this.gridColumn9.FieldName = "time_end";
+            this.gridColumn9.MinWidth = 120;
             this.gridColumn9.Name = "gridColumn9";
             this.gridColumn9.OptionsColumn.FixedWidth = true;
             this.gridColumn9.Visible = true;
@@ -1011,6 +1033,7 @@
             this.gridColumn13.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridColumn13.Caption = "Времени затрачено";
             this.gridColumn13.FieldName = "time_span";
+            this.gridColumn13.MinWidth = 120;
             this.gridColumn13.Name = "gridColumn13";
             this.gridColumn13.OptionsColumn.FixedWidth = true;
             this.gridColumn13.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
@@ -1026,6 +1049,7 @@
             this.gridColumn14.Caption = "Форма";
             this.gridColumn14.ColumnEdit = this.repositoryItemMemoEdit1;
             this.gridColumn14.FieldName = "form_id";
+            this.gridColumn14.MinWidth = 120;
             this.gridColumn14.Name = "gridColumn14";
             this.gridColumn14.OptionsColumn.FixedWidth = true;
             this.gridColumn14.Visible = true;

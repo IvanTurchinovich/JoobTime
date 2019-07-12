@@ -17,7 +17,7 @@ namespace JoobTime
         Class_sql _sql = new Class_sql();
         DataTable dtWorker;
         public static string id_tn;
-
+        public static string subunit;
         public formLogin()
         {
             InitializeComponent();
@@ -27,7 +27,7 @@ namespace JoobTime
 
         public void load_dtWorker()
         {
-            string comand = "select id_tn, password, status from worker";
+            string comand = "select id_tn, password, status, id_Subunit from worker";
             dtWorker = _sql.sql_dt(comand,"t1");
         }
 
@@ -43,6 +43,7 @@ namespace JoobTime
                 DataRow rowWorkerInfo = LoginInfo.ElementAt(0);
                 string ParolInfo = rowWorkerInfo["password"].ToString();
                 string status = rowWorkerInfo["status"].ToString();
+                subunit = rowWorkerInfo["id_Subunit"].ToString();
                 if (ParolInfo == parol)
                 {
                     id_tn = login;

@@ -47,16 +47,17 @@ namespace JoobTime
 
         private void windowsUIButtonPanel1_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
         {
-            if (e.Button.Properties.Tag.ToString() == "0")
+            switch (e.Button.Properties.Tag)
             {
-                grid_total.Select();
-                load_dtTotal();
-            }
-            else if (e.Button.Properties.Tag.ToString() == "1")
-            {
-                formLogin FormLogin = new formLogin();
-                Hide();
-                FormLogin.Show();
+                case 0:
+                    grid_total.Select();
+                    load_dtTotal();
+                    break;
+                case 1:
+                    formLogin FormLogin = new formLogin();
+                    Hide();
+                    FormLogin.Show();
+                    break;
             }
         }
 
@@ -133,6 +134,29 @@ namespace JoobTime
             newAdd.caption_f = "Изменить";
             newAdd formAdd = new newAdd();
             formAdd.ShowDialog();
+        }
+
+        private void windowsUIButtonPanel1_ButtonChecked(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
+        {
+            if (e.Button.Properties.Tag.ToString()=="2" )
+            {
+                grid_total.MainView = gridView_konstr;
+            }
+        }
+
+        private void windowsUIButtonPanel1_ButtonUnchecked(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
+        {
+            if (e.Button.Properties.Tag.ToString() == "2")
+            {
+                if (formLogin.subunit == "1015" || formLogin.subunit == "1022")
+                {
+                    grid_total.MainView = PBView;
+                }
+                else
+                {
+                    grid_total.MainView = gridView1;
+                }
+            }
         }
     }
 }

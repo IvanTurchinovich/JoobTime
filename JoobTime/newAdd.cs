@@ -120,7 +120,7 @@ namespace JoobTime
 
         public void load_dtTotal(string id_record)
         {
-            string comand = @"select tl.id, tl.subunit,tl.work,tl.date,tl.time_begin,tl.time_end,tl.other from total tl where id=" + id_record;
+            string comand = @"select tl.id,tl.id_work, tl.subunit,tl.work,tl.date,tl.time_begin,tl.time_end,tl.other from total tl where id=" + id_record;
             dtTotal = _Sql.sql_dt(comand, "t1");
         }
 
@@ -199,7 +199,7 @@ namespace JoobTime
                     tmEdt_start.TimeSpan = TimeSpan.Parse(dtTotal.Rows[0]["time_begin"].ToString());
                     tmEdt_end.TimeSpan = TimeSpan.Parse(dtTotal.Rows[0]["time_end"].ToString());
                     lUp_subunit.Text = dtTotal.Rows[0]["subunit"].ToString();
-                    lUp_work.EditValue = Convert.ToInt32(dtTotal.Rows[0]["work"].ToString());
+                    lUp_work.EditValue = Convert.ToInt32(dtTotal.Rows[0]["id_work"].ToString());
                     lUp_other.EditValue = dtTotal.Rows[0]["other"].ToString();
                     break;
             }
@@ -370,7 +370,10 @@ namespace JoobTime
 
         private void lUp_work_EditValueChanged(object sender, EventArgs e)
         {
-            dtOtherDistinkt.DefaultView.RowFilter = "[work] ='" + lUp_work.Text + "'";
+            if (dtOtherDistinkt!= null)
+            {
+                dtOtherDistinkt.DefaultView.RowFilter = "[work] ='" + lUp_work.Text + "'";
+            }
         }
 
         private void btn_add_Click(object sender, EventArgs e)
@@ -389,6 +392,7 @@ namespace JoobTime
                 else if (caption_f == "Изменить")
                 {
                     changeRecord();
+                    Close();
                 }
             }
             else
