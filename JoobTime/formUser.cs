@@ -183,5 +183,19 @@ namespace JoobTime
                 xlsx_.write_xml("gridName", grid_total.MainView.Name);
             }
         }
+
+        private void btn_delete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string totalId = gridView1.GetFocusedRowCellValue("id").ToString();
+                string comand = "delete total where id=" + totalId;
+                if (_sql.UpdateComand(comand))
+                {
+                    XtraMessageBox.Show("Запись успешно удалена.", "Внимание");
+                }
+            }
+            catch { XtraMessageBox.Show("Ошибка, запись не выделена.", "Ошибка"); }
+        }
     }
 }
