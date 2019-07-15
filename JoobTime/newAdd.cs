@@ -208,7 +208,7 @@ namespace JoobTime
         public void saveTextControl()
         {
             xlsx_.write_xml("save_work_name", lUp_work.Text);
-            xlsx_.write_xml("save_other", lUp_other.Text);
+            xlsx_.write_xml("save_other", memoOther.Text);
         }
 
         public void addNewRecord()

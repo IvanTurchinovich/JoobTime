@@ -290,7 +290,7 @@
             this.lUp_work.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.lUp_work.Properties.ValueMember = "id_work";
             this.lUp_work.Size = new System.Drawing.Size(432, 28);
-            this.lUp_work.TabIndex = 24;
+            this.lUp_work.TabIndex = 5;
             this.lUp_work.EditValueChanged += new System.EventHandler(this.lUp_work_EditValueChanged);
             // 
             // btn_add
@@ -305,7 +305,7 @@
             this.btn_add.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(240, 55);
-            this.btn_add.TabIndex = 23;
+            this.btn_add.TabIndex = 8;
             this.btn_add.Text = "Добавить";
             this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
