@@ -18,6 +18,10 @@ namespace JoobTime
         DataTable dtWorker;
         public static string id_tn;
         public static string subunit;
+        public static string info;
+        public static string FIO;
+        public static string version;
+
         public formLogin()
         {
             InitializeComponent();

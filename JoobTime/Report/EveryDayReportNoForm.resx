@@ -117,16 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="design3d" xml:space="preserve">
-    <value>3D дизайна изделий</value>
-  </data>
-  <data name="form2d" xml:space="preserve">
-    <value>конструкторской документации</value>
-  </data>
-  <data name="form3d" xml:space="preserve">
-    <value>технологической оснастки</value>
-  </data>
-  <data name="up" xml:space="preserve">
-    <value>УП</value>
-  </data>
+  <metadata name="totalBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="sqlDataSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 56</value>
+  </metadata>
 </root>
