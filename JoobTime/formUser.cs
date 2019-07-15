@@ -130,17 +130,33 @@ namespace JoobTime
 
         private void btn_edit_Click(object sender, EventArgs e)
         {
-            string totalId = gridView1.GetFocusedRowCellValue("id").ToString();
-            newAdd.total_id= totalId;
-            newAdd.caption_f = "Изменить";
-            newAdd formAdd = new newAdd();
-            formAdd.ShowDialog();
+            try {
+                string totalId = gridView1.GetFocusedRowCellValue("id").ToString();
+                newAdd.total_id = totalId;
+                newAdd.caption_f = "Изменить";
+                newAdd formAdd = new newAdd();
+                formAdd.ShowDialog();
+            }
+            catch { XtraMessageBox.Show("Ошибка, запись не выделена.", "Ошибка"); }
         }
 
         public void selectGridView()
         {
             string nameView = xlsx_.read_xlsx("gridName");
-            grid_total.MainView.Name = nameView;
+            //DevExpress.XtraGrid.Views.Grid.GridView
+            var xz = from DevExpress.XtraGrid.Views.Grid.GridView grd in grid_total.ViewCollection
+                     where grd.Name.ToString() == nameView
+                     select grd;
+            DevExpress.XtraGrid.Views.Grid.GridView grid = xz.ElementAt(0);
+            grid_total.MainView = grid;
+            if (nameView == "gridView_konstr")
+            {
+                //var btn = from DevExpress.XtraBars.Docking2010.IButton button in windowsUIButtonPanel1.Buttons
+                //          where button.Properties.Tag.ToString() == "2"
+                //          select button;
+                windowsUIButtonPanel1.Buttons[0].Properties.Checked = true;
+                //btn.ElementAt(0).Properties.Checked = true;
+            }
         }
 
         private void windowsUIButtonPanel1_ButtonChecked(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
@@ -148,7 +164,7 @@ namespace JoobTime
             if (e.Button.Properties.Tag.ToString()=="2" )
             {
                 grid_total.MainView = gridView_konstr;
-                xlsx_.write_xml(grid_total.MainView.Name, "gridName");
+                xlsx_.write_xml( "gridName", grid_total.MainView.Name);
             }
         }
 
@@ -164,7 +180,7 @@ namespace JoobTime
                 {
                     grid_total.MainView = gridView1;
                 }
-                xlsx_.write_xml(grid_total.MainView.Name, "gridName");
+                xlsx_.write_xml("gridName", grid_total.MainView.Name);
             }
         }
     }

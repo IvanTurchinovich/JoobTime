@@ -40,6 +40,7 @@
             this.lblTime = new System.Windows.Forms.Label();
             this.tmEdt_start = new DevExpress.XtraEditors.TimeSpanEdit();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.lUp_work = new DevExpress.XtraEditors.LookUpEdit();
             this.btn_add = new DevExpress.XtraEditors.SimpleButton();
             this.lUp_other = new DevExpress.XtraEditors.LookUpEdit();
             this.lUp_subunit = new DevExpress.XtraEditors.LookUpEdit();
@@ -47,7 +48,6 @@
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.lUp_work = new DevExpress.XtraEditors.LookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.tmEdt_end.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.date_AddRecord.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.date_AddRecord.Properties)).BeginInit();
@@ -56,10 +56,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.tmEdt_start.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lUp_work.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lUp_other.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lUp_subunit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.memoOther.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lUp_work.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // tmEdt_end
@@ -188,7 +188,6 @@
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(73)))), ((int)(((byte)(88)))));
             this.label2.Location = new System.Drawing.Point(430, 39);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
@@ -201,7 +200,6 @@
             this.lblTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTime.BackColor = System.Drawing.Color.Transparent;
             this.lblTime.Font = new System.Drawing.Font("Trebuchet MS", 54.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(73)))), ((int)(((byte)(88)))));
             this.lblTime.Location = new System.Drawing.Point(372, 49);
             this.lblTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTime.Name = "lblTime";
@@ -260,6 +258,40 @@
             this.groupControl1.Size = new System.Drawing.Size(618, 313);
             this.groupControl1.TabIndex = 30;
             this.groupControl1.Text = "Введите информацию о проделанной работе";
+            // 
+            // lUp_work
+            // 
+            this.lUp_work.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lUp_work.Location = new System.Drawing.Point(172, 67);
+            this.lUp_work.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.lUp_work.Name = "lUp_work";
+            this.lUp_work.Properties.Appearance.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lUp_work.Properties.Appearance.Options.UseFont = true;
+            this.lUp_work.Properties.AppearanceDisabled.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lUp_work.Properties.AppearanceDisabled.Options.UseFont = true;
+            this.lUp_work.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lUp_work.Properties.AppearanceDropDown.Options.UseFont = true;
+            this.lUp_work.Properties.AppearanceDropDownHeader.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lUp_work.Properties.AppearanceDropDownHeader.Options.UseFont = true;
+            this.lUp_work.Properties.AppearanceFocused.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lUp_work.Properties.AppearanceFocused.Options.UseFont = true;
+            this.lUp_work.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lUp_work.Properties.AppearanceReadOnly.Options.UseFont = true;
+            this.lUp_work.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lUp_work.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("work", "Примечания")});
+            this.lUp_work.Properties.DisplayMember = "work";
+            this.lUp_work.Properties.DropDownRows = 10;
+            this.lUp_work.Properties.ImmediatePopup = true;
+            this.lUp_work.Properties.NullText = "";
+            this.lUp_work.Properties.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.Contains;
+            this.lUp_work.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.lUp_work.Properties.ValueMember = "id_work";
+            this.lUp_work.Size = new System.Drawing.Size(432, 28);
+            this.lUp_work.TabIndex = 24;
+            this.lUp_work.EditValueChanged += new System.EventHandler(this.lUp_work_EditValueChanged);
             // 
             // btn_add
             // 
@@ -399,40 +431,6 @@
             this.labelControl1.TabIndex = 10;
             this.labelControl1.Text = "Подразделение";
             // 
-            // lUp_work
-            // 
-            this.lUp_work.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lUp_work.Location = new System.Drawing.Point(172, 67);
-            this.lUp_work.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.lUp_work.Name = "lUp_work";
-            this.lUp_work.Properties.Appearance.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lUp_work.Properties.Appearance.Options.UseFont = true;
-            this.lUp_work.Properties.AppearanceDisabled.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lUp_work.Properties.AppearanceDisabled.Options.UseFont = true;
-            this.lUp_work.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lUp_work.Properties.AppearanceDropDown.Options.UseFont = true;
-            this.lUp_work.Properties.AppearanceDropDownHeader.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lUp_work.Properties.AppearanceDropDownHeader.Options.UseFont = true;
-            this.lUp_work.Properties.AppearanceFocused.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lUp_work.Properties.AppearanceFocused.Options.UseFont = true;
-            this.lUp_work.Properties.AppearanceReadOnly.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lUp_work.Properties.AppearanceReadOnly.Options.UseFont = true;
-            this.lUp_work.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lUp_work.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("work", "Примечания")});
-            this.lUp_work.Properties.DisplayMember = "work";
-            this.lUp_work.Properties.DropDownRows = 10;
-            this.lUp_work.Properties.ImmediatePopup = true;
-            this.lUp_work.Properties.NullText = "";
-            this.lUp_work.Properties.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.Contains;
-            this.lUp_work.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            this.lUp_work.Properties.ValueMember = "id_work";
-            this.lUp_work.Size = new System.Drawing.Size(432, 28);
-            this.lUp_work.TabIndex = 24;
-            this.lUp_work.EditValueChanged += new System.EventHandler(this.lUp_work_EditValueChanged);
-            // 
             // newAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 22F);
@@ -461,10 +459,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lUp_work.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lUp_other.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lUp_subunit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.memoOther.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lUp_work.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
