@@ -24,12 +24,12 @@ namespace JoobTime
         string idForm;
         string nameForm;
 
-      
+
         public void timeToLabel()
         {
             DateTime selectDate = date_AddRecord.DateTime.Date;
             string query = @"SELECT [time_span] FROM [total] 
-                              WHERE [id_tn]='" +formLogin.id_tn + "'"
+                              WHERE [id_tn]='" + formLogin.id_tn + "'"
                              + "AND [date]='" + _Date.convert(date_AddRecord.DateTime) + "'";
             DataTable dtHours = _Sql.sql_dt(query, "t1");
 
@@ -40,7 +40,7 @@ namespace JoobTime
                 {
                     ts1 += TimeSpan.Parse(dtHours.Rows[i]["time_span"].ToString());
                 }
-                lblTime.Text = ts1.ToString().Substring(0,5);
+                lblTime.Text = ts1.ToString().Substring(0, 5);
             }
             else
             {
@@ -53,7 +53,7 @@ namespace JoobTime
             string query = @"select max(total.time_end) from total where date='" +
                            date_AddRecord.DateTime.ToShortDateString() + "' and id_tn=" + formLogin.id_tn;
             DataTable dtMaxDate = _Sql.sql_dt(query, "t1");
-            if (dtMaxDate.Rows[0][0].ToString()!="" || !string.IsNullOrEmpty(dtMaxDate.Rows[0][0].ToString()))
+            if (dtMaxDate.Rows[0][0].ToString() != "" || !string.IsNullOrEmpty(dtMaxDate.Rows[0][0].ToString()))
             {
                 TimeSpan ts = TimeSpan.Parse(dtMaxDate.Rows[0][0].ToString());
 
@@ -79,7 +79,7 @@ namespace JoobTime
                             left join 
                                       subunit sb on sb.id_subunit=wr.id_Subunit 
                                 where
-                                      id_tn="+ id_tn;
+                                      id_tn=" + id_tn;
             dtWorker = _Sql.sql_dt(comand, "t1");
         }
 
@@ -98,21 +98,21 @@ namespace JoobTime
         public void load_dtWork(string id_position)
         {
             string comand = "select id_work, work from work where id_position=" + id_position;
-            dtWork = _Sql.sql_dt(comand,"t1");
+            dtWork = _Sql.sql_dt(comand, "t1");
         }
 
         public void load_dtSubunit()
         {
             string comand = "select*from subunit";
-            dtSubunit = _Sql.sql_dt(comand,"t1");
+            dtSubunit = _Sql.sql_dt(comand, "t1");
         }
 
         public void load_dtOtherDistinkt()
         {
-            string comand= @"select distinct other, work  from total where id_tn=" + formLogin.id_tn
-                            + " AND [date]>='" + extremeDay(date_AddRecord.DateTime,true) + "'"
+            string comand = @"select distinct other, work  from total where id_tn=" + formLogin.id_tn
+                            + " AND [date]>='" + extremeDay(date_AddRecord.DateTime, true) + "'"
                             + " AND [date]<='" + extremeDay(date_AddRecord.DateTime, false) + "'";
-            dtOtherDistinkt = _Sql.sql_dt(comand,"t1");
+            dtOtherDistinkt = _Sql.sql_dt(comand, "t1");
         }
 
         public void load_dtTotal(string id_record)
@@ -138,7 +138,7 @@ namespace JoobTime
 
         public void form_size()
         {
-            int h=int.Parse(xlsx_.read_xlsx("add_size_h"));
+            int h = int.Parse(xlsx_.read_xlsx("add_size_h"));
             int w = int.Parse(xlsx_.read_xlsx("add_size_w"));
             Height = h;
             Width = w;
@@ -161,6 +161,7 @@ namespace JoobTime
             else if (caption_f == "Изменить")
             {
                 load_dtTotal(total_id);
+                date_AddRecord.DateTime = Convert.ToDateTime(dtTotal.Rows[0]["date"].ToString());
             }
             load_dtOtherDistinkt();
             timeToLabel();
@@ -169,7 +170,7 @@ namespace JoobTime
         public void editStartTime()
         {
             tmEdt_start.TimeSpan = tmEdt_end.TimeSpan;
-            tmEdt_end.EditValue= null;
+            tmEdt_end.EditValue = null;
         }
 
         public void loadTextControl(string addEdit)
@@ -205,7 +206,7 @@ namespace JoobTime
             xlsx_.write_xml("save_work_name", lUp_work.Text);
             xlsx_.write_xml("save_other", memoOther.Text);
         }
-        
+
         public void addNewRecord()
         {
             string fio = dtWorker.Rows[0]["fio"].ToString();
@@ -241,7 +242,7 @@ namespace JoobTime
             string id_work = lUp_work.GetColumnValue("id_work").ToString();
             string other = memoOther.Text;
 
-            string comand = string .Format( @"UPDATE [dbo].[total]
+            string comand = string.Format(@"UPDATE [dbo].[total]
                                                  SET  [subunit] =    '{0}'
                                                      ,[id_work] =     {1}
                                                      ,[work] =       '{2}'
@@ -251,11 +252,65 @@ namespace JoobTime
                                                      ,[other] =      '{6}'
                                                      ,[add_time] =   '{7}'
                                                      ,[time_span] =  '{8}'
-                                               WHERE id=              {9}",subunit,id_work,work,date,time_start,time_end,other,time_add, time_span,total_id);
+                                               WHERE id=              {9}", subunit, id_work, work, date, time_start, time_end, other, time_add, time_span, total_id);
             if (_Sql.UpdateComand(comand))
             {
                 XtraMessageBox.Show("Запись успешно изменена.", "Изменение записи");
             }
+        }
+
+        public string comandUpdate(string subunit, string id_work, string work, string date, string time_start, string time_end, string other, string time_add, string time_span, string total_id)
+        {
+            string comand;
+            switch (nameView)
+            {
+                case "PBView":
+                    string id_object = lUp_object.GetColumnValue("id_object").ToString();
+                    string name_object = lUp_object.Text;
+                    comand = string.Format(@"UPDATE [dbo].[total]
+                                                 SET  [subunit] =    '{0}'
+                                                     ,[id_work] =     {1}
+                                                     ,[work] =       '{2}'
+                                                     ,[date] =       '{3}'
+                                                     ,[time_begin] = '{4}'
+                                                     ,[time_end] =   '{5}'
+                                                     ,[other] =      '{6}'
+                                                     ,[add_time] =   '{7}'
+                                                     ,[time_span] =  '{8}'
+                                                     ,[id_object]=    {9}
+                                                     ,[name_object]= '{10}'
+                                               WHERE id=              {11}", subunit, id_work, work, date, time_start, time_end, other, time_add, time_span, id_object, name_object, total_id);
+                    break;
+                case "gridView_konstr":
+                    comand = string.Format(@"UPDATE [dbo].[total]
+                                                 SET  [subunit] =    '{0}'
+                                                     ,[id_work] =     {1}
+                                                     ,[work] =       '{2}'
+                                                     ,[date] =       '{3}'
+                                                     ,[time_begin] = '{4}'
+                                                     ,[time_end] =   '{5}'
+                                                     ,[other] =      '{6}'
+                                                     ,[add_time] =   '{7}'
+                                                     ,[time_span] =  '{8}'
+                                                     ,[form_id]=     '{9}'
+                                                     ,[name_form]=   '{10}'
+                                               WHERE id=              {11}", subunit, id_work, work, date, time_start, time_end, other, time_add, time_span,idForm,nameForm, total_id);
+                    break;
+                default:
+                    comand = string.Format(@"UPDATE [dbo].[total]
+                                                 SET  [subunit] =    '{0}'
+                                                     ,[id_work] =     {1}
+                                                     ,[work] =       '{2}'
+                                                     ,[date] =       '{3}'
+                                                     ,[time_begin] = '{4}'
+                                                     ,[time_end] =   '{5}'
+                                                     ,[other] =      '{6}'
+                                                     ,[add_time] =   '{7}'
+                                                     ,[time_span] =  '{8}'
+                                               WHERE id=              {9}", subunit, id_work, work, date, time_start, time_end, other, time_add, time_span, total_id);
+                    break;
+            }
+            return comand;
         }
 
         public void lUpSubunit_loadData()
