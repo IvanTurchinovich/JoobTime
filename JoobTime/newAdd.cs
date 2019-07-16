@@ -322,7 +322,7 @@ namespace JoobTime
                                                      {10}, 
                                                     '{11}',  
                                                      {12},
-                                                    '{13}',
+                                                     {13},
                                                     '{14}'
                                                    )", fio, position, subunit, id_work, work, date, time_start, time_end, other, time_add, id_tn, time_span, id_subunit_worker, id_object, name_object);
                     break;
