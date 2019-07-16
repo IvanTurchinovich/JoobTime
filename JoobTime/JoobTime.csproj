@@ -103,7 +103,9 @@
       <DependentUpon>Settings_WD.settings</DependentUpon>
     </Compile>
     <Compile Include="Report\DB.cs" />
-    <Compile Include="Report\DeclensionBLL.cs" />
+    <Compile Include="Report\DeclensionBLL.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
     <Compile Include="Report\EveryDayReport.cs">
       <SubType>Component</SubType>
     </Compile>

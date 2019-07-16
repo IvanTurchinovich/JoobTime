@@ -139,3 +139,4 @@ C:\Users\tig\source\repos\JoobTime\JoobTime\obj\x64\Debug\JoobTime.csproj.CoreCo
 C:\Users\tig\source\repos\JoobTime\JoobTime\obj\x64\Debug\JoobTime.csproj.CopyComplete
 C:\Users\tig\source\repos\JoobTime\JoobTime\obj\x64\Debug\JoobTime.exe
 C:\Users\tig\source\repos\JoobTime\JoobTime\obj\x64\Debug\JoobTime.pdb
+C:\Users\tig\source\repos\JoobTime\JoobTime\bin\x64\Debug\Report\DeclensionBLL.cs

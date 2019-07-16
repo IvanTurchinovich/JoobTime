@@ -18,7 +18,13 @@ namespace JoobTime
         private DataTable dtOtherDistinkt;
         private DataTable dtWorker;
         private DataTable dtTotal;
+        private DataTable dtForm;
+        private DataTable dtObjects;
+        string nameView = xlsx_.read_xlsx("gridName");
+        string idForm;
+        string nameForm;
 
+      
         public void timeToLabel()
         {
             DateTime selectDate = date_AddRecord.DateTime.Date;
@@ -77,6 +83,18 @@ namespace JoobTime
             dtWorker = _Sql.sql_dt(comand, "t1");
         }
 
+        public void load_dtForm()
+        {
+            string comand = "select*from pres_form";
+            dtForm = _Sql.sql_dt(comand, "t1");
+        }
+
+        public void load_dtObjects()
+        {
+            string comand = "select*from objects";
+            dtObjects = _Sql.sql_dt(comand, "t1");
+        }
+
         public void load_dtWork(string id_position)
         {
             string comand = "select id_work, work from work where id_position=" + id_position;
@@ -132,6 +150,8 @@ namespace JoobTime
             load_dtWorker(formLogin.id_tn);
             load_dtWork(dtWorker.Rows[0]["id_Subunit"].ToString());
             load_dtSubunit();
+            load_dtForm();
+            load_dtObjects();
             form_size();
             if (caption_f == "Добавить")
             {
@@ -185,7 +205,7 @@ namespace JoobTime
             xlsx_.write_xml("save_work_name", lUp_work.Text);
             xlsx_.write_xml("save_other", memoOther.Text);
         }
-
+        
         public void addNewRecord()
         {
             string fio = dtWorker.Rows[0]["fio"].ToString();
@@ -283,17 +303,141 @@ namespace JoobTime
             lUp_other.Properties.DataSource = dtOtherDistinkt;
         }
 
+        public void lUpForm_loadData()
+        {
+            lUp_numberForm.Properties.DataSource = dtForm;
+        }
+
+        public void lUpObjects_loadData()
+        {
+            lUp_object.Properties.DataSource = dtObjects;
+        }
+
+        public string comandInsert(string fio, string position, string subunit, string id_work, string work, string date, string time_start, string time_end, string other, string time_add, string id_tn, string time_span, string id_subunit_worker)
+        {
+            string comand;
+            switch (nameView)
+            {
+                case "gridView1":
+                   
+                    break;
+                case "PBView":
+                    break;
+                case "gridView_konstr":
+                    comand = string.Format(@"INSERT INTO [dbo].[total]
+                                                   ([FIO]
+                                                   ,[position]
+                                                   ,[subunit]
+                                                   ,[id_work]
+                                                   ,[work]
+                                                   ,[date]
+                                                   ,[time_begin]
+                                                   ,[time_end]
+                                                   ,[other]
+                                                   ,[add_time]
+                                                   ,[id_tn]
+                                                   ,[time_span]
+		                                           ,[id_subunit_worker]
+                                                   ,[form_id]
+                                                   ,[name_form])                                           
+          
+                                             VALUES
+                                                   ('{0}',
+                                                    '{1}',
+                                                    '{2}',
+                                                     {3}, 
+                                                    '{4}',
+                                                    '{5}',
+                                                    '{6}', 
+                                                    '{7}', 
+                                                    '{8}',  
+                                                    '{9}', 
+                                                     {10}, 
+                                                    '{11}',  
+                                                     {12},
+                                                    '{13}',
+                                                    '{14}'
+                                                   )", fio, position, subunit, id_work, work, date, time_start, time_end, other, time_add, id_tn, time_span, id_subunit_worker,idForm,nameForm);
+                    break;
+                default:
+                    comand = string.Format(@"INSERT INTO [dbo].[total]
+                                                   ([FIO]
+                                                   ,[position]
+                                                   ,[subunit]
+                                                   ,[id_work]
+                                                   ,[work]
+                                                   ,[date]
+                                                   ,[time_begin]
+                                                   ,[time_end]
+                                                   ,[other]
+                                                   ,[add_time]
+                                                   ,[id_tn]
+                                                   ,[time_span]
+		                                           ,[id_subunit_worker])
+          
+                                             VALUES
+                                                   ('{0}',
+                                                    '{1}',
+                                                    '{2}',
+                                                     {3}, 
+                                                    '{4}',
+                                                    '{5}',
+                                                    '{6}', 
+                                                    '{7}', 
+                                                    '{8}',  
+                                                    '{9}', 
+                                                     {10}, 
+                                                    '{11}',  
+                                                     {12}
+                                                   )", fio, position, subunit, id_work, work, date, time_start, time_end, other, time_add, id_tn, time_span, id_subunit_worker);
+                    break;
+            }
+            return comand;
+        }
+        public void typeFormAdd()
+        {
+            switch (nameView)
+            {
+                case "gridView1":
+                    lUp_object.Visible = false;
+                    lUp_numberForm.Visible = false;
+                    labelControl7.Visible = false;
+                    labelControl8.Visible = false;
+                    MaximumSize = new System.Drawing.Size(this.MaximumSize.Width,525);
+                    break;
+                case "PBView":
+                    lUp_object.Visible = true;
+                    lUp_numberForm.Visible = false;
+                    labelControl7.Visible = true;
+                    labelControl8.Visible = false;
+                    MaximumSize = new System.Drawing.Size(this.MaximumSize.Width, 565);
+                    break;
+                case "gridView_konstr":
+                    lUp_object.Visible = false;
+                    lUp_numberForm.Visible = true;
+                    labelControl7.Visible = false;
+                    labelControl8.Visible = true;
+                    lUp_numberForm.Location = new System.Drawing.Point(172, 35);
+                    labelControl8.Location = new System.Drawing.Point(6, 39);
+                    MaximumSize = new System.Drawing.Size(this.MaximumSize.Width, 565);
+                    break;
+            }
+            MinimumSize = new System.Drawing.Size(MinimumSize.Width, MaximumSize.Height);
+        }
+
         private void add_Load(object sender, EventArgs e)
         {
             lUpSubunit_loadData();
             lUpWork_loadData();
             lUpOthers_loadData();
+            lUpForm_loadData();
+            lUpObjects_loadData();
             lUp_subunit.Text = dtWorker.Rows[0]["subunit"].ToString();
             Text = caption_f;
             btn_add.Text = caption_f;
             tmEdt_start.Select();
             loadTextControl(caption_f);
-            
+            typeFormAdd();
         }
 
         private void dateEdit1_EditValueChanged_1(object sender, EventArgs e)
@@ -356,7 +500,6 @@ namespace JoobTime
             {
                 if (caption_f == "Добавить")
                 {
-
                     addNewRecord();
                     saveTextControl();
                     editStartTime();
@@ -376,5 +519,24 @@ namespace JoobTime
             }
         }
 
+        private void lUp_numberForm_CustomDisplayText(object sender, DevExpress.XtraEditors.Controls.CustomDisplayTextEventArgs e)
+        {
+            e.DisplayText = e.DisplayText + " " + e.Value;            
+        }
+
+        private void lUp_numberForm_EditValueChanged(object sender, EventArgs e)
+        {
+            idForm = lUp_numberForm.Text;
+            nameForm="";
+            if(idForm != null)
+            {
+                 nameForm = lUp_numberForm.GetColumnValue("name_form").ToString();
+            }
+        }
+
+        private void lUp_object_EditValueChanged(object sender, EventArgs e)
+        {
+            XtraMessageBox.Show(lUp_object.Text+" "+lUp_object.GetColumnValue("id_object"),"OBJECT");
+        }
     }
 }
