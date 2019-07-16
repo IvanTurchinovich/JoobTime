@@ -14,12 +14,12 @@
   <save_pf>ВФ 141</save_pf>
   <save_pf_onoff>2</save_pf_onoff>
   <save_work>2</save_work>
-  <save_work_name>Аппаратно-программная поддержка</save_work_name>
-  <save_other>
-  </save_other>
+  <save_work_name>Разработка ПО</save_work_name>
+  <save_other>Изменение функции добавления записей в программе "Полесье.Рабочее время" с учетом пресс форм и объектов
+</save_other>
   <uvd_onoff>False</uvd_onoff>
   <add_size_h>525</add_size_h>
-  <add_size_w>618</add_size_w>
+  <add_size_w>787</add_size_w>
   <add_k_size_h>573</add_k_size_h>
   <add_k_size_w>702</add_k_size_w>
   <gridName>gridView1</gridName>

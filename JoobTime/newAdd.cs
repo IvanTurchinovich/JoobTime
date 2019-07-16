@@ -221,37 +221,7 @@ namespace JoobTime
             string id_subunit_worker = dtWorker.Rows[0]["id_subunit"].ToString();
             string position = dtWorker.Rows[0]["position"].ToString();
             string other = memoOther.Text;
-
-            string comand = string.Format(@"INSERT INTO [dbo].[total]
-                                                   ([FIO]
-                                                   ,[position]
-                                                   ,[subunit]
-                                                   ,[id_work]
-                                                   ,[work]
-                                                   ,[date]
-                                                   ,[time_begin]
-                                                   ,[time_end]
-                                                   ,[other]
-                                                   ,[add_time]
-                                                   ,[id_tn]
-                                                   ,[time_span]
-		                                           ,[id_subunit_worker])
-          
-                                             VALUES
-                                                   ('{0}',
-                                                    '{1}',
-                                                    '{2}',
-                                                     {3}, 
-                                                    '{4}',
-                                                    '{5}',
-                                                    '{6}', 
-                                                    '{7}', 
-                                                    '{8}',  
-                                                    '{9}', 
-                                                     {10}, 
-                                                    '{11}',  
-                                                     {12}
-                                                   )", fio, position, subunit, id_work, work, date, time_start, time_end, other, time_add, id_tn, time_span, id_subunit_worker);
+            string comand = comandInsert(fio, position, subunit, id_work, work, date, time_start, time_end, other, time_add, id_tn, time_span, id_subunit_worker);
             if (_Sql.UpdateComand(comand))
             {
                 //msgbox.msg = "Запись добавлена успешно.";
@@ -318,10 +288,43 @@ namespace JoobTime
             string comand;
             switch (nameView)
             {
-                case "gridView1":
-                   
-                    break;
                 case "PBView":
+                    string id_object = lUp_object.GetColumnValue("id_object").ToString();
+                    string name_object = lUp_object.Text;
+                    comand = string.Format(@"INSERT INTO [dbo].[total]
+                                                   ([FIO]
+                                                   ,[position]
+                                                   ,[subunit]
+                                                   ,[id_work]
+                                                   ,[work]
+                                                   ,[date]
+                                                   ,[time_begin]
+                                                   ,[time_end]
+                                                   ,[other]
+                                                   ,[add_time]
+                                                   ,[id_tn]
+                                                   ,[time_span]
+		                                           ,[id_subunit_worker]
+                                                   ,[id_object]
+                                                   ,[name_object])                                           
+          
+                                             VALUES
+                                                   ('{0}',
+                                                    '{1}',
+                                                    '{2}',
+                                                     {3}, 
+                                                    '{4}',
+                                                    '{5}',
+                                                    '{6}', 
+                                                    '{7}', 
+                                                    '{8}',  
+                                                    '{9}', 
+                                                     {10}, 
+                                                    '{11}',  
+                                                     {12},
+                                                    '{13}',
+                                                    '{14}'
+                                                   )", fio, position, subunit, id_work, work, date, time_start, time_end, other, time_add, id_tn, time_span, id_subunit_worker, id_object, name_object);
                     break;
                 case "gridView_konstr":
                     comand = string.Format(@"INSERT INTO [dbo].[total]
@@ -394,6 +397,7 @@ namespace JoobTime
             }
             return comand;
         }
+
         public void typeFormAdd()
         {
             switch (nameView)
