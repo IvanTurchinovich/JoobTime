@@ -29,6 +29,7 @@ namespace JoobTime
             load_dtWorker();
             selectGridView();
             cmb_ReportPrint_AddItems();
+            groupButton.CustomHeaderButtons[0].Properties.Checked =Convert.ToBoolean(xlsx_.read_xlsx("groupExpand"));
         }
 
         public void cmb_ReportPrint_AddItems()
@@ -227,18 +228,13 @@ namespace JoobTime
             _Calendar.ShowDialog();
         }
 
-        private void groupButton_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void groupButton_CustomButtonChecked(object sender, DevExpress.XtraBars.Docking2010.BaseButtonEventArgs e)
         {
             groupButton.Size = new Size(44, 613);
             groupButton.CustomHeaderButtons[0].Properties.Image = Properties.Resources.forward_16x16;
             groupButton.CustomHeaderButtons[0].Properties.Checked = true;
             groupButton.Text = "      ";
-
+            xlsx_.write_xml("groupExpand","True");
         }
 
         private void groupButton_CustomButtonUnchecked(object sender, DevExpress.XtraBars.Docking2010.BaseButtonEventArgs e)
@@ -247,6 +243,7 @@ namespace JoobTime
             groupButton.CustomHeaderButtons[0].Properties.Image = Properties.Resources.backward_16x16;
             groupButton.CustomHeaderButtons[0].Properties.Checked = false;
             groupButton.Text = "Управление";
+            xlsx_.write_xml("groupExpand", "False");
         }
     }
 }

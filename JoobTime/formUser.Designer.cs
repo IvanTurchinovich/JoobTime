@@ -147,7 +147,6 @@
             this.groupButton.Text = "Управление";
             this.groupButton.CustomButtonUnchecked += new DevExpress.XtraBars.Docking2010.BaseButtonEventHandler(this.groupButton_CustomButtonUnchecked);
             this.groupButton.CustomButtonChecked += new DevExpress.XtraBars.Docking2010.BaseButtonEventHandler(this.groupButton_CustomButtonChecked);
-            this.groupButton.Paint += new System.Windows.Forms.PaintEventHandler(this.groupButton_Paint);
             // 
             // cmb_ReportPrint
             // 

@@ -15,8 +15,8 @@
   <save_pf_onoff>2</save_pf_onoff>
   <save_work>2</save_work>
   <save_work_name>Аппаратно-программная поддержка</save_work_name>
-  <save_other>Чистка ПК от станка Hermele в КБ
-</save_other>
+  <save_other>Чистка ПК от станка Hermele в КБ</save_other>
+  <groupExpand>True</groupExpand>
   <uvd_onoff>False</uvd_onoff>
   <add_size_h>525</add_size_h>
   <add_size_w>787</add_size_w>
