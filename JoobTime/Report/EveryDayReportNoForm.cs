@@ -28,7 +28,6 @@ namespace JoobTime
         private string Fionerf(string full)
         {
             string[] array = full.Split(' ');
-            
             return array[0] + " " + array[1].Substring(0, 1) + ". " + array[2].Substring(0, 1) + ".";
         }
 

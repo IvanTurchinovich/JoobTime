@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.Xpf.Core;
 using DevExpress.XtraEditors;
+using JoobTime.Properties;
 
 namespace JoobTime
 {
@@ -16,6 +17,7 @@ namespace JoobTime
     {
         Class_sql _sql = new Class_sql();
         DataTable dtWorker;
+        DataRow rowWorkerInfo;
         public static string id_tn;
         public static string subunit;
         public static string info;
@@ -31,7 +33,7 @@ namespace JoobTime
 
         public void load_dtWorker()
         {
-            string comand = "select id_tn, password, status, id_Subunit from worker";
+            string comand = @"Select worker.*,concat(Last_name,' ',First_name,' ',Second_name)fio,subunit,position  from worker join subunit on subunit.id_subunit = worker.id_Subunit join Position on Position.id_position = worker.id_Position";
             dtWorker = _sql.sql_dt(comand,"t1");
         }
 
@@ -43,15 +45,19 @@ namespace JoobTime
                             where row["id_tn"].ToString() == login
                             select row;
             if (LoginInfo.Count() != 0)
-            {
-                DataRow rowWorkerInfo = LoginInfo.ElementAt(0);
+            { 
+                rowWorkerInfo = LoginInfo.ElementAt(0);
+                
                 string ParolInfo = rowWorkerInfo["password"].ToString();
                 string status = rowWorkerInfo["status"].ToString();
                 subunit = rowWorkerInfo["id_Subunit"].ToString();
+                FIO = rowWorkerInfo["fio"].ToString();
                 if (ParolInfo == parol)
                 {
                     id_tn = login;
+                    PropertiesSet(rowWorkerInfo);
                     showNextForm(status);
+                    
                 }
                 else
                 {
@@ -112,6 +118,23 @@ namespace JoobTime
         private void formLogin_Load(object sender, EventArgs e)
         {
             txt_password.Select();
+        }
+        
+        private void PropertiesSet(DataRow rowWorker)
+        {
+            Settings_WD.Default.id_tn = Convert.ToInt32(id_tn);
+            Settings_WD.Default.Save();
+            
+            Settings_WD.Default.subunit_id = Convert.ToInt32(rowWorker["id_Subunit"]);
+            Settings_WD.Default.position = rowWorker["position"].ToString();
+            Settings_WD.Default.FullFIO = rowWorker["Last_name"] + " " +
+                                      rowWorker["First_name"] + " " +
+                                     rowWorker["Second_name"];
+            Settings_WD.Default.FIO = rowWorker["Last_name"] + " " +
+                                  rowWorker["First_name"].ToString().Substring(0, 1) + ". " +
+                                   rowWorker["Second_name"].ToString().Substring(0, 1) + ".";
+            Settings_WD.Default.isBoss = rowWorker["status"].Equals("r");
+            Settings_WD.Default.subunit = rowWorker["subunit"].ToString();
         }
     }
 }

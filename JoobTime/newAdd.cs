@@ -62,27 +62,6 @@ namespace JoobTime
             }
         }
 
-        public void write_saveWork(bool check)
-        {
-            switch (check)
-            {
-                case true:
-                    xlsx_.write_xml("save_work", "1");
-                    if (lUp_work.Text == "")
-                    {
-                        lUp_work.Text = xlsx_.read_xlsx("save_work_name");
-                    }
-                    else
-                    {
-                        xlsx_.write_xml("save_work_name", lUp_work.Text);
-                    }
-                    break;
-                case false:
-                    xlsx_.write_xml("save_work", "2");
-                    break;
-            }
-        }
-
         public void load_dtWorker(string id_tn)
         {
             string comand = @" select 
@@ -162,10 +141,6 @@ namespace JoobTime
             else if (caption_f == "Изменить")
             {
                 load_dtTotal(total_id);
-                if (dtTotal.Rows.Count != 0)
-                {
-                    loadTextControl(caption_f);
-                }
             }
             load_dtOtherDistinkt();
             timeToLabel();
@@ -277,19 +252,18 @@ namespace JoobTime
             string other = memoOther.Text;
 
             string comand = string .Format( @"UPDATE [dbo].[total]
-                                 SET  [subunit] =    '{0}'
-                                     ,[id_work] =     {1}
-                                     ,[work] =       '{2}'
-                                     ,[date] =       '{3}'
-                                     ,[time_begin] = '{4}'
-                                     ,[time_end] =   '{5}'
-                                     ,[other] =      '{6}'
-                                     ,[add_time] =   '{7}'
-                                     ,[time_span] =  '{8}'
-                               WHERE id=              {9}",subunit,id_work,work,date,time_start,time_end,other,time_add, time_span,total_id);
+                                                 SET  [subunit] =    '{0}'
+                                                     ,[id_work] =     {1}
+                                                     ,[work] =       '{2}'
+                                                     ,[date] =       '{3}'
+                                                     ,[time_begin] = '{4}'
+                                                     ,[time_end] =   '{5}'
+                                                     ,[other] =      '{6}'
+                                                     ,[add_time] =   '{7}'
+                                                     ,[time_span] =  '{8}'
+                                               WHERE id=              {9}",subunit,id_work,work,date,time_start,time_end,other,time_add, time_span,total_id);
             if (_Sql.UpdateComand(comand))
             {
-                //msgbox.msg = "Запись успешно изменена.";
                 XtraMessageBox.Show("Запись успешно изменена.", "Изменение записи");
             }
         }

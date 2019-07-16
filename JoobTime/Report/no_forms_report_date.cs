@@ -980,7 +980,7 @@ namespace JoobTime
             selectQuery6,
             selectQuery7,
             selectQuery8});
-            this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
+            //this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
             // totalBindingSource
             // 

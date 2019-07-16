@@ -17,6 +17,7 @@ namespace JoobTime
         class_date _date = new class_date();
         total_sum_time_span _totalTimeSummary = new total_sum_time_span();
         DataTable dtTotal;
+        DataTable dtWorker;
         string date_start;
         string date_end;
         
@@ -25,7 +26,22 @@ namespace JoobTime
             InitializeComponent();
             get_time_dtEdit(cmb_season.Text);
             load_dtTotal();
+            load_dtWorker();
             selectGridView();
+            cmb_ReportPrint_AddItems();
+        }
+
+        public void cmb_ReportPrint_AddItems()
+        {
+            var rg = new ReportGenerating();
+            cmb_ReportPrint.Properties.Items.AddRange(rg.getReportList(Properties.Settings_WD.Default.subunit));
+        }
+
+        public void load_dtWorker()
+        {
+            dtWorker = _sql.sql_dt(@"select worker.*, concat(Last_name,' ',First_name,' ',Second_name)fio,subunit, position
+                                        from worker join subunit on worker.id_Subunit=subunit.id_subunit join position on position.id_position=worker.id_Position where id_tn=" +
+                                   formLogin.id_tn, "t1");
         }
 
         public void get_time_dtEdit(string season)
@@ -50,11 +66,11 @@ namespace JoobTime
         {
             switch (e.Button.Properties.Tag)
             {
-                case 0:
+                case "0":
                     grid_total.Select();
                     load_dtTotal();
                     break;
-                case 1:
+                case "1":
                     formLogin FormLogin = new formLogin();
                     Hide();
                     FormLogin.Show();
@@ -99,20 +115,24 @@ namespace JoobTime
 
         private void comboBoxEdit1_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-            if (e.Button.Kind == DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph)
+            if (e.Button.Tag.ToString() == "1")
             {
-                switch (cmb_ReportPrint.Text)
+                if (cmb_ReportPrint.SelectedIndex == -1)
+                    return;
+                var w = new Class_sql();
+                var rg = new ReportGenerating();
+                ReportGenerating.startDate = date_start;
+                ReportGenerating.endDate = date_end;
+                ReportGenerating.fio_for_report = dtWorker.Rows[0]["fio"].ToString();
+                ReportGenerating.subunit_for_report = dtWorker.Rows[0]["subunit"].ToString();
+                ReportGenerating.position = dtWorker.Rows[0]["position"].ToString().ToLower();
+                if (cmb_ReportPrint.Text.Equals("Текущая таблица"))
                 {
-                    case "report1":
-                        MessageBox.Show("report1");
-                        break;
-                    case "report2":
-                        MessageBox.Show("report2");
-                        break;
-                    case "report3":
-                        MessageBox.Show("report3");
-                        break;
+                    rg.Createreport(Convert.ToInt32(dtWorker.Rows[0]["id_subunit"].ToString()), dtTotal, cmb_ReportPrint.Text, formLogin.id_tn, ReportGenerating.fio_for_report);
+                    return;
                 }
+
+                rg.Createreport(Convert.ToInt32(dtWorker.Rows[0]["id_subunit"].ToString()), dtTotal, cmb_ReportPrint.Text, formLogin.id_tn, ReportGenerating.fio_for_report);
             }
         }
 
@@ -144,10 +164,10 @@ namespace JoobTime
         {
             string nameView = xlsx_.read_xlsx("gridName");
             //DevExpress.XtraGrid.Views.Grid.GridView
-            var xz = from DevExpress.XtraGrid.Views.Grid.GridView grd in grid_total.ViewCollection
+            var typeGridView = from DevExpress.XtraGrid.Views.Grid.GridView grd in grid_total.ViewCollection
                      where grd.Name.ToString() == nameView
                      select grd;
-            DevExpress.XtraGrid.Views.Grid.GridView grid = xz.ElementAt(0);
+            DevExpress.XtraGrid.Views.Grid.GridView grid = typeGridView.ElementAt(0);
             grid_total.MainView = grid;
             if (nameView == "gridView_konstr")
             {
@@ -157,6 +177,10 @@ namespace JoobTime
                 windowsUIButtonPanel1.Buttons[0].Properties.Checked = true;
                 //btn.ElementAt(0).Properties.Checked = true;
             }
+            else
+            {
+                windowsUIButtonPanel1.Buttons[0].Properties.Checked = false;
+            }
         }
 
         private void windowsUIButtonPanel1_ButtonChecked(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
@@ -165,6 +189,7 @@ namespace JoobTime
             {
                 grid_total.MainView = gridView_konstr;
                 xlsx_.write_xml( "gridName", grid_total.MainView.Name);
+                Properties.Settings_WD.Default.isForm = true;
             }
         }
 
@@ -181,6 +206,7 @@ namespace JoobTime
                     grid_total.MainView = gridView1;
                 }
                 xlsx_.write_xml("gridName", grid_total.MainView.Name);
+                Properties.Settings_WD.Default.isForm = false;
             }
         }
 

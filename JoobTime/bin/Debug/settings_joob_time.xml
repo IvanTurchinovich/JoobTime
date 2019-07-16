@@ -15,7 +15,8 @@
   <save_pf_onoff>2</save_pf_onoff>
   <save_work>2</save_work>
   <save_work_name>Разработка ПО</save_work_name>
-  <save_other>Изменение функции удаления записей в программе "Полесье.Рабочее время"</save_other>
+  <save_other>Добавление новой функции печати отчетов в программу "Полесье.Рабочее время"
+</save_other>
   <uvd_onoff>False</uvd_onoff>
   <add_size_h>550</add_size_h>
   <add_size_w>1000</add_size_w>
