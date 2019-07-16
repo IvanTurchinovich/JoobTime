@@ -140,3 +140,10 @@ C:\Users\tig\source\repos\JoobTime\JoobTime\obj\x64\Debug\JoobTime.csproj.CopyCo
 C:\Users\tig\source\repos\JoobTime\JoobTime\obj\x64\Debug\JoobTime.exe
 C:\Users\tig\source\repos\JoobTime\JoobTime\obj\x64\Debug\JoobTime.pdb
 C:\Users\tig\source\repos\JoobTime\JoobTime\bin\x64\Debug\Report\DeclensionBLL.cs
+C:\Users\tig\source\repos\JoobTime\JoobTime\obj\x64\Debug\JoobTime.form_calendar.resources
+C:\Users\tig\source\repos\JoobTime\JoobTime\bin\x64\Debug\DevExpress.XtraPivotGrid.v18.1.dll
+C:\Users\tig\source\repos\JoobTime\JoobTime\bin\x64\Debug\DevExpress.XtraPivotGrid.v18.1.xml
+C:\Users\tig\source\repos\JoobTime\JoobTime\bin\x64\Debug\de\DevExpress.XtraPivotGrid.v18.1.resources.dll
+C:\Users\tig\source\repos\JoobTime\JoobTime\bin\x64\Debug\es\DevExpress.XtraPivotGrid.v18.1.resources.dll
+C:\Users\tig\source\repos\JoobTime\JoobTime\bin\x64\Debug\ja\DevExpress.XtraPivotGrid.v18.1.resources.dll
+C:\Users\tig\source\repos\JoobTime\JoobTime\bin\x64\Debug\ru\DevExpress.XtraPivotGrid.v18.1.resources.dll

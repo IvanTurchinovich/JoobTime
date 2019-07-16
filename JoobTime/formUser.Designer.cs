@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions buttonImageOptions1 = new DevExpress.XtraEditors.ButtonsPanelControl.ButtonImageOptions();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -44,9 +45,10 @@
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions3 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             this.groupButton = new DevExpress.XtraEditors.GroupControl();
             this.cmb_ReportPrint = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.btn_add = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_Calendar = new DevExpress.XtraEditors.SimpleButton();
             this.btn_delete = new DevExpress.XtraEditors.SimpleButton();
             this.btn_edit = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_add = new DevExpress.XtraEditors.SimpleButton();
             this.groupDate = new DevExpress.XtraEditors.GroupControl();
             this.windowsUIButtonPanel1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
@@ -127,21 +129,31 @@
             this.groupButton.AppearanceCaption.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupButton.AppearanceCaption.Options.UseFont = true;
             this.groupButton.Controls.Add(this.cmb_ReportPrint);
-            this.groupButton.Controls.Add(this.btn_add);
+            this.groupButton.Controls.Add(this.btn_Calendar);
             this.groupButton.Controls.Add(this.btn_delete);
             this.groupButton.Controls.Add(this.btn_edit);
+            this.groupButton.Controls.Add(this.btn_add);
+            buttonImageOptions1.Image = global::JoobTime.Properties.Resources.backward_16x16;
+            buttonImageOptions1.Location = DevExpress.XtraEditors.ButtonPanel.ImageLocation.AfterText;
+            this.groupButton.CustomHeaderButtons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
+            new DevExpress.XtraEditors.ButtonsPanelControl.GroupBoxButton("", true, buttonImageOptions1, DevExpress.XtraBars.Docking2010.ButtonStyle.CheckButton, "", -1, true, null, true, false, true, null, -1)});
+            this.groupButton.CustomHeaderButtonsLocation = DevExpress.Utils.GroupElementLocation.AfterText;
             this.groupButton.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupButton.Location = new System.Drawing.Point(0, 0);
             this.groupButton.Margin = new System.Windows.Forms.Padding(4);
             this.groupButton.Name = "groupButton";
-            this.groupButton.Size = new System.Drawing.Size(256, 613);
+            this.groupButton.Size = new System.Drawing.Size(234, 613);
             this.groupButton.TabIndex = 0;
             this.groupButton.Text = "Управление";
+            this.groupButton.CustomButtonUnchecked += new DevExpress.XtraBars.Docking2010.BaseButtonEventHandler(this.groupButton_CustomButtonUnchecked);
+            this.groupButton.CustomButtonChecked += new DevExpress.XtraBars.Docking2010.BaseButtonEventHandler(this.groupButton_CustomButtonChecked);
+            this.groupButton.Paint += new System.Windows.Forms.PaintEventHandler(this.groupButton_Paint);
             // 
             // cmb_ReportPrint
             // 
+            this.cmb_ReportPrint.Dock = System.Windows.Forms.DockStyle.Top;
             this.cmb_ReportPrint.EditValue = "Выберите отчет";
-            this.cmb_ReportPrint.Location = new System.Drawing.Point(7, 237);
+            this.cmb_ReportPrint.Location = new System.Drawing.Point(2, 247);
             this.cmb_ReportPrint.Name = "cmb_ReportPrint";
             this.cmb_ReportPrint.Properties.Appearance.Options.UseTextOptions = true;
             this.cmb_ReportPrint.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -164,34 +176,36 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", "0", null, DevExpress.Utils.ToolTipAnchor.Default),
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", "1", null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.cmb_ReportPrint.Properties.NullText = "SelectReport";
-            this.cmb_ReportPrint.Size = new System.Drawing.Size(240, 28);
+            this.cmb_ReportPrint.Size = new System.Drawing.Size(230, 28);
             this.cmb_ReportPrint.TabIndex = 27;
             this.cmb_ReportPrint.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.comboBoxEdit1_ButtonClick);
             // 
-            // btn_add
+            // btn_Calendar
             // 
-            this.btn_add.Appearance.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btn_add.Appearance.Options.UseFont = true;
-            this.btn_add.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_add.ImageOptions.Image")));
-            this.btn_add.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleRight;
-            this.btn_add.Location = new System.Drawing.Point(7, 34);
-            this.btn_add.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
-            this.btn_add.Name = "btn_add";
-            this.btn_add.Size = new System.Drawing.Size(240, 55);
-            this.btn_add.TabIndex = 3;
-            this.btn_add.Text = "Добавить";
-            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
+            this.btn_Calendar.Appearance.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btn_Calendar.Appearance.Options.UseFont = true;
+            this.btn_Calendar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_Calendar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Calendar.ImageOptions.Image")));
+            this.btn_Calendar.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleRight;
+            this.btn_Calendar.Location = new System.Drawing.Point(2, 192);
+            this.btn_Calendar.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
+            this.btn_Calendar.Name = "btn_Calendar";
+            this.btn_Calendar.Size = new System.Drawing.Size(230, 55);
+            this.btn_Calendar.TabIndex = 28;
+            this.btn_Calendar.Text = "Календарь";
+            this.btn_Calendar.Click += new System.EventHandler(this.btn_Calendar_Click);
             // 
             // btn_delete
             // 
             this.btn_delete.Appearance.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btn_delete.Appearance.Options.UseFont = true;
+            this.btn_delete.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_delete.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_delete.ImageOptions.Image")));
             this.btn_delete.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleRight;
-            this.btn_delete.Location = new System.Drawing.Point(7, 172);
+            this.btn_delete.Location = new System.Drawing.Point(2, 137);
             this.btn_delete.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
             this.btn_delete.Name = "btn_delete";
-            this.btn_delete.Size = new System.Drawing.Size(240, 55);
+            this.btn_delete.Size = new System.Drawing.Size(230, 55);
             this.btn_delete.TabIndex = 5;
             this.btn_delete.Text = "Удалить";
             this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
@@ -200,15 +214,31 @@
             // 
             this.btn_edit.Appearance.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btn_edit.Appearance.Options.UseFont = true;
+            this.btn_edit.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_edit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_edit.ImageOptions.Image")));
             this.btn_edit.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleRight;
-            this.btn_edit.Location = new System.Drawing.Point(7, 103);
+            this.btn_edit.Location = new System.Drawing.Point(2, 82);
             this.btn_edit.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
             this.btn_edit.Name = "btn_edit";
-            this.btn_edit.Size = new System.Drawing.Size(240, 55);
+            this.btn_edit.Size = new System.Drawing.Size(230, 55);
             this.btn_edit.TabIndex = 4;
             this.btn_edit.Text = "Изменить";
             this.btn_edit.Click += new System.EventHandler(this.btn_edit_Click);
+            // 
+            // btn_add
+            // 
+            this.btn_add.Appearance.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btn_add.Appearance.Options.UseFont = true;
+            this.btn_add.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_add.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_add.ImageOptions.Image")));
+            this.btn_add.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleRight;
+            this.btn_add.Location = new System.Drawing.Point(2, 27);
+            this.btn_add.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
+            this.btn_add.Name = "btn_add";
+            this.btn_add.Size = new System.Drawing.Size(230, 55);
+            this.btn_add.TabIndex = 0;
+            this.btn_add.Text = "Добавить";
+            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
             // groupDate
             // 
@@ -219,9 +249,9 @@
             this.groupDate.Controls.Add(this.dEdit_start);
             this.groupDate.Controls.Add(this.cmb_season);
             this.groupDate.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupDate.Location = new System.Drawing.Point(256, 0);
+            this.groupDate.Location = new System.Drawing.Point(234, 0);
             this.groupDate.Name = "groupDate";
-            this.groupDate.Size = new System.Drawing.Size(1251, 69);
+            this.groupDate.Size = new System.Drawing.Size(1273, 69);
             this.groupDate.TabIndex = 25;
             this.groupDate.Text = "Период отображения";
             // 
@@ -236,7 +266,7 @@
             new DevExpress.XtraBars.Docking2010.WindowsUIButton("", true, windowsUIButtonImageOptions2, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "Обновить", -1, true, null, true, false, true, "0", -1, false),
             new DevExpress.XtraBars.Docking2010.WindowsUIButton("", true, windowsUIButtonImageOptions3, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "Вернуться на форму авторизации", -1, true, null, true, false, true, "1", -1, false)});
             this.windowsUIButtonPanel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.windowsUIButtonPanel1.Location = new System.Drawing.Point(1083, 27);
+            this.windowsUIButtonPanel1.Location = new System.Drawing.Point(1105, 27);
             this.windowsUIButtonPanel1.Name = "windowsUIButtonPanel1";
             this.windowsUIButtonPanel1.Size = new System.Drawing.Size(166, 40);
             this.windowsUIButtonPanel1.TabIndex = 5;
@@ -304,13 +334,13 @@
             // grid_total
             // 
             this.grid_total.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grid_total.Location = new System.Drawing.Point(256, 69);
+            this.grid_total.Location = new System.Drawing.Point(234, 69);
             this.grid_total.MainView = this.gridView1;
             this.grid_total.Name = "grid_total";
             this.grid_total.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemMemoEdit1,
             this.repositoryItemTimeEdit1});
-            this.grid_total.Size = new System.Drawing.Size(1251, 544);
+            this.grid_total.Size = new System.Drawing.Size(1273, 544);
             this.grid_total.TabIndex = 26;
             this.grid_total.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1,
@@ -1193,5 +1223,6 @@
         private DevExpress.XtraGrid.Views.Card.CardView cardView1;
         private DevExpress.XtraEditors.ComboBoxEdit cmb_season;
         private DevExpress.XtraEditors.ComboBoxEdit cmb_ReportPrint;
+        private DevExpress.XtraEditors.SimpleButton btn_Calendar;
     }
 }

@@ -131,7 +131,6 @@ namespace JoobTime
                     rg.Createreport(Convert.ToInt32(dtWorker.Rows[0]["id_subunit"].ToString()), dtTotal, cmb_ReportPrint.Text, formLogin.id_tn, ReportGenerating.fio_for_report);
                     return;
                 }
-
                 rg.Createreport(Convert.ToInt32(dtWorker.Rows[0]["id_subunit"].ToString()), dtTotal, cmb_ReportPrint.Text, formLogin.id_tn, ReportGenerating.fio_for_report);
             }
         }
@@ -170,16 +169,14 @@ namespace JoobTime
             DevExpress.XtraGrid.Views.Grid.GridView grid = typeGridView.ElementAt(0);
             grid_total.MainView = grid;
             if (nameView == "gridView_konstr")
-            {
-                //var btn = from DevExpress.XtraBars.Docking2010.IButton button in windowsUIButtonPanel1.Buttons
-                //          where button.Properties.Tag.ToString() == "2"
-                //          select button;
+            {            
                 windowsUIButtonPanel1.Buttons[0].Properties.Checked = true;
-                //btn.ElementAt(0).Properties.Checked = true;
+                Properties.Settings_WD.Default.isForm = true;
             }
             else
             {
                 windowsUIButtonPanel1.Buttons[0].Properties.Checked = false;
+                Properties.Settings_WD.Default.isForm = false;
             }
         }
 
@@ -222,6 +219,34 @@ namespace JoobTime
                 }
             }
             catch { XtraMessageBox.Show("Ошибка, запись не выделена.", "Ошибка"); }
+        }
+
+        private void btn_Calendar_Click(object sender, EventArgs e)
+        {
+            form_calendar _Calendar = new form_calendar();
+            _Calendar.ShowDialog();
+        }
+
+        private void groupButton_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void groupButton_CustomButtonChecked(object sender, DevExpress.XtraBars.Docking2010.BaseButtonEventArgs e)
+        {
+            groupButton.Size = new Size(44, 613);
+            groupButton.CustomHeaderButtons[0].Properties.Image = Properties.Resources.forward_16x16;
+            groupButton.CustomHeaderButtons[0].Properties.Checked = true;
+            groupButton.Text = "      ";
+
+        }
+
+        private void groupButton_CustomButtonUnchecked(object sender, DevExpress.XtraBars.Docking2010.BaseButtonEventArgs e)
+        {
+            groupButton.Size = new Size(234, 613);
+            groupButton.CustomHeaderButtons[0].Properties.Image = Properties.Resources.backward_16x16;
+            groupButton.CustomHeaderButtons[0].Properties.Checked = false;
+            groupButton.Text = "Управление";
         }
     }
 }

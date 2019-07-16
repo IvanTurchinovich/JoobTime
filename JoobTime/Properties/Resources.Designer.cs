@@ -61,6 +61,26 @@ namespace JoobTime.Properties {
         }
         
         /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap backward_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("backward_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap backward_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("backward_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на 3D дизайна изделий.
         /// </summary>
         internal static string design3d {
@@ -84,6 +104,26 @@ namespace JoobTime.Properties {
         internal static string form3d {
             get {
                 return ResourceManager.GetString("form3d", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap forward_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("forward_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap forward_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("forward_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
