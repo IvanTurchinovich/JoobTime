@@ -1,4 +1,6 @@
 ﻿using DevExpress.XtraEditors;
+using DevExpress.XtraGrid.Views.Base;
+using DevExpress.XtraGrid.Views.Grid;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,6 +20,7 @@ namespace JoobTime
         total_sum_time_span _totalTimeSummary = new total_sum_time_span();
         DataTable dtTotal;
         DataTable dtWorker;
+        public static string status;
         string date_start;
         string date_end;
         
@@ -25,11 +28,32 @@ namespace JoobTime
         {
             InitializeComponent();
             get_time_dtEdit(cmb_season.Text);
-            load_dtTotal();
-            load_dtWorker();
-            selectGridView();
-            cmb_ReportPrint_AddItems();
+            if (status == "s")
+            {
+                load_dtTotal();
+                load_dtWorker();
+                selectGridView();
+                cmb_ReportPrint_AddItems();
+            }
             groupButton.CustomHeaderButtons[0].Properties.Checked =Convert.ToBoolean(xlsx_.read_xlsx("groupExpand"));
+            groupColumnData(true);
+        }
+
+        public void groupColumnData(bool IsLoad)
+        {
+            GridView view = (GridView)grid_total.FocusedView;
+            if (view != null)
+            {
+                if (IsLoad)
+                {
+                    int groupIndex = Convert.ToInt32(xlsx_.read_xlsx("group_params"));
+                    view.Columns["date"].GroupIndex = groupIndex;
+                }
+                else
+                {
+                    xlsx_.write_xml("group_params", view.Columns["date"].GroupIndex.ToString());
+                }
+            }
         }
 
         public void cmb_ReportPrint_AddItems()
@@ -245,5 +269,11 @@ namespace JoobTime
             groupButton.Text = "Управление";
             xlsx_.write_xml("groupExpand", "False");
         }
+
+        private void gridView1_StartGrouping(object sender, EventArgs e)
+        {
+            groupColumnData(false);
+        }
+
     }
 }

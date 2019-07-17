@@ -9,13 +9,13 @@
   <conection_ip>192.168.76.22,1433</conection_ip>
   <login_save>9999</login_save>
   <login_save_on>true</login_save_on>
-  <group_params>-1</group_params>
+  <group_params>0</group_params>
   <grid_polz>0</grid_polz>
   <save_pf>ВФ 141</save_pf>
   <save_pf_onoff>2</save_pf_onoff>
   <save_work>2</save_work>
   <save_work_name>Аппаратно-программная поддержка</save_work_name>
-  <save_other>Чистка ПК от станка Hermele в КБ</save_other>
+  <save_other>Подключение ПК Давидовича к сети Internet</save_other>
   <groupExpand>True</groupExpand>
   <uvd_onoff>False</uvd_onoff>
   <add_size_h>525</add_size_h>

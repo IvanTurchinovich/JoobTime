@@ -84,7 +84,6 @@ namespace JoobTime
                             left join models md on calendar.id_models=md.id 
                             left join worker on md.id_creator=worker.id_tn
                             left join Position on worker.id_Position=Position.id_position where calendar.id_tn={2}", month, year,formLogin.id_tn);
-
             dt_gridCalendar = class_Sql.sql_dt(command, "1");
             dt_gridCalendar.Columns.Add("image", typeof(Image));
             ImageLoadToDT(dt_gridCalendar);
