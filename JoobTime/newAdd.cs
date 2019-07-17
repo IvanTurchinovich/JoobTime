@@ -179,7 +179,7 @@ namespace JoobTime
             var rowInfo = from DataRow row in _dataTable.Rows
                           where row[findFieldColumn].ToString() == findText
                           select row;
-            if (rowInfo.Count() != 0)
+            if (rowInfo.Any())
             {
                 DataRow resultRow = rowInfo.ElementAt(0);
                 result = resultRow[resultFieldColumn].ToString();
