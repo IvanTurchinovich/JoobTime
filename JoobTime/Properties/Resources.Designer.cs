@@ -81,6 +81,16 @@ namespace JoobTime.Properties {
         }
         
         /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap currency_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("currency_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на 3D дизайна изделий.
         /// </summary>
         internal static string design3d {
@@ -123,6 +133,26 @@ namespace JoobTime.Properties {
         internal static System.Drawing.Bitmap forward_32x32 {
             get {
                 object obj = ResourceManager.GetObject("forward_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap showworktimeonly_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("showworktimeonly_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tableofcontents_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("tableofcontents_32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

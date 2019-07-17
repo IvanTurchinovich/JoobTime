@@ -174,8 +174,9 @@ namespace JoobTime
 
         private void btn_edit_Click(object sender, EventArgs e)
         {
+            GridView view = (GridView)grid_total.FocusedView;
             try {
-                string totalId = gridView1.GetFocusedRowCellValue("id").ToString();
+                string totalId = view.GetFocusedRowCellValue("id").ToString();
                 newAdd.total_id = totalId;
                 newAdd.caption_f = "Изменить";
                 newAdd formAdd = new newAdd();
@@ -234,9 +235,10 @@ namespace JoobTime
 
         private void btn_delete_Click(object sender, EventArgs e)
         {
+            GridView view = (GridView)grid_total.FocusedView;
             try
             {
-                string totalId = gridView1.GetFocusedRowCellValue("id").ToString();
+                string totalId = view.GetFocusedRowCellValue("id").ToString();
                 string comand = "delete total where id=" + totalId;
                 if (_sql.UpdateComand(comand))
                 {

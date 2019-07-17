@@ -40,11 +40,14 @@
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions7 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions8 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions9 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions2 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions3 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             this.groupButton = new DevExpress.XtraEditors.GroupControl();
             this.cmb_ReportPrint = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.btn_prices = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_report = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_tabel = new DevExpress.XtraEditors.SimpleButton();
             this.btn_Calendar = new DevExpress.XtraEditors.SimpleButton();
             this.btn_delete = new DevExpress.XtraEditors.SimpleButton();
             this.btn_edit = new DevExpress.XtraEditors.SimpleButton();
@@ -57,12 +60,29 @@
             this.dEdit_start = new DevExpress.XtraEditors.DateEdit();
             this.cmb_season = new DevExpress.XtraEditors.ComboBoxEdit();
             this.grid_total = new DevExpress.XtraGrid.GridControl();
+            this.gridView_konstr = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemMemoEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemTimeEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTimeEdit();
+            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn27 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn30 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.id = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colFIO = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colposition = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colsubunit = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemMemoEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.colwork = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coldate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coltime_begin = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -70,7 +90,6 @@
             this.colother = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_tn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemTimeEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTimeEdit();
             this.PBView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn16 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -86,22 +105,6 @@
             this.gridColumn26 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn29 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn31 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridView_konstr = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn27 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn30 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cardView1 = new DevExpress.XtraGrid.Views.Card.CardView();
             ((System.ComponentModel.ISupportInitialize)(this.groupButton)).BeginInit();
             this.groupButton.SuspendLayout();
@@ -114,11 +117,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dEdit_start.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmb_season.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid_total)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView_konstr)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTimeEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView_konstr)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cardView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -129,6 +132,9 @@
             this.groupButton.AppearanceCaption.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupButton.AppearanceCaption.Options.UseFont = true;
             this.groupButton.Controls.Add(this.cmb_ReportPrint);
+            this.groupButton.Controls.Add(this.btn_prices);
+            this.groupButton.Controls.Add(this.btn_report);
+            this.groupButton.Controls.Add(this.btn_tabel);
             this.groupButton.Controls.Add(this.btn_Calendar);
             this.groupButton.Controls.Add(this.btn_delete);
             this.groupButton.Controls.Add(this.btn_edit);
@@ -152,7 +158,7 @@
             // 
             this.cmb_ReportPrint.Dock = System.Windows.Forms.DockStyle.Top;
             this.cmb_ReportPrint.EditValue = "Выберите отчет";
-            this.cmb_ReportPrint.Location = new System.Drawing.Point(2, 247);
+            this.cmb_ReportPrint.Location = new System.Drawing.Point(2, 412);
             this.cmb_ReportPrint.Name = "cmb_ReportPrint";
             this.cmb_ReportPrint.Properties.Appearance.Options.UseTextOptions = true;
             this.cmb_ReportPrint.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -177,7 +183,56 @@
             this.cmb_ReportPrint.Properties.NullText = "SelectReport";
             this.cmb_ReportPrint.Size = new System.Drawing.Size(230, 28);
             this.cmb_ReportPrint.TabIndex = 27;
+            this.cmb_ReportPrint.ToolTip = "Выбор и печать отчетов";
             this.cmb_ReportPrint.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.comboBoxEdit1_ButtonClick);
+            // 
+            // btn_prices
+            // 
+            this.btn_prices.Appearance.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btn_prices.Appearance.Options.UseFont = true;
+            this.btn_prices.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_prices.ImageOptions.Image = global::JoobTime.Properties.Resources.currency_32x32;
+            this.btn_prices.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleRight;
+            this.btn_prices.Location = new System.Drawing.Point(2, 357);
+            this.btn_prices.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
+            this.btn_prices.Name = "btn_prices";
+            this.btn_prices.Size = new System.Drawing.Size(230, 55);
+            this.btn_prices.TabIndex = 31;
+            this.btn_prices.Text = "Оплата";
+            this.btn_prices.ToolTip = "Оплата";
+            this.btn_prices.Visible = false;
+            // 
+            // btn_report
+            // 
+            this.btn_report.Appearance.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btn_report.Appearance.Options.UseFont = true;
+            this.btn_report.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_report.ImageOptions.Image = global::JoobTime.Properties.Resources.tableofcontents_32x32;
+            this.btn_report.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleRight;
+            this.btn_report.Location = new System.Drawing.Point(2, 302);
+            this.btn_report.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
+            this.btn_report.Name = "btn_report";
+            this.btn_report.Size = new System.Drawing.Size(230, 55);
+            this.btn_report.TabIndex = 30;
+            this.btn_report.Text = "Отчеты";
+            this.btn_report.ToolTip = "Отчеты";
+            this.btn_report.Visible = false;
+            // 
+            // btn_tabel
+            // 
+            this.btn_tabel.Appearance.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btn_tabel.Appearance.Options.UseFont = true;
+            this.btn_tabel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_tabel.ImageOptions.Image = global::JoobTime.Properties.Resources.showworktimeonly_32x32;
+            this.btn_tabel.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleRight;
+            this.btn_tabel.Location = new System.Drawing.Point(2, 247);
+            this.btn_tabel.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
+            this.btn_tabel.Name = "btn_tabel";
+            this.btn_tabel.Size = new System.Drawing.Size(230, 55);
+            this.btn_tabel.TabIndex = 29;
+            this.btn_tabel.Text = "Табель";
+            this.btn_tabel.ToolTip = "Табель";
+            this.btn_tabel.Visible = false;
             // 
             // btn_Calendar
             // 
@@ -192,6 +247,7 @@
             this.btn_Calendar.Size = new System.Drawing.Size(230, 55);
             this.btn_Calendar.TabIndex = 28;
             this.btn_Calendar.Text = "Календарь";
+            this.btn_Calendar.ToolTip = "Календарь";
             this.btn_Calendar.Click += new System.EventHandler(this.btn_Calendar_Click);
             // 
             // btn_delete
@@ -207,6 +263,7 @@
             this.btn_delete.Size = new System.Drawing.Size(230, 55);
             this.btn_delete.TabIndex = 5;
             this.btn_delete.Text = "Удалить";
+            this.btn_delete.ToolTip = "Удалить";
             this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
             // 
             // btn_edit
@@ -222,6 +279,7 @@
             this.btn_edit.Size = new System.Drawing.Size(230, 55);
             this.btn_edit.TabIndex = 4;
             this.btn_edit.Text = "Изменить";
+            this.btn_edit.ToolTip = "Изменить";
             this.btn_edit.Click += new System.EventHandler(this.btn_edit_Click);
             // 
             // btn_add
@@ -237,6 +295,7 @@
             this.btn_add.Size = new System.Drawing.Size(230, 55);
             this.btn_add.TabIndex = 0;
             this.btn_add.Text = "Добавить";
+            this.btn_add.ToolTip = "Добавить";
             this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
             // groupDate
@@ -256,14 +315,14 @@
             // 
             // windowsUIButtonPanel1
             // 
-            windowsUIButtonImageOptions7.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions7.Image")));
-            windowsUIButtonImageOptions8.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions8.Image")));
-            windowsUIButtonImageOptions9.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions9.Image")));
+            windowsUIButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions1.Image")));
+            windowsUIButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions2.Image")));
+            windowsUIButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions3.Image")));
             this.windowsUIButtonPanel1.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("", true, windowsUIButtonImageOptions7, DevExpress.XtraBars.Docking2010.ButtonStyle.CheckButton, "Пресс-форма\r\nВключить\\выключить отображение пресс-форм", -1, true, null, true, false, true, "2", -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("", true, windowsUIButtonImageOptions1, DevExpress.XtraBars.Docking2010.ButtonStyle.CheckButton, "Пресс-форма\r\nВключить\\выключить отображение пресс-форм", -1, true, null, true, false, true, "2", -1, false),
             new DevExpress.XtraBars.Docking2010.WindowsUISeparator(),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("", true, windowsUIButtonImageOptions8, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "Обновить", -1, true, null, true, false, true, "0", -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("", true, windowsUIButtonImageOptions9, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "Вернуться на форму авторизации", -1, true, null, true, false, true, "1", -1, false)});
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("", true, windowsUIButtonImageOptions2, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "Обновить", -1, true, null, true, false, true, "0", -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("", true, windowsUIButtonImageOptions3, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "Вернуться на форму авторизации", -1, true, null, true, false, true, "1", -1, false)});
             this.windowsUIButtonPanel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.windowsUIButtonPanel1.Location = new System.Drawing.Point(1105, 27);
             this.windowsUIButtonPanel1.Name = "windowsUIButtonPanel1";
@@ -342,10 +401,307 @@
             this.grid_total.Size = new System.Drawing.Size(1273, 544);
             this.grid_total.TabIndex = 26;
             this.grid_total.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView_konstr,
             this.gridView1,
             this.PBView,
-            this.gridView_konstr,
             this.cardView1});
+            // 
+            // gridView_konstr
+            // 
+            this.gridView_konstr.Appearance.ColumnFilterButton.Options.UseTextOptions = true;
+            this.gridView_konstr.Appearance.ColumnFilterButton.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.gridView_konstr.Appearance.EvenRow.Options.UseTextOptions = true;
+            this.gridView_konstr.Appearance.EvenRow.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.gridView_konstr.Appearance.FocusedCell.Options.UseTextOptions = true;
+            this.gridView_konstr.Appearance.FocusedCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridView_konstr.Appearance.FocusedCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.gridView_konstr.Appearance.FocusedRow.Options.UseTextOptions = true;
+            this.gridView_konstr.Appearance.FocusedRow.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridView_konstr.Appearance.FocusedRow.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.gridView_konstr.Appearance.GroupRow.FontStyleDelta = System.Drawing.FontStyle.Bold;
+            this.gridView_konstr.Appearance.GroupRow.Options.UseFont = true;
+            this.gridView_konstr.Appearance.GroupRow.Options.UseTextOptions = true;
+            this.gridView_konstr.Appearance.GroupRow.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.gridView_konstr.Appearance.HeaderPanel.FontStyleDelta = System.Drawing.FontStyle.Bold;
+            this.gridView_konstr.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.gridView_konstr.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView_konstr.Appearance.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridView_konstr.Appearance.HideSelectionRow.Options.UseTextOptions = true;
+            this.gridView_konstr.Appearance.HideSelectionRow.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.gridView_konstr.Appearance.Preview.Options.UseTextOptions = true;
+            this.gridView_konstr.Appearance.Preview.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.gridView_konstr.Appearance.Row.Options.UseTextOptions = true;
+            this.gridView_konstr.Appearance.Row.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.gridView_konstr.Appearance.SelectedRow.Options.UseTextOptions = true;
+            this.gridView_konstr.Appearance.SelectedRow.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.gridView_konstr.Appearance.ViewCaption.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.gridView_konstr.Appearance.ViewCaption.Options.UseFont = true;
+            this.gridView_konstr.AppearancePrint.EvenRow.BackColor = System.Drawing.Color.White;
+            this.gridView_konstr.AppearancePrint.EvenRow.Font = new System.Drawing.Font("Times New Roman", 9.75F);
+            this.gridView_konstr.AppearancePrint.EvenRow.Options.UseBackColor = true;
+            this.gridView_konstr.AppearancePrint.EvenRow.Options.UseFont = true;
+            this.gridView_konstr.AppearancePrint.EvenRow.Options.UseTextOptions = true;
+            this.gridView_konstr.AppearancePrint.EvenRow.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.gridView_konstr.AppearancePrint.FooterPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.gridView_konstr.AppearancePrint.FooterPanel.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridView_konstr.AppearancePrint.FooterPanel.Options.UseBackColor = true;
+            this.gridView_konstr.AppearancePrint.FooterPanel.Options.UseFont = true;
+            this.gridView_konstr.AppearancePrint.GroupFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.gridView_konstr.AppearancePrint.GroupFooter.Font = new System.Drawing.Font("Times New Roman", 9.75F);
+            this.gridView_konstr.AppearancePrint.GroupFooter.Options.UseBackColor = true;
+            this.gridView_konstr.AppearancePrint.GroupFooter.Options.UseFont = true;
+            this.gridView_konstr.AppearancePrint.GroupRow.Font = new System.Drawing.Font("Times New Roman", 9.75F);
+            this.gridView_konstr.AppearancePrint.GroupRow.Options.UseFont = true;
+            this.gridView_konstr.AppearancePrint.HeaderPanel.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.gridView_konstr.AppearancePrint.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
+            this.gridView_konstr.AppearancePrint.HeaderPanel.Options.UseBackColor = true;
+            this.gridView_konstr.AppearancePrint.HeaderPanel.Options.UseFont = true;
+            this.gridView_konstr.AppearancePrint.HeaderPanel.Options.UseTextOptions = true;
+            this.gridView_konstr.AppearancePrint.HeaderPanel.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.gridView_konstr.AppearancePrint.OddRow.BackColor = System.Drawing.Color.White;
+            this.gridView_konstr.AppearancePrint.OddRow.Font = new System.Drawing.Font("Times New Roman", 9.75F);
+            this.gridView_konstr.AppearancePrint.OddRow.Options.UseBackColor = true;
+            this.gridView_konstr.AppearancePrint.OddRow.Options.UseFont = true;
+            this.gridView_konstr.AppearancePrint.Preview.Options.UseTextOptions = true;
+            this.gridView_konstr.AppearancePrint.Preview.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.gridView_konstr.AppearancePrint.Row.Font = new System.Drawing.Font("Times New Roman", 9.75F);
+            this.gridView_konstr.AppearancePrint.Row.Options.UseFont = true;
+            this.gridView_konstr.AppearancePrint.Row.Options.UseTextOptions = true;
+            this.gridView_konstr.AppearancePrint.Row.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.gridView_konstr.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn2,
+            this.gridColumn3,
+            this.gridColumn4,
+            this.gridColumn5,
+            this.gridColumn6,
+            this.gridColumn8,
+            this.gridColumn7,
+            this.gridColumn9,
+            this.gridColumn10,
+            this.gridColumn12,
+            this.gridColumn13,
+            this.gridColumn14,
+            this.gridColumn11,
+            this.gridColumn27,
+            this.gridColumn30});
+            this.gridView_konstr.GridControl = this.grid_total;
+            this.gridView_konstr.GroupRowHeight = 27;
+            this.gridView_konstr.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Custom, "time_span", null, "[Времени всего {0}]", "2")});
+            this.gridView_konstr.HorzScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Never;
+            this.gridView_konstr.Name = "gridView_konstr";
+            this.gridView_konstr.OptionsBehavior.Editable = false;
+            this.gridView_konstr.OptionsPrint.AutoWidth = false;
+            this.gridView_konstr.OptionsPrint.EnableAppearanceEvenRow = true;
+            this.gridView_konstr.OptionsPrint.EnableAppearanceOddRow = true;
+            this.gridView_konstr.OptionsPrint.ExpandAllDetails = true;
+            this.gridView_konstr.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView_konstr.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
+            this.gridView_konstr.OptionsView.EnableAppearanceEvenRow = true;
+            this.gridView_konstr.OptionsView.EnableAppearanceOddRow = true;
+            this.gridView_konstr.OptionsView.RowAutoHeight = true;
+            this.gridView_konstr.OptionsView.ShowFooter = true;
+            this.gridView_konstr.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn7, DevExpress.Data.ColumnSortOrder.Descending),
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn8, DevExpress.Data.ColumnSortOrder.Descending)});
+            this.gridView_konstr.CustomSummaryCalculate += new DevExpress.Data.CustomSummaryEventHandler(this.gridView1_CustomSummaryCalculate);
+            this.gridView_konstr.StartGrouping += new System.EventHandler(this.gridView1_StartGrouping);
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn2.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn2.Caption = "ID";
+            this.gridColumn2.ColumnEdit = this.repositoryItemMemoEdit1;
+            this.gridColumn2.DisplayFormat.FormatString = "#####";
+            this.gridColumn2.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn2.FieldName = "id";
+            this.gridColumn2.Name = "gridColumn2";
+            // 
+            // repositoryItemMemoEdit1
+            // 
+            this.repositoryItemMemoEdit1.Appearance.Options.UseTextOptions = true;
+            this.repositoryItemMemoEdit1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.repositoryItemMemoEdit1.Name = "repositoryItemMemoEdit1";
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn3.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn3.Caption = "ФИО";
+            this.gridColumn3.ColumnEdit = this.repositoryItemMemoEdit1;
+            this.gridColumn3.FieldName = "FIO";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Width = 185;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn4.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn4.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.gridColumn4.Caption = "Должность";
+            this.gridColumn4.ColumnEdit = this.repositoryItemMemoEdit1;
+            this.gridColumn4.FieldName = "position";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Width = 151;
+            // 
+            // gridColumn5
+            // 
+            this.gridColumn5.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn5.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn5.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.gridColumn5.Caption = "Подразделение";
+            this.gridColumn5.FieldName = "subunit";
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.Width = 63;
+            // 
+            // gridColumn6
+            // 
+            this.gridColumn6.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn6.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn6.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.gridColumn6.Caption = "Вид работ";
+            this.gridColumn6.ColumnEdit = this.repositoryItemMemoEdit1;
+            this.gridColumn6.FieldName = "work";
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 3;
+            this.gridColumn6.Width = 167;
+            // 
+            // gridColumn8
+            // 
+            this.gridColumn8.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn8.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn8.Caption = "Время начала";
+            this.gridColumn8.FieldName = "time_begin";
+            this.gridColumn8.MinWidth = 120;
+            this.gridColumn8.Name = "gridColumn8";
+            this.gridColumn8.OptionsColumn.FixedWidth = true;
+            this.gridColumn8.Visible = true;
+            this.gridColumn8.VisibleIndex = 5;
+            this.gridColumn8.Width = 91;
+            // 
+            // gridColumn7
+            // 
+            this.gridColumn7.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn7.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn7.Caption = "Дата";
+            this.gridColumn7.FieldName = "date";
+            this.gridColumn7.MinWidth = 120;
+            this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.OptionsColumn.FixedWidth = true;
+            this.gridColumn7.Visible = true;
+            this.gridColumn7.VisibleIndex = 0;
+            this.gridColumn7.Width = 89;
+            // 
+            // gridColumn9
+            // 
+            this.gridColumn9.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn9.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn9.Caption = "Время окончания";
+            this.gridColumn9.ColumnEdit = this.repositoryItemTimeEdit1;
+            this.gridColumn9.FieldName = "time_end";
+            this.gridColumn9.MinWidth = 120;
+            this.gridColumn9.Name = "gridColumn9";
+            this.gridColumn9.OptionsColumn.FixedWidth = true;
+            this.gridColumn9.Visible = true;
+            this.gridColumn9.VisibleIndex = 6;
+            this.gridColumn9.Width = 100;
+            // 
+            // repositoryItemTimeEdit1
+            // 
+            this.repositoryItemTimeEdit1.Appearance.Options.UseTextOptions = true;
+            this.repositoryItemTimeEdit1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.repositoryItemTimeEdit1.AppearanceDisabled.Options.UseTextOptions = true;
+            this.repositoryItemTimeEdit1.AppearanceDisabled.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.repositoryItemTimeEdit1.AppearanceFocused.Options.UseTextOptions = true;
+            this.repositoryItemTimeEdit1.AppearanceFocused.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.repositoryItemTimeEdit1.AppearanceReadOnly.Options.UseTextOptions = true;
+            this.repositoryItemTimeEdit1.AppearanceReadOnly.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.repositoryItemTimeEdit1.AutoHeight = false;
+            this.repositoryItemTimeEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemTimeEdit1.DisplayFormat.FormatString = "t";
+            this.repositoryItemTimeEdit1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.repositoryItemTimeEdit1.Mask.EditMask = "t";
+            this.repositoryItemTimeEdit1.Name = "repositoryItemTimeEdit1";
+            // 
+            // gridColumn10
+            // 
+            this.gridColumn10.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn10.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn10.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.gridColumn10.Caption = "Доп. информация";
+            this.gridColumn10.ColumnEdit = this.repositoryItemMemoEdit1;
+            this.gridColumn10.FieldName = "other";
+            this.gridColumn10.Name = "gridColumn10";
+            this.gridColumn10.Visible = true;
+            this.gridColumn10.VisibleIndex = 4;
+            this.gridColumn10.Width = 255;
+            // 
+            // gridColumn12
+            // 
+            this.gridColumn12.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn12.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn12.Caption = "Табельный номер";
+            this.gridColumn12.ColumnEdit = this.repositoryItemMemoEdit1;
+            this.gridColumn12.FieldName = "id_tn";
+            this.gridColumn12.Name = "gridColumn12";
+            // 
+            // gridColumn13
+            // 
+            this.gridColumn13.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn13.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn13.Caption = "Времени затрачено";
+            this.gridColumn13.FieldName = "time_span";
+            this.gridColumn13.MinWidth = 120;
+            this.gridColumn13.Name = "gridColumn13";
+            this.gridColumn13.OptionsColumn.FixedWidth = true;
+            this.gridColumn13.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Custom, "time_span", "", "1")});
+            this.gridColumn13.Visible = true;
+            this.gridColumn13.VisibleIndex = 7;
+            this.gridColumn13.Width = 98;
+            // 
+            // gridColumn14
+            // 
+            this.gridColumn14.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn14.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn14.Caption = "Форма";
+            this.gridColumn14.ColumnEdit = this.repositoryItemMemoEdit1;
+            this.gridColumn14.FieldName = "form_id";
+            this.gridColumn14.MinWidth = 120;
+            this.gridColumn14.Name = "gridColumn14";
+            this.gridColumn14.OptionsColumn.FixedWidth = true;
+            this.gridColumn14.Visible = true;
+            this.gridColumn14.VisibleIndex = 1;
+            this.gridColumn14.Width = 79;
+            // 
+            // gridColumn11
+            // 
+            this.gridColumn11.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn11.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn11.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.gridColumn11.Caption = "Наименование формы";
+            this.gridColumn11.ColumnEdit = this.repositoryItemMemoEdit1;
+            this.gridColumn11.FieldName = "name_form";
+            this.gridColumn11.Name = "gridColumn11";
+            this.gridColumn11.Visible = true;
+            this.gridColumn11.VisibleIndex = 2;
+            this.gridColumn11.Width = 179;
+            // 
+            // gridColumn27
+            // 
+            this.gridColumn27.Caption = "Время добавления";
+            this.gridColumn27.FieldName = "add_time";
+            this.gridColumn27.Name = "gridColumn27";
+            // 
+            // gridColumn30
+            // 
+            this.gridColumn30.Caption = "Сложность";
+            this.gridColumn30.FieldName = "difficult";
+            this.gridColumn30.Name = "gridColumn30";
+            this.gridColumn30.OptionsColumn.AllowShowHide = false;
             // 
             // gridView1
             // 
@@ -483,12 +839,6 @@
             this.colsubunit.Name = "colsubunit";
             this.colsubunit.Width = 79;
             // 
-            // repositoryItemMemoEdit1
-            // 
-            this.repositoryItemMemoEdit1.Appearance.Options.UseTextOptions = true;
-            this.repositoryItemMemoEdit1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.repositoryItemMemoEdit1.Name = "repositoryItemMemoEdit1";
-            // 
             // colwork
             // 
             this.colwork.AppearanceCell.Options.UseTextOptions = true;
@@ -587,24 +937,6 @@
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 5;
             this.gridColumn1.Width = 120;
-            // 
-            // repositoryItemTimeEdit1
-            // 
-            this.repositoryItemTimeEdit1.Appearance.Options.UseTextOptions = true;
-            this.repositoryItemTimeEdit1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.repositoryItemTimeEdit1.AppearanceDisabled.Options.UseTextOptions = true;
-            this.repositoryItemTimeEdit1.AppearanceDisabled.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.repositoryItemTimeEdit1.AppearanceFocused.Options.UseTextOptions = true;
-            this.repositoryItemTimeEdit1.AppearanceFocused.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.repositoryItemTimeEdit1.AppearanceReadOnly.Options.UseTextOptions = true;
-            this.repositoryItemTimeEdit1.AppearanceReadOnly.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.repositoryItemTimeEdit1.AutoHeight = false;
-            this.repositoryItemTimeEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemTimeEdit1.DisplayFormat.FormatString = "t";
-            this.repositoryItemTimeEdit1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.repositoryItemTimeEdit1.Mask.EditMask = "t";
-            this.repositoryItemTimeEdit1.Name = "repositoryItemTimeEdit1";
             // 
             // PBView
             // 
@@ -843,279 +1175,6 @@
             this.gridColumn31.Name = "gridColumn31";
             this.gridColumn31.OptionsColumn.AllowShowHide = false;
             // 
-            // gridView_konstr
-            // 
-            this.gridView_konstr.Appearance.ColumnFilterButton.Options.UseTextOptions = true;
-            this.gridView_konstr.Appearance.ColumnFilterButton.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.gridView_konstr.Appearance.EvenRow.Options.UseTextOptions = true;
-            this.gridView_konstr.Appearance.EvenRow.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.gridView_konstr.Appearance.FocusedCell.Options.UseTextOptions = true;
-            this.gridView_konstr.Appearance.FocusedCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridView_konstr.Appearance.FocusedCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.gridView_konstr.Appearance.FocusedRow.Options.UseTextOptions = true;
-            this.gridView_konstr.Appearance.FocusedRow.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridView_konstr.Appearance.FocusedRow.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.gridView_konstr.Appearance.GroupRow.FontStyleDelta = System.Drawing.FontStyle.Bold;
-            this.gridView_konstr.Appearance.GroupRow.Options.UseFont = true;
-            this.gridView_konstr.Appearance.GroupRow.Options.UseTextOptions = true;
-            this.gridView_konstr.Appearance.GroupRow.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.gridView_konstr.Appearance.HeaderPanel.FontStyleDelta = System.Drawing.FontStyle.Bold;
-            this.gridView_konstr.Appearance.HeaderPanel.Options.UseTextOptions = true;
-            this.gridView_konstr.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView_konstr.Appearance.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridView_konstr.Appearance.HideSelectionRow.Options.UseTextOptions = true;
-            this.gridView_konstr.Appearance.HideSelectionRow.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.gridView_konstr.Appearance.Preview.Options.UseTextOptions = true;
-            this.gridView_konstr.Appearance.Preview.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.gridView_konstr.Appearance.Row.Options.UseTextOptions = true;
-            this.gridView_konstr.Appearance.Row.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.gridView_konstr.Appearance.SelectedRow.Options.UseTextOptions = true;
-            this.gridView_konstr.Appearance.SelectedRow.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.gridView_konstr.Appearance.ViewCaption.Font = new System.Drawing.Font("Century Gothic", 8.25F);
-            this.gridView_konstr.Appearance.ViewCaption.Options.UseFont = true;
-            this.gridView_konstr.AppearancePrint.EvenRow.BackColor = System.Drawing.Color.White;
-            this.gridView_konstr.AppearancePrint.EvenRow.Font = new System.Drawing.Font("Times New Roman", 9.75F);
-            this.gridView_konstr.AppearancePrint.EvenRow.Options.UseBackColor = true;
-            this.gridView_konstr.AppearancePrint.EvenRow.Options.UseFont = true;
-            this.gridView_konstr.AppearancePrint.EvenRow.Options.UseTextOptions = true;
-            this.gridView_konstr.AppearancePrint.EvenRow.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.gridView_konstr.AppearancePrint.FooterPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.gridView_konstr.AppearancePrint.FooterPanel.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.gridView_konstr.AppearancePrint.FooterPanel.Options.UseBackColor = true;
-            this.gridView_konstr.AppearancePrint.FooterPanel.Options.UseFont = true;
-            this.gridView_konstr.AppearancePrint.GroupFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.gridView_konstr.AppearancePrint.GroupFooter.Font = new System.Drawing.Font("Times New Roman", 9.75F);
-            this.gridView_konstr.AppearancePrint.GroupFooter.Options.UseBackColor = true;
-            this.gridView_konstr.AppearancePrint.GroupFooter.Options.UseFont = true;
-            this.gridView_konstr.AppearancePrint.GroupRow.Font = new System.Drawing.Font("Times New Roman", 9.75F);
-            this.gridView_konstr.AppearancePrint.GroupRow.Options.UseFont = true;
-            this.gridView_konstr.AppearancePrint.HeaderPanel.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.gridView_konstr.AppearancePrint.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
-            this.gridView_konstr.AppearancePrint.HeaderPanel.Options.UseBackColor = true;
-            this.gridView_konstr.AppearancePrint.HeaderPanel.Options.UseFont = true;
-            this.gridView_konstr.AppearancePrint.HeaderPanel.Options.UseTextOptions = true;
-            this.gridView_konstr.AppearancePrint.HeaderPanel.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.gridView_konstr.AppearancePrint.OddRow.BackColor = System.Drawing.Color.White;
-            this.gridView_konstr.AppearancePrint.OddRow.Font = new System.Drawing.Font("Times New Roman", 9.75F);
-            this.gridView_konstr.AppearancePrint.OddRow.Options.UseBackColor = true;
-            this.gridView_konstr.AppearancePrint.OddRow.Options.UseFont = true;
-            this.gridView_konstr.AppearancePrint.Preview.Options.UseTextOptions = true;
-            this.gridView_konstr.AppearancePrint.Preview.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.gridView_konstr.AppearancePrint.Row.Font = new System.Drawing.Font("Times New Roman", 9.75F);
-            this.gridView_konstr.AppearancePrint.Row.Options.UseFont = true;
-            this.gridView_konstr.AppearancePrint.Row.Options.UseTextOptions = true;
-            this.gridView_konstr.AppearancePrint.Row.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.gridView_konstr.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn2,
-            this.gridColumn3,
-            this.gridColumn4,
-            this.gridColumn5,
-            this.gridColumn6,
-            this.gridColumn8,
-            this.gridColumn7,
-            this.gridColumn9,
-            this.gridColumn10,
-            this.gridColumn12,
-            this.gridColumn13,
-            this.gridColumn14,
-            this.gridColumn11,
-            this.gridColumn27,
-            this.gridColumn30});
-            this.gridView_konstr.GridControl = this.grid_total;
-            this.gridView_konstr.GroupRowHeight = 27;
-            this.gridView_konstr.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Custom, "time_span", null, "[Времени всего {0}]", "2")});
-            this.gridView_konstr.HorzScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Never;
-            this.gridView_konstr.Name = "gridView_konstr";
-            this.gridView_konstr.OptionsBehavior.Editable = false;
-            this.gridView_konstr.OptionsPrint.AutoWidth = false;
-            this.gridView_konstr.OptionsPrint.EnableAppearanceEvenRow = true;
-            this.gridView_konstr.OptionsPrint.EnableAppearanceOddRow = true;
-            this.gridView_konstr.OptionsPrint.ExpandAllDetails = true;
-            this.gridView_konstr.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView_konstr.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
-            this.gridView_konstr.OptionsView.EnableAppearanceEvenRow = true;
-            this.gridView_konstr.OptionsView.EnableAppearanceOddRow = true;
-            this.gridView_konstr.OptionsView.RowAutoHeight = true;
-            this.gridView_konstr.OptionsView.ShowFooter = true;
-            this.gridView_konstr.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn7, DevExpress.Data.ColumnSortOrder.Descending),
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn8, DevExpress.Data.ColumnSortOrder.Descending)});
-            this.gridView_konstr.CustomSummaryCalculate += new DevExpress.Data.CustomSummaryEventHandler(this.gridView1_CustomSummaryCalculate);
-            this.gridView_konstr.StartGrouping += new System.EventHandler(this.gridView1_StartGrouping);
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn2.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridColumn2.Caption = "ID";
-            this.gridColumn2.ColumnEdit = this.repositoryItemMemoEdit1;
-            this.gridColumn2.DisplayFormat.FormatString = "#####";
-            this.gridColumn2.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.gridColumn2.FieldName = "id";
-            this.gridColumn2.Name = "gridColumn2";
-            // 
-            // gridColumn3
-            // 
-            this.gridColumn3.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn3.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridColumn3.Caption = "ФИО";
-            this.gridColumn3.ColumnEdit = this.repositoryItemMemoEdit1;
-            this.gridColumn3.FieldName = "FIO";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Width = 185;
-            // 
-            // gridColumn4
-            // 
-            this.gridColumn4.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn4.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridColumn4.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.gridColumn4.Caption = "Должность";
-            this.gridColumn4.ColumnEdit = this.repositoryItemMemoEdit1;
-            this.gridColumn4.FieldName = "position";
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.Width = 151;
-            // 
-            // gridColumn5
-            // 
-            this.gridColumn5.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn5.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridColumn5.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.gridColumn5.Caption = "Подразделение";
-            this.gridColumn5.FieldName = "subunit";
-            this.gridColumn5.Name = "gridColumn5";
-            this.gridColumn5.Width = 63;
-            // 
-            // gridColumn6
-            // 
-            this.gridColumn6.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn6.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridColumn6.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.gridColumn6.Caption = "Вид работ";
-            this.gridColumn6.ColumnEdit = this.repositoryItemMemoEdit1;
-            this.gridColumn6.FieldName = "work";
-            this.gridColumn6.Name = "gridColumn6";
-            this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 3;
-            this.gridColumn6.Width = 167;
-            // 
-            // gridColumn8
-            // 
-            this.gridColumn8.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn8.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridColumn8.Caption = "Время начала";
-            this.gridColumn8.FieldName = "time_begin";
-            this.gridColumn8.MinWidth = 120;
-            this.gridColumn8.Name = "gridColumn8";
-            this.gridColumn8.OptionsColumn.FixedWidth = true;
-            this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 5;
-            this.gridColumn8.Width = 91;
-            // 
-            // gridColumn7
-            // 
-            this.gridColumn7.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn7.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridColumn7.Caption = "Дата";
-            this.gridColumn7.FieldName = "date";
-            this.gridColumn7.MinWidth = 120;
-            this.gridColumn7.Name = "gridColumn7";
-            this.gridColumn7.OptionsColumn.FixedWidth = true;
-            this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 0;
-            this.gridColumn7.Width = 89;
-            // 
-            // gridColumn9
-            // 
-            this.gridColumn9.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn9.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridColumn9.Caption = "Время окончания";
-            this.gridColumn9.ColumnEdit = this.repositoryItemTimeEdit1;
-            this.gridColumn9.FieldName = "time_end";
-            this.gridColumn9.MinWidth = 120;
-            this.gridColumn9.Name = "gridColumn9";
-            this.gridColumn9.OptionsColumn.FixedWidth = true;
-            this.gridColumn9.Visible = true;
-            this.gridColumn9.VisibleIndex = 6;
-            this.gridColumn9.Width = 100;
-            // 
-            // gridColumn10
-            // 
-            this.gridColumn10.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn10.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridColumn10.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.gridColumn10.Caption = "Доп. информация";
-            this.gridColumn10.ColumnEdit = this.repositoryItemMemoEdit1;
-            this.gridColumn10.FieldName = "other";
-            this.gridColumn10.Name = "gridColumn10";
-            this.gridColumn10.Visible = true;
-            this.gridColumn10.VisibleIndex = 4;
-            this.gridColumn10.Width = 255;
-            // 
-            // gridColumn12
-            // 
-            this.gridColumn12.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn12.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridColumn12.Caption = "Табельный номер";
-            this.gridColumn12.ColumnEdit = this.repositoryItemMemoEdit1;
-            this.gridColumn12.FieldName = "id_tn";
-            this.gridColumn12.Name = "gridColumn12";
-            // 
-            // gridColumn13
-            // 
-            this.gridColumn13.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn13.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridColumn13.Caption = "Времени затрачено";
-            this.gridColumn13.FieldName = "time_span";
-            this.gridColumn13.MinWidth = 120;
-            this.gridColumn13.Name = "gridColumn13";
-            this.gridColumn13.OptionsColumn.FixedWidth = true;
-            this.gridColumn13.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Custom, "time_span", "", "1")});
-            this.gridColumn13.Visible = true;
-            this.gridColumn13.VisibleIndex = 7;
-            this.gridColumn13.Width = 98;
-            // 
-            // gridColumn14
-            // 
-            this.gridColumn14.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn14.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridColumn14.Caption = "Форма";
-            this.gridColumn14.ColumnEdit = this.repositoryItemMemoEdit1;
-            this.gridColumn14.FieldName = "form_id";
-            this.gridColumn14.MinWidth = 120;
-            this.gridColumn14.Name = "gridColumn14";
-            this.gridColumn14.OptionsColumn.FixedWidth = true;
-            this.gridColumn14.Visible = true;
-            this.gridColumn14.VisibleIndex = 1;
-            this.gridColumn14.Width = 79;
-            // 
-            // gridColumn11
-            // 
-            this.gridColumn11.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn11.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridColumn11.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.gridColumn11.Caption = "Наименование формы";
-            this.gridColumn11.ColumnEdit = this.repositoryItemMemoEdit1;
-            this.gridColumn11.FieldName = "name_form";
-            this.gridColumn11.Name = "gridColumn11";
-            this.gridColumn11.Visible = true;
-            this.gridColumn11.VisibleIndex = 2;
-            this.gridColumn11.Width = 179;
-            // 
-            // gridColumn27
-            // 
-            this.gridColumn27.Caption = "Время добавления";
-            this.gridColumn27.FieldName = "add_time";
-            this.gridColumn27.Name = "gridColumn27";
-            // 
-            // gridColumn30
-            // 
-            this.gridColumn30.Caption = "Сложность";
-            this.gridColumn30.FieldName = "difficult";
-            this.gridColumn30.Name = "gridColumn30";
-            this.gridColumn30.OptionsColumn.AllowShowHide = false;
-            // 
             // cardView1
             // 
             this.cardView1.Appearance.ViewCaption.Font = new System.Drawing.Font("Century Gothic", 8.25F);
@@ -1154,11 +1213,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dEdit_start.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmb_season.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid_total)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView_konstr)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTimeEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView_konstr)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cardView1)).EndInit();
             this.ResumeLayout(false);
 
@@ -1226,5 +1285,8 @@
         private DevExpress.XtraEditors.ComboBoxEdit cmb_season;
         private DevExpress.XtraEditors.ComboBoxEdit cmb_ReportPrint;
         private DevExpress.XtraEditors.SimpleButton btn_Calendar;
+        private DevExpress.XtraEditors.SimpleButton btn_tabel;
+        private DevExpress.XtraEditors.SimpleButton btn_report;
+        private DevExpress.XtraEditors.SimpleButton btn_prices;
     }
 }
