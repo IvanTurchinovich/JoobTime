@@ -32,9 +32,9 @@ namespace JoobTime
             {
                 load_dtTotal();
                 load_dtWorker();
-                selectGridView();
                 cmb_ReportPrint_AddItems();
             }
+            selectGridView();
             groupButton.CustomHeaderButtons[0].Properties.Checked =Convert.ToBoolean(xlsx_.read_xlsx("groupExpand"));
             groupColumnData(true);
         }
@@ -188,11 +188,10 @@ namespace JoobTime
         public void selectGridView()
         {
             string nameView = xlsx_.read_xlsx("gridName");
-            //DevExpress.XtraGrid.Views.Grid.GridView
-            var typeGridView = from DevExpress.XtraGrid.Views.Grid.GridView grd in grid_total.ViewCollection
+            var typeGridView = from GridView grd in grid_total.ViewCollection
                      where grd.Name.ToString() == nameView
                      select grd;
-            DevExpress.XtraGrid.Views.Grid.GridView grid = typeGridView.ElementAt(0);
+            GridView grid = typeGridView.ElementAt(0);
             grid_total.MainView = grid;
             if (nameView == "gridView_konstr")
             {            

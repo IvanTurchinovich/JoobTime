@@ -173,11 +173,39 @@ namespace JoobTime
             tmEdt_end.EditValue = null;
         }
 
+        public string linkToDt(DataTable _dataTable, string findText, string findFieldColumn, string resultFieldColumn)
+        {
+            string result;
+            var rowInfo = from DataRow row in _dataTable.Rows
+                          where row[findFieldColumn].ToString() == findText
+                          select row;
+            if (rowInfo.Count() != 0)
+            {
+                DataRow resultRow = rowInfo.ElementAt(0);
+                result = resultRow[resultFieldColumn].ToString();
+            }
+            else
+            {
+                result = null;
+            }
+            return result;
+        }
+
         public void loadTextControl(string addEdit)
         {
             switch (addEdit)
             {
                 case "Добавить":
+                    switch (nameView)
+                    {
+                        case "gridView_konstr":
+                            lUp_numberForm.EditValue=linkToDt(dtForm, idForm, "form_id", "name_form");
+                            break;
+                        case "PBView":
+                            string nameObject = xlsx_.read_xlsx("save_obj");
+                            lUp_object.EditValue = linkToDt(dtObjects,nameObject,"name_object","id_object");
+                            break;
+                    }
                     string work = xlsx_.read_xlsx("save_work_name");
                     var rowWorks = from DataRow row in dtWork.Rows
                                    where row["work"].ToString() == work
@@ -187,10 +215,19 @@ namespace JoobTime
                         DataRow row1 = rowWorks.ElementAt(0);
                         lUp_work.EditValue = Convert.ToInt32(row1["id_work"].ToString());
                     }
+                    lUp_work.EditValue = linkToDt(dtWork, work, "Work", "id_work");
+
                     string other = xlsx_.read_xlsx("save_other");
                     lUp_other.EditValue = other;
                     break;
                 case "Изменить":
+                    switch (nameView)
+                    {
+                        case "gridView_konstr":
+                            break;
+                        case "PBView":
+                            break;
+                    }
                     date_AddRecord.DateTime = Convert.ToDateTime(dtTotal.Rows[0]["date"].ToString());
                     tmEdt_start.TimeSpan = TimeSpan.Parse(dtTotal.Rows[0]["time_begin"].ToString());
                     tmEdt_end.TimeSpan = TimeSpan.Parse(dtTotal.Rows[0]["time_end"].ToString());
