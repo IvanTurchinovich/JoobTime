@@ -117,7 +117,7 @@ namespace JoobTime
 
         public void load_dtTotal(string id_record)
         {
-            string comand = @"select tl.id,tl.id_work, tl.subunit,tl.work,tl.date,tl.time_begin,tl.time_end,tl.other from total tl where id=" + id_record;
+            string comand = @"select tl.id,tl.id_work, tl.subunit,tl.work,tl.date,tl.time_begin,tl.time_end,tl.other,tl.form_id,tl.name_form,tl.id_object,tl.name_object from total tl where id=" + id_record;
             dtTotal = _Sql.sql_dt(comand, "t1");
         }
 
@@ -173,23 +173,7 @@ namespace JoobTime
             tmEdt_end.EditValue = null;
         }
 
-        public string linkToDt(DataTable _dataTable, string findText, string findFieldColumn, string resultFieldColumn)
-        {
-            string result;
-            var rowInfo = from DataRow row in _dataTable.Rows
-                          where row[findFieldColumn].ToString() == findText
-                          select row;
-            if (rowInfo.Any())
-            {
-                DataRow resultRow = rowInfo.ElementAt(0);
-                result = resultRow[resultFieldColumn].ToString();
-            }
-            else
-            {
-                result = null;
-            }
-            return result;
-        }
+        
 
         public void loadTextControl(string addEdit)
         {
@@ -199,24 +183,16 @@ namespace JoobTime
                     switch (nameView)
                     {
                         case "gridView_konstr":
-                            lUp_numberForm.EditValue=linkToDt(dtForm, idForm, "form_id", "name_form");
+                            idForm = xlsx_.read_xlsx("save_pf");
+                            lUp_numberForm.EditValue= _Sql.linkToDt(dtForm, idForm, "id", "name_form");
                             break;
                         case "PBView":
                             string nameObject = xlsx_.read_xlsx("save_obj");
-                            lUp_object.EditValue = linkToDt(dtObjects,nameObject,"name_object","id_object");
+                            lUp_object.EditValue = _Sql.linkToDt(dtObjects,nameObject,"name_object","id_object");
                             break;
                     }
                     string work = xlsx_.read_xlsx("save_work_name");
-                    var rowWorks = from DataRow row in dtWork.Rows
-                                   where row["work"].ToString() == work
-                                   select row;
-                    if (rowWorks.Count() != 0)
-                    {
-                        DataRow row1 = rowWorks.ElementAt(0);
-                        lUp_work.EditValue = Convert.ToInt32(row1["id_work"].ToString());
-                    }
-                    lUp_work.EditValue = linkToDt(dtWork, work, "Work", "id_work");
-
+                    lUp_work.EditValue =Convert.ToInt32(_Sql.linkToDt(dtWork, work, "Work", "id_work"));
                     string other = xlsx_.read_xlsx("save_other");
                     lUp_other.EditValue = other;
                     break;
@@ -224,8 +200,12 @@ namespace JoobTime
                     switch (nameView)
                     {
                         case "gridView_konstr":
+                            idForm = dtTotal.Rows[0]["form_id"].ToString();
+                            lUp_numberForm.EditValue = _Sql.linkToDt(dtForm, idForm, "id", "name_form");
                             break;
                         case "PBView":
+                            string nameObject = dtTotal.Rows[0]["id_object"].ToString();
+                            lUp_object.EditValue = _Sql.linkToDt(dtObjects, nameObject, "name_object", "id_object");
                             break;
                     }
                     date_AddRecord.DateTime = Convert.ToDateTime(dtTotal.Rows[0]["date"].ToString());
@@ -492,33 +472,29 @@ namespace JoobTime
 
         public void typeFormAdd()
         {
+            lUp_object.Visible = false;
+            lUp_numberForm.Visible = false;
+            labelControl7.Visible = false;
+            labelControl8.Visible = false;
+            MaximumSize = new System.Drawing.Size(this.MaximumSize.Width, 525);
             switch (nameView)
             {
-                case "gridView1":
-                    lUp_object.Visible = false;
-                    lUp_numberForm.Visible = false;
-                    labelControl7.Visible = false;
-                    labelControl8.Visible = false;
-                    MaximumSize = new System.Drawing.Size(this.MaximumSize.Width,525);
-                    break;
                 case "PBView":
                     lUp_object.Visible = true;
-                    lUp_numberForm.Visible = false;
                     labelControl7.Visible = true;
-                    labelControl8.Visible = false;
                     MaximumSize = new System.Drawing.Size(this.MaximumSize.Width, 565);
+                    MinimumSize = new System.Drawing.Size(MinimumSize.Width, MaximumSize.Height);
                     break;
                 case "gridView_konstr":
-                    lUp_object.Visible = false;
                     lUp_numberForm.Visible = true;
-                    labelControl7.Visible = false;
                     labelControl8.Visible = true;
+                    MaximumSize = new System.Drawing.Size(this.MaximumSize.Width, 565);
+                    MinimumSize = new System.Drawing.Size(MinimumSize.Width, MaximumSize.Height);
                     lUp_numberForm.Location = new System.Drawing.Point(172, 35);
                     labelControl8.Location = new System.Drawing.Point(6, 39);
-                    MaximumSize = new System.Drawing.Size(this.MaximumSize.Width, 565);
                     break;
             }
-            MinimumSize = new System.Drawing.Size(MinimumSize.Width, MaximumSize.Height);
+            //MinimumSize = new System.Drawing.Size(MinimumSize.Width, MaximumSize.Height);
         }
 
         private void add_Load(object sender, EventArgs e)

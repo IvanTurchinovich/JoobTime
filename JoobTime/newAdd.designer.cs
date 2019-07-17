@@ -265,18 +265,18 @@
             this.groupControl1.Location = new System.Drawing.Point(0, 173);
             this.groupControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(618, 394);
+            this.groupControl1.Size = new System.Drawing.Size(618, 382);
             this.groupControl1.TabIndex = 30;
             this.groupControl1.Text = "Введите информацию о проделанной работе";
             // 
             // labelControl8
             // 
-            this.labelControl8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.labelControl8.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelControl8.Appearance.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelControl8.Appearance.ForeColor = System.Drawing.Color.Black;
             this.labelControl8.Appearance.Options.UseFont = true;
             this.labelControl8.Appearance.Options.UseForeColor = true;
-            this.labelControl8.Location = new System.Drawing.Point(6, 31);
+            this.labelControl8.Location = new System.Drawing.Point(6, 40);
             this.labelControl8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(102, 22);
@@ -286,12 +286,12 @@
             // 
             // labelControl7
             // 
-            this.labelControl7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.labelControl7.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelControl7.Appearance.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelControl7.Appearance.ForeColor = System.Drawing.Color.Black;
             this.labelControl7.Appearance.Options.UseFont = true;
             this.labelControl7.Appearance.Options.UseForeColor = true;
-            this.labelControl7.Location = new System.Drawing.Point(6, 69);
+            this.labelControl7.Location = new System.Drawing.Point(6, 78);
             this.labelControl7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(54, 22);
@@ -301,9 +301,8 @@
             // 
             // lUp_object
             // 
-            this.lUp_object.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lUp_object.Location = new System.Drawing.Point(172, 66);
+            this.lUp_object.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lUp_object.Location = new System.Drawing.Point(172, 75);
             this.lUp_object.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lUp_object.Name = "lUp_object";
             this.lUp_object.Properties.Appearance.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -336,9 +335,8 @@
             // 
             // lUp_numberForm
             // 
-            this.lUp_numberForm.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lUp_numberForm.Location = new System.Drawing.Point(172, 28);
+            this.lUp_numberForm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lUp_numberForm.Location = new System.Drawing.Point(172, 37);
             this.lUp_numberForm.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lUp_numberForm.Name = "lUp_numberForm";
             this.lUp_numberForm.Properties.Appearance.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -372,9 +370,8 @@
             // 
             // lUp_work
             // 
-            this.lUp_work.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lUp_work.Location = new System.Drawing.Point(172, 142);
+            this.lUp_work.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lUp_work.Location = new System.Drawing.Point(172, 151);
             this.lUp_work.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lUp_work.Name = "lUp_work";
             this.lUp_work.Properties.Appearance.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -406,25 +403,23 @@
             // 
             // btn_add
             // 
-            this.btn_add.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_add.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_add.Appearance.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btn_add.Appearance.Options.UseFont = true;
             this.btn_add.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_add.ImageOptions.Image")));
             this.btn_add.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleRight;
-            this.btn_add.Location = new System.Drawing.Point(172, 324);
+            this.btn_add.Location = new System.Drawing.Point(172, 331);
             this.btn_add.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
             this.btn_add.Name = "btn_add";
-            this.btn_add.Size = new System.Drawing.Size(240, 55);
+            this.btn_add.Size = new System.Drawing.Size(240, 42);
             this.btn_add.TabIndex = 10;
             this.btn_add.Text = "Добавить";
             this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
             // lUp_other
             // 
-            this.lUp_other.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lUp_other.Location = new System.Drawing.Point(172, 180);
+            this.lUp_other.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lUp_other.Location = new System.Drawing.Point(172, 189);
             this.lUp_other.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lUp_other.Name = "lUp_other";
             this.lUp_other.Properties.Appearance.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -456,9 +451,8 @@
             // 
             // lUp_subunit
             // 
-            this.lUp_subunit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lUp_subunit.Location = new System.Drawing.Point(172, 104);
+            this.lUp_subunit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lUp_subunit.Location = new System.Drawing.Point(172, 113);
             this.lUp_subunit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lUp_subunit.Name = "lUp_subunit";
             this.lUp_subunit.Properties.Appearance.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -488,16 +482,15 @@
             // 
             // memoOther
             // 
-            this.memoOther.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.memoOther.Location = new System.Drawing.Point(172, 210);
+            this.memoOther.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.memoOther.Location = new System.Drawing.Point(172, 219);
             this.memoOther.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.memoOther.Name = "memoOther";
             this.memoOther.Properties.Appearance.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.memoOther.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
             this.memoOther.Properties.Appearance.Options.UseFont = true;
             this.memoOther.Properties.Appearance.Options.UseForeColor = true;
-            this.memoOther.Size = new System.Drawing.Size(432, 102);
+            this.memoOther.Size = new System.Drawing.Size(432, 100);
             this.memoOther.TabIndex = 9;
             this.memoOther.ToolTip = "Это поле должно быть заполнено обязательно. Если в поле с выбором примечаний нет " +
     "нужного вам варианта, запишите текст в это поле. ";
@@ -505,12 +498,12 @@
             // 
             // labelControl6
             // 
-            this.labelControl6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.labelControl6.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelControl6.Appearance.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelControl6.Appearance.ForeColor = System.Drawing.Color.Black;
             this.labelControl6.Appearance.Options.UseFont = true;
             this.labelControl6.Appearance.Options.UseForeColor = true;
-            this.labelControl6.Location = new System.Drawing.Point(6, 183);
+            this.labelControl6.Location = new System.Drawing.Point(6, 192);
             this.labelControl6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(90, 22);
@@ -519,12 +512,12 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.labelControl2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelControl2.Appearance.ForeColor = System.Drawing.Color.Black;
             this.labelControl2.Appearance.Options.UseFont = true;
             this.labelControl2.Appearance.Options.UseForeColor = true;
-            this.labelControl2.Location = new System.Drawing.Point(6, 145);
+            this.labelControl2.Location = new System.Drawing.Point(6, 154);
             this.labelControl2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(85, 22);
@@ -533,12 +526,12 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.labelControl1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelControl1.Appearance.ForeColor = System.Drawing.Color.Black;
             this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.Appearance.Options.UseForeColor = true;
-            this.labelControl1.Location = new System.Drawing.Point(6, 107);
+            this.labelControl1.Location = new System.Drawing.Point(6, 116);
             this.labelControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(114, 22);
@@ -549,7 +542,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(618, 567);
+            this.ClientSize = new System.Drawing.Size(618, 555);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.groupControl2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

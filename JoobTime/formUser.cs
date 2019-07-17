@@ -20,6 +20,7 @@ namespace JoobTime
         total_sum_time_span _totalTimeSummary = new total_sum_time_span();
         DataTable dtTotal;
         DataTable dtWorker;
+        DataTable dtCmbBoxSubunit;
         public static string status;
         string date_start;
         string date_end;
@@ -33,6 +34,13 @@ namespace JoobTime
                 load_dtTotal();
                 load_dtWorker();
                 cmb_ReportPrint_AddItems();
+            }
+            else if (status == "r")
+            {
+                load_dtCmbBoxSubunit();
+                btn_tabel.Visible = true;
+                btn_prices.Visible = true;
+                btn_report.Visible = true; 
             }
             selectGridView();
             groupButton.CustomHeaderButtons[0].Properties.Checked =Convert.ToBoolean(xlsx_.read_xlsx("groupExpand"));
@@ -105,12 +113,39 @@ namespace JoobTime
 
         public void load_dtTotal()
         {
-            string comand = @"SELECT* FROM[total] join work on work.id_work = total.id_work
+            if (status == "s")
+            {
+                string comand = @"SELECT* FROM[total] join work on work.id_work = total.id_work
                      WHERE[id_tn] = '" + formLogin.id_tn + "'"
-                      + "AND [date]>='" + date_start + "'"
-                      + "AND [date]<='" + date_end + "'";
-            dtTotal = _sql.sql_dt(comand,"t1");
-            grid_total.DataSource = dtTotal;
+                          + "AND [date]>='" + date_start + "'"
+                          + "AND [date]<='" + date_end + "'";
+                dtTotal = _sql.sql_dt(comand, "t1");
+                grid_total.DataSource = dtTotal;
+            }
+            else if (status == "r")
+            {
+
+                string idSubunitWorker = _sql.linkToDt(dtCmbBoxSubunit,cmb_subunit.Text,"subunit","id_subunit");
+                string comand = @"SELECT* FROM[total] join work on work.id_work = total.id_work
+                             WHERE [date]>='" + date_start + "'"
+                            + "AND [date]<='" + date_end + "'"
+                            + "AND [id_subunit_worker]=" + idSubunitWorker;
+
+                dtTotal = _sql.sql_dt(comand, "t1");
+                grid_total.DataSource = dtTotal;
+            }
+        }
+
+        public void load_dtCmbBoxSubunit()
+        {
+            string comand = "select cp.subunit,sb.id_subunit from catalog_position cp left join subunit sb on sb.subunit = cp.subunit where id_tn =" + formLogin.id_tn;
+            dtCmbBoxSubunit = _sql.sql_dt(comand, "t1");
+            dtCmbBoxSubunit.Rows.Add(new object[] {"Мои записи"});
+            foreach (DataRow row in dtCmbBoxSubunit.Rows)
+            {
+                cmb_subunit.Properties.Items.Add(row["subunit"].ToString());
+            }
+            cmb_subunit.Text = Properties.Settings_WD.Default.subunit;
         }
 
         private void formUser_FormClosed(object sender, FormClosedEventArgs e)
@@ -255,7 +290,7 @@ namespace JoobTime
 
         private void groupButton_CustomButtonChecked(object sender, DevExpress.XtraBars.Docking2010.BaseButtonEventArgs e)
         {
-            groupButton.Size = new Size(44, 613);
+            groupButton.Size = new Size(42, 613);
             groupButton.CustomHeaderButtons[0].Properties.Image = Properties.Resources.forward_16x16;
             groupButton.CustomHeaderButtons[0].Properties.Checked = true;
             groupButton.Text = "      ";
@@ -264,7 +299,7 @@ namespace JoobTime
 
         private void groupButton_CustomButtonUnchecked(object sender, DevExpress.XtraBars.Docking2010.BaseButtonEventArgs e)
         {
-            groupButton.Size = new Size(234, 613);
+            groupButton.Size = new Size(230, 613);
             groupButton.CustomHeaderButtons[0].Properties.Image = Properties.Resources.backward_16x16;
             groupButton.CustomHeaderButtons[0].Properties.Checked = false;
             groupButton.Text = "Управление";

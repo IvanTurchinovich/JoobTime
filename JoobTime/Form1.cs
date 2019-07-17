@@ -57,7 +57,6 @@ namespace JoobTime
                     id_tn = login;
                     PropertiesSet(rowWorkerInfo);
                     showNextForm(status);
-                    
                 }
                 else
                 {
@@ -73,15 +72,12 @@ namespace JoobTime
 
         public void showNextForm(string status)
         {
-            if (status == "s")
+            if (status == "s"|| status == "r")
             {
+                formUser.status = status;
                 formUser user = new formUser();
                 user.Show();
                 Hide();
-            }
-            else if (status == "r")
-            {
-                XtraMessageBox.Show("Вы ввели верный пароль \\" + status+" Но форма руководителя еще не готова");
             }
             else if (status == "admin")
             {

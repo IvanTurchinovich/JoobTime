@@ -1,6 +1,7 @@
 ﻿using System.Data.SqlClient;
 using System.Data;
 using System.Windows.Forms;
+using System.Linq;
 
 namespace JoobTime
 {
@@ -171,6 +172,33 @@ namespace JoobTime
             Class_sql w = new Class_sql();
                 DataTable dt = w.ds_query(query, name_t).Tables[name_t];
             return dt;
+        }
+
+
+        /// <summary>
+        /// ВЫводит необходимую строку при помощи LINQ запросов
+        /// </summary>
+        /// <param name="_dataTable"></param> таблица в которой искать
+        /// <param name="findText"></param>текст по которому производится поиск
+        /// <param name="findFieldColumn"></param> столбец(имя) в котором искать текст 
+        /// <param name="resultFieldColumn"></param> столбец(имя) в котором хранится нужная ячейка
+        /// <returns></returns>
+        public string linkToDt(DataTable _dataTable, string findText, string findFieldColumn, string resultFieldColumn)
+        {
+            string result;
+            var rowInfo = from DataRow row in _dataTable.Rows
+                          where row[findFieldColumn].ToString() == findText
+                          select row;
+            if (rowInfo.Any())
+            {
+                DataRow resultRow = rowInfo.ElementAt(0);
+                result = resultRow[resultFieldColumn].ToString();
+            }
+            else
+            {
+                result = null;
+            }
+            return result;
         }
     }
 }

@@ -7,18 +7,17 @@
   <admin_login>admin</admin_login>
   <admin_password>74123</admin_password>
   <conection_ip>192.168.76.22,1433</conection_ip>
-  <login_save>9999</login_save>
+  <login_save>2322</login_save>
   <login_save_on>true</login_save_on>
-  <group_params>0</group_params>
+  <group_params>-1</group_params>
   <grid_polz>0</grid_polz>
   <save_pf>ВФ 141</save_pf>
   <save_obj>
   </save_obj>
-  <save_work_name>Прочее</save_work_name>
-  <save_other>Обсуждение возможности объединения оперативной памяти двух ПК для получения ПК с 32-мя Гб оперативной памяти для более эфеективного рендеринга с Каменчуком Р. 
-</save_other>
+  <save_work_name>Аппаратно-программная поддержка</save_work_name>
+  <save_other>Настройка TeamRender Client на ПК в штабе строительства, настройка TeamViewer на ПК в штабе строительства(переключение проводов в свитче и изменение параметров доступа)</save_other>
   <groupExpand>True</groupExpand>
-  <add_size_h>565</add_size_h>
-  <add_size_w>791</add_size_w>
-  <gridName>gridView1</gridName>
+  <add_size_h>525</add_size_h>
+  <add_size_w>618</add_size_w>
+  <gridName>gridView_konstr</gridName>
 </Settings>

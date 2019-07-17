@@ -40,6 +40,11 @@
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions2 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions3 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
@@ -53,12 +58,13 @@
             this.btn_edit = new DevExpress.XtraEditors.SimpleButton();
             this.btn_add = new DevExpress.XtraEditors.SimpleButton();
             this.groupDate = new DevExpress.XtraEditors.GroupControl();
+            this.cmb_subunit = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.cmb_season = new DevExpress.XtraEditors.ComboBoxEdit();
             this.windowsUIButtonPanel1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.dEdit_end = new DevExpress.XtraEditors.DateEdit();
             this.dEdit_start = new DevExpress.XtraEditors.DateEdit();
-            this.cmb_season = new DevExpress.XtraEditors.ComboBoxEdit();
             this.grid_total = new DevExpress.XtraGrid.GridControl();
             this.gridView_konstr = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -111,11 +117,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.cmb_ReportPrint.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupDate)).BeginInit();
             this.groupDate.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cmb_subunit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmb_season.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dEdit_end.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dEdit_end.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dEdit_start.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dEdit_start.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmb_season.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid_total)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView_konstr)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
@@ -129,7 +136,8 @@
             // 
             this.groupButton.Appearance.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupButton.Appearance.Options.UseFont = true;
-            this.groupButton.AppearanceCaption.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.groupButton.AppearanceCaption.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.groupButton.AppearanceCaption.FontStyleDelta = System.Drawing.FontStyle.Bold;
             this.groupButton.AppearanceCaption.Options.UseFont = true;
             this.groupButton.Controls.Add(this.cmb_ReportPrint);
             this.groupButton.Controls.Add(this.btn_prices);
@@ -148,7 +156,7 @@
             this.groupButton.Location = new System.Drawing.Point(0, 0);
             this.groupButton.Margin = new System.Windows.Forms.Padding(4);
             this.groupButton.Name = "groupButton";
-            this.groupButton.Size = new System.Drawing.Size(234, 613);
+            this.groupButton.Size = new System.Drawing.Size(230, 577);
             this.groupButton.TabIndex = 0;
             this.groupButton.Text = "Управление";
             this.groupButton.CustomButtonUnchecked += new DevExpress.XtraBars.Docking2010.BaseButtonEventHandler(this.groupButton_CustomButtonUnchecked);
@@ -158,7 +166,7 @@
             // 
             this.cmb_ReportPrint.Dock = System.Windows.Forms.DockStyle.Top;
             this.cmb_ReportPrint.EditValue = "Выберите отчет";
-            this.cmb_ReportPrint.Location = new System.Drawing.Point(2, 412);
+            this.cmb_ReportPrint.Location = new System.Drawing.Point(2, 321);
             this.cmb_ReportPrint.Name = "cmb_ReportPrint";
             this.cmb_ReportPrint.Properties.Appearance.Options.UseTextOptions = true;
             this.cmb_ReportPrint.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -181,7 +189,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", "0", null, DevExpress.Utils.ToolTipAnchor.Default),
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", "1", null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.cmb_ReportPrint.Properties.NullText = "SelectReport";
-            this.cmb_ReportPrint.Size = new System.Drawing.Size(230, 28);
+            this.cmb_ReportPrint.Size = new System.Drawing.Size(226, 28);
             this.cmb_ReportPrint.TabIndex = 27;
             this.cmb_ReportPrint.ToolTip = "Выбор и печать отчетов";
             this.cmb_ReportPrint.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.comboBoxEdit1_ButtonClick);
@@ -193,10 +201,10 @@
             this.btn_prices.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_prices.ImageOptions.Image = global::JoobTime.Properties.Resources.currency_32x32;
             this.btn_prices.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleRight;
-            this.btn_prices.Location = new System.Drawing.Point(2, 357);
+            this.btn_prices.Location = new System.Drawing.Point(2, 279);
             this.btn_prices.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
             this.btn_prices.Name = "btn_prices";
-            this.btn_prices.Size = new System.Drawing.Size(230, 55);
+            this.btn_prices.Size = new System.Drawing.Size(226, 42);
             this.btn_prices.TabIndex = 31;
             this.btn_prices.Text = "Оплата";
             this.btn_prices.ToolTip = "Оплата";
@@ -209,10 +217,10 @@
             this.btn_report.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_report.ImageOptions.Image = global::JoobTime.Properties.Resources.tableofcontents_32x32;
             this.btn_report.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleRight;
-            this.btn_report.Location = new System.Drawing.Point(2, 302);
+            this.btn_report.Location = new System.Drawing.Point(2, 237);
             this.btn_report.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
             this.btn_report.Name = "btn_report";
-            this.btn_report.Size = new System.Drawing.Size(230, 55);
+            this.btn_report.Size = new System.Drawing.Size(226, 42);
             this.btn_report.TabIndex = 30;
             this.btn_report.Text = "Отчеты";
             this.btn_report.ToolTip = "Отчеты";
@@ -225,10 +233,10 @@
             this.btn_tabel.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_tabel.ImageOptions.Image = global::JoobTime.Properties.Resources.showworktimeonly_32x32;
             this.btn_tabel.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleRight;
-            this.btn_tabel.Location = new System.Drawing.Point(2, 247);
+            this.btn_tabel.Location = new System.Drawing.Point(2, 195);
             this.btn_tabel.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
             this.btn_tabel.Name = "btn_tabel";
-            this.btn_tabel.Size = new System.Drawing.Size(230, 55);
+            this.btn_tabel.Size = new System.Drawing.Size(226, 42);
             this.btn_tabel.TabIndex = 29;
             this.btn_tabel.Text = "Табель";
             this.btn_tabel.ToolTip = "Табель";
@@ -241,10 +249,10 @@
             this.btn_Calendar.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_Calendar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Calendar.ImageOptions.Image")));
             this.btn_Calendar.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleRight;
-            this.btn_Calendar.Location = new System.Drawing.Point(2, 192);
+            this.btn_Calendar.Location = new System.Drawing.Point(2, 153);
             this.btn_Calendar.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
             this.btn_Calendar.Name = "btn_Calendar";
-            this.btn_Calendar.Size = new System.Drawing.Size(230, 55);
+            this.btn_Calendar.Size = new System.Drawing.Size(226, 42);
             this.btn_Calendar.TabIndex = 28;
             this.btn_Calendar.Text = "Календарь";
             this.btn_Calendar.ToolTip = "Календарь";
@@ -257,13 +265,13 @@
             this.btn_delete.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_delete.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_delete.ImageOptions.Image")));
             this.btn_delete.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleRight;
-            this.btn_delete.Location = new System.Drawing.Point(2, 137);
+            this.btn_delete.Location = new System.Drawing.Point(2, 111);
             this.btn_delete.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
             this.btn_delete.Name = "btn_delete";
-            this.btn_delete.Size = new System.Drawing.Size(230, 55);
+            this.btn_delete.Size = new System.Drawing.Size(226, 42);
             this.btn_delete.TabIndex = 5;
             this.btn_delete.Text = "Удалить";
-            this.btn_delete.ToolTip = "Удалить";
+            this.btn_delete.ToolTip = "Удалить запись";
             this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
             // 
             // btn_edit
@@ -273,13 +281,13 @@
             this.btn_edit.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_edit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_edit.ImageOptions.Image")));
             this.btn_edit.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleRight;
-            this.btn_edit.Location = new System.Drawing.Point(2, 82);
+            this.btn_edit.Location = new System.Drawing.Point(2, 69);
             this.btn_edit.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
             this.btn_edit.Name = "btn_edit";
-            this.btn_edit.Size = new System.Drawing.Size(230, 55);
+            this.btn_edit.Size = new System.Drawing.Size(226, 42);
             this.btn_edit.TabIndex = 4;
             this.btn_edit.Text = "Изменить";
-            this.btn_edit.ToolTip = "Изменить";
+            this.btn_edit.ToolTip = "Изменить запись";
             this.btn_edit.Click += new System.EventHandler(this.btn_edit_Click);
             // 
             // btn_add
@@ -292,26 +300,77 @@
             this.btn_add.Location = new System.Drawing.Point(2, 27);
             this.btn_add.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
             this.btn_add.Name = "btn_add";
-            this.btn_add.Size = new System.Drawing.Size(230, 55);
+            this.btn_add.Size = new System.Drawing.Size(226, 42);
             this.btn_add.TabIndex = 0;
-            this.btn_add.Text = "Добавить";
-            this.btn_add.ToolTip = "Добавить";
+            this.btn_add.Text = "Добавить ";
+            this.btn_add.ToolTip = "Добавить запись";
             this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
             // groupDate
             // 
+            this.groupDate.Controls.Add(this.cmb_subunit);
+            this.groupDate.Controls.Add(this.cmb_season);
             this.groupDate.Controls.Add(this.windowsUIButtonPanel1);
             this.groupDate.Controls.Add(this.labelControl2);
             this.groupDate.Controls.Add(this.labelControl1);
             this.groupDate.Controls.Add(this.dEdit_end);
             this.groupDate.Controls.Add(this.dEdit_start);
-            this.groupDate.Controls.Add(this.cmb_season);
             this.groupDate.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupDate.Location = new System.Drawing.Point(234, 0);
+            this.groupDate.Location = new System.Drawing.Point(230, 0);
             this.groupDate.Name = "groupDate";
-            this.groupDate.Size = new System.Drawing.Size(1273, 69);
+            this.groupDate.Size = new System.Drawing.Size(1277, 69);
             this.groupDate.TabIndex = 25;
-            this.groupDate.Text = "Период отображения";
+            this.groupDate.Text = "Параметры отображения";
+            // 
+            // cmb_subunit
+            // 
+            this.cmb_subunit.EditValue = "";
+            this.cmb_subunit.Location = new System.Drawing.Point(505, 32);
+            this.cmb_subunit.Name = "cmb_subunit";
+            this.cmb_subunit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", "0", null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.cmb_subunit.Properties.NullText = "Выберите подразделение";
+            this.cmb_subunit.Size = new System.Drawing.Size(275, 28);
+            this.cmb_subunit.TabIndex = 32;
+            this.cmb_subunit.ToolTip = "Выбор подразделения для отображения";
+            // 
+            // cmb_season
+            // 
+            this.cmb_season.EditValue = "За месяц";
+            this.cmb_season.Location = new System.Drawing.Point(354, 32);
+            this.cmb_season.Name = "cmb_season";
+            this.cmb_season.Properties.Appearance.Options.UseTextOptions = true;
+            this.cmb_season.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.cmb_season.Properties.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.cmb_season.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.cmb_season.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.cmb_season.Properties.AppearanceDisabled.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.cmb_season.Properties.AppearanceDropDown.Options.UseTextOptions = true;
+            this.cmb_season.Properties.AppearanceDropDown.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.cmb_season.Properties.AppearanceDropDown.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.cmb_season.Properties.AppearanceFocused.Options.UseTextOptions = true;
+            this.cmb_season.Properties.AppearanceFocused.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.cmb_season.Properties.AppearanceFocused.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.cmb_season.Properties.AppearanceItemDisabled.Options.UseTextOptions = true;
+            this.cmb_season.Properties.AppearanceItemDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.cmb_season.Properties.AppearanceItemDisabled.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.cmb_season.Properties.AppearanceItemHighlight.Options.UseTextOptions = true;
+            this.cmb_season.Properties.AppearanceItemHighlight.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.cmb_season.Properties.AppearanceItemHighlight.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.cmb_season.Properties.AppearanceItemSelected.Options.UseTextOptions = true;
+            this.cmb_season.Properties.AppearanceItemSelected.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.cmb_season.Properties.AppearanceItemSelected.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.cmb_season.Properties.AppearanceReadOnly.Options.UseTextOptions = true;
+            this.cmb_season.Properties.AppearanceReadOnly.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.cmb_season.Properties.AppearanceReadOnly.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.cmb_season.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmb_season.Properties.Items.AddRange(new object[] {
+            "За месяц",
+            "За день"});
+            this.cmb_season.Size = new System.Drawing.Size(145, 28);
+            this.cmb_season.TabIndex = 27;
+            this.cmb_season.SelectedIndexChanged += new System.EventHandler(this.comboBoxEdit1_SelectedIndexChanged);
             // 
             // windowsUIButtonPanel1
             // 
@@ -324,7 +383,7 @@
             new DevExpress.XtraBars.Docking2010.WindowsUIButton("", true, windowsUIButtonImageOptions2, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "Обновить", -1, true, null, true, false, true, "0", -1, false),
             new DevExpress.XtraBars.Docking2010.WindowsUIButton("", true, windowsUIButtonImageOptions3, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "Вернуться на форму авторизации", -1, true, null, true, false, true, "1", -1, false)});
             this.windowsUIButtonPanel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.windowsUIButtonPanel1.Location = new System.Drawing.Point(1105, 27);
+            this.windowsUIButtonPanel1.Location = new System.Drawing.Point(1109, 27);
             this.windowsUIButtonPanel1.Name = "windowsUIButtonPanel1";
             this.windowsUIButtonPanel1.Size = new System.Drawing.Size(166, 40);
             this.windowsUIButtonPanel1.TabIndex = 5;
@@ -335,7 +394,7 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(174, 33);
+            this.labelControl2.Location = new System.Drawing.Point(180, 35);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(17, 22);
             this.labelControl2.TabIndex = 3;
@@ -343,7 +402,7 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(9, 33);
+            this.labelControl1.Location = new System.Drawing.Point(15, 35);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(8, 22);
             this.labelControl1.TabIndex = 2;
@@ -352,7 +411,7 @@
             // dEdit_end
             // 
             this.dEdit_end.EditValue = null;
-            this.dEdit_end.Location = new System.Drawing.Point(197, 30);
+            this.dEdit_end.Location = new System.Drawing.Point(203, 32);
             this.dEdit_end.Name = "dEdit_end";
             this.dEdit_end.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -365,7 +424,7 @@
             // dEdit_start
             // 
             this.dEdit_start.EditValue = null;
-            this.dEdit_start.Location = new System.Drawing.Point(23, 30);
+            this.dEdit_start.Location = new System.Drawing.Point(29, 32);
             this.dEdit_start.Name = "dEdit_start";
             this.dEdit_start.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -375,30 +434,16 @@
             this.dEdit_start.TabIndex = 0;
             this.dEdit_start.EditValueChanged += new System.EventHandler(this.dEdit_start_EditValueChanged);
             // 
-            // cmb_season
-            // 
-            this.cmb_season.EditValue = "За месяц";
-            this.cmb_season.Location = new System.Drawing.Point(348, 30);
-            this.cmb_season.Name = "cmb_season";
-            this.cmb_season.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmb_season.Properties.Items.AddRange(new object[] {
-            "За месяц",
-            "За день"});
-            this.cmb_season.Size = new System.Drawing.Size(178, 28);
-            this.cmb_season.TabIndex = 27;
-            this.cmb_season.SelectedIndexChanged += new System.EventHandler(this.comboBoxEdit1_SelectedIndexChanged);
-            // 
             // grid_total
             // 
             this.grid_total.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grid_total.Location = new System.Drawing.Point(234, 69);
+            this.grid_total.Location = new System.Drawing.Point(230, 69);
             this.grid_total.MainView = this.gridView_konstr;
             this.grid_total.Name = "grid_total";
             this.grid_total.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemMemoEdit1,
             this.repositoryItemTimeEdit1});
-            this.grid_total.Size = new System.Drawing.Size(1273, 544);
+            this.grid_total.Size = new System.Drawing.Size(1277, 508);
             this.grid_total.TabIndex = 26;
             this.grid_total.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView_konstr,
@@ -1189,7 +1234,7 @@
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1507, 613);
+            this.ClientSize = new System.Drawing.Size(1507, 577);
             this.Controls.Add(this.grid_total);
             this.Controls.Add(this.groupDate);
             this.Controls.Add(this.groupButton);
@@ -1207,11 +1252,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupDate)).EndInit();
             this.groupDate.ResumeLayout(false);
             this.groupDate.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cmb_subunit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmb_season.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dEdit_end.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dEdit_end.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dEdit_start.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dEdit_start.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmb_season.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid_total)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView_konstr)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).EndInit();
@@ -1288,5 +1334,6 @@
         private DevExpress.XtraEditors.SimpleButton btn_tabel;
         private DevExpress.XtraEditors.SimpleButton btn_report;
         private DevExpress.XtraEditors.SimpleButton btn_prices;
+        private DevExpress.XtraEditors.ComboBoxEdit cmb_subunit;
     }
 }

@@ -43,7 +43,7 @@
             this.txt_login.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_login.Location = new System.Drawing.Point(13, 20);
+            this.txt_login.Location = new System.Drawing.Point(13, 16);
             this.txt_login.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_login.Name = "txt_login";
             this.txt_login.Properties.Appearance.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -65,7 +65,7 @@
             this.txt_password.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_password.Location = new System.Drawing.Point(13, 58);
+            this.txt_password.Location = new System.Drawing.Point(13, 54);
             this.txt_password.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_password.Name = "txt_password";
             this.txt_password.Properties.Appearance.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -93,19 +93,19 @@
             this.btn_login.Appearance.Options.UseFont = true;
             this.btn_login.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_login.ImageOptions.Image")));
             this.btn_login.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleRight;
-            this.btn_login.Location = new System.Drawing.Point(13, 96);
+            this.btn_login.Location = new System.Drawing.Point(13, 92);
             this.btn_login.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_login.Name = "btn_login";
-            this.btn_login.Size = new System.Drawing.Size(243, 50);
+            this.btn_login.Size = new System.Drawing.Size(243, 42);
             this.btn_login.TabIndex = 2;
             this.btn_login.Text = "Войти";
             this.btn_login.Click += new System.EventHandler(this.btn_login_Click);
             // 
             // check_showPassword
             // 
-            this.check_showPassword.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("checkButton1.ImageOptions.Image")));
+            this.check_showPassword.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("check_showPassword.ImageOptions.Image")));
             this.check_showPassword.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.check_showPassword.Location = new System.Drawing.Point(228, 58);
+            this.check_showPassword.Location = new System.Drawing.Point(228, 54);
             this.check_showPassword.Name = "check_showPassword";
             this.check_showPassword.Size = new System.Drawing.Size(28, 28);
             this.check_showPassword.TabIndex = 3;
@@ -116,7 +116,7 @@
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(269, 160);
+            this.ClientSize = new System.Drawing.Size(269, 148);
             this.Controls.Add(this.check_showPassword);
             this.Controls.Add(this.btn_login);
             this.Controls.Add(this.txt_password);
