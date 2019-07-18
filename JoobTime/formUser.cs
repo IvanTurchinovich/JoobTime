@@ -124,50 +124,45 @@ namespace JoobTime
             }
             else if (status == "r")
             {
-                if (cmb_subunit.Text =="Мои записи")
-                {
-                    string comand = @"SELECT* FROM[total] join work on work.id_work = total.id_work
+                dtTotal = _sql.sql_dt(comandSelectBOSS(), "t1");
+                grid_total.DataSource = dtTotal;
+            }
+        }
+
+        public string comandSelectBOSS()
+        {
+            string comand = comand = @"SELECT* FROM[total] join work on work.id_work = total.id_work
                              WHERE [date]>='" + date_start + "'"
-                                + "AND [date]<='" + date_end + "'"
-                                + "AND id_tn=" + formLogin.id_tn;
-                    dtTotal = _sql.sql_dt(comand, "t1");
-                    grid_total.DataSource = dtTotal;
-                }
-                else if (cmb_subunit.Text == "Все")
+                               + "AND [date]<='" + date_end + "'"; ;
+            if (cmb_subunit.Text == "Мои записи")
+            {
+                comand += " AND id_tn=" + formLogin.id_tn;
+            }
+            else if (cmb_subunit.Text == "Все")
+            {
+                for (int i = 0; i < dtCmbBoxSubunit.Rows.Count; i++)
                 {
-                    string comand = @"SELECT* FROM[total] join work on work.id_work = total.id_work
-                             WHERE [date]>='" + date_start + "'"
-                                   + "AND [date]<='" + date_end + "'";
-                    for (int i = 0; i < dtCmbBoxSubunit.Rows.Count; i++)
+                    string idSubunitWorker = dtCmbBoxSubunit.Rows[i]["id_subunit"].ToString();
+                    if (!string.IsNullOrEmpty(idSubunitWorker) && idSubunitWorker != "")
                     {
-                        string idSubunitWorker = dtCmbBoxSubunit.Rows[i]["id_subunit"].ToString();
-                        if (!string.IsNullOrEmpty(idSubunitWorker) && idSubunitWorker != "")
+                        if (i == 0)
                         {
-                            if (i == 0)
-                            {
-                                comand += " AND( [id_subunit_worker]=" + idSubunitWorker;
-                            }
-                            else
-                            {
-                                comand += " OR [id_subunit_worker]=" + idSubunitWorker;
-                            }
+                            comand += " AND( [id_subunit_worker]=" + idSubunitWorker;
+                        }
+                        else
+                        {
+                            comand += " OR [id_subunit_worker]=" + idSubunitWorker;
                         }
                     }
-                    dtTotal = _sql.sql_dt(comand+")", "t1");
-                    grid_total.DataSource = dtTotal;
                 }
-                else
-                {
-                    string idSubunitWorker = _sql.linkToDt(dtCmbBoxSubunit, cmb_subunit.Text, "subunit", "id_subunit");
-                    string comand = @"SELECT* FROM[total] join work on work.id_work = total.id_work
-                             WHERE [date]>='" + date_start + "'"
-                                + "AND [date]<='" + date_end + "'"
-                                + "AND [id_subunit_worker]=" + idSubunitWorker;
-
-                    dtTotal = _sql.sql_dt(comand, "t1");
-                    grid_total.DataSource = dtTotal;
-                }
+                comand += ")";
             }
+            else
+            {
+                string idSubunitWorker = _sql.linkToDt(dtCmbBoxSubunit, cmb_subunit.Text, "subunit", "id_subunit");
+                comand += " AND [id_subunit_worker]=" + idSubunitWorker;
+            }
+            return comand;
         }
 
         public void load_dtCmbBoxSubunit()

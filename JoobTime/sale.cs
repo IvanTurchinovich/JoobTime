@@ -8,7 +8,6 @@ namespace JoobTime
 {
     public partial class sale : DevExpress.XtraEditors.XtraForm
     {
-
         public string id_sale;
         public string id_work_select;
         public string id_pres_form;
@@ -16,8 +15,7 @@ namespace JoobTime
         public string id_value;
         public string pres_form_name;
         public string work_name;
-        //public string difficulty_select;
-      //  public string work_sale;
+        
         public string select_subunit;
         public string select_IdSubunit;
         public string selected_worker_fio;
@@ -29,20 +27,19 @@ namespace JoobTime
         public DataTable dt_update_total_price;
         public DataTable dt_subunit_cmbBox;
         public DataTable dt_total_rep;
-        public DateTime de1;
-        public DateTime de2;
+        public DateTime de_start;
+        public DateTime de_end;
 
         Class_sql sql = new Class_sql();
         class_date date_edit_for_SQL = new class_date();
        
-
         public void get_time_dtEdit()
         {
             int countday = DateTime.DaysInMonth(DateTime.Today.Year, DateTime.Today.Month);
-            de1 = new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1);
-            de2 = new DateTime(DateTime.Today.Year, DateTime.Today.Month, countday);
-            dEdit_start.DateTime = de1;
-            dEdit_end.DateTime = de2;
+            de_start = new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1);
+            de_end = new DateTime(DateTime.Today.Year, DateTime.Today.Month, countday);
+            dEdit_start.DateTime = de_start;
+            dEdit_end.DateTime = de_end;
         }
 
         public void update_totalPrice()
@@ -86,52 +83,73 @@ namespace JoobTime
 
         public void grid_control_prices()
         {
-            string query = string.Format("select*from work where id_position=6");
-            string command = @"select DISTINCT work,
-            (select DISTINCT price from prices pr where difficulty=1 and pr.id_work=prices.id_work) pr1,
-            (select DISTINCT price from prices pr where difficulty=2 and pr.id_work=prices.id_work) pr2,
-            (select DISTINCT price from prices pr where difficulty=3 and pr.id_work=prices.id_work) pr3,
-            (select DISTINCT price from prices pr where difficulty=4 and pr.id_work=prices.id_work) pr4,
-            (select DISTINCT price from prices pr where difficulty=5 and pr.id_work=prices.id_work) pr5,
-            (select DISTINCT price from prices pr where difficulty=6 and pr.id_work=prices.id_work) pr6,
-            (select DISTINCT price from prices pr where difficulty=7 and pr.id_work=prices.id_work) pr7,
-            (select DISTINCT price from prices pr where difficulty=8 and pr.id_work=prices.id_work) pr8,
-            (select DISTINCT price from prices pr where difficulty=9 and pr.id_work=prices.id_work) pr9,
-            (select DISTINCT price from prices pr where difficulty=10 and pr.id_work=prices.id_work) pr10, work.id_work,
-            case when pay_type=0 then 'Почасовая' when pay_type=1 then 'По расценке' when pay_type=2 then 'Форма' end pay_type_for_user,pay_type
-            from work left join prices on prices.id_work=work.id_work join subunit on 
-			subunit.id_subunit=work.id_position where subunit='" + select_subunit +
-                            "' order by pay_type DESC, work asc";
-            gridControl1.DataSource = sql.bs_query(command, "t1");
+            if (select_subunit != "")
+            {
+                string command = @"select DISTINCT work,
+                                  (select DISTINCT price from prices pr where difficulty=1 and pr.id_work=prices.id_work) pr1,
+                                  (select DISTINCT price from prices pr where difficulty=2 and pr.id_work=prices.id_work) pr2,
+                                  (select DISTINCT price from prices pr where difficulty=3 and pr.id_work=prices.id_work) pr3,
+                                  (select DISTINCT price from prices pr where difficulty=4 and pr.id_work=prices.id_work) pr4,
+                                  (select DISTINCT price from prices pr where difficulty=5 and pr.id_work=prices.id_work) pr5,
+                                  (select DISTINCT price from prices pr where difficulty=6 and pr.id_work=prices.id_work) pr6,
+                                  (select DISTINCT price from prices pr where difficulty=7 and pr.id_work=prices.id_work) pr7,
+                                  (select DISTINCT price from prices pr where difficulty=8 and pr.id_work=prices.id_work) pr8,
+                                  (select DISTINCT price from prices pr where difficulty=9 and pr.id_work=prices.id_work) pr9,
+                                  (select DISTINCT price from prices pr where difficulty=10 and pr.id_work=prices.id_work) pr10, work.id_work,
+                                  case when pay_type=0 then 'Почасовая' when pay_type=1 then 'По расценке' when pay_type=2 then 'Форма' end pay_type_for_user,pay_type
+                                  from work left join prices on prices.id_work=work.id_work join subunit on 
+			                      subunit.id_subunit=work.id_position where subunit='" + select_subunit + "' order by pay_type DESC, work asc";
+                gridControl1.DataSource = sql.bs_query(command, "t1");
+            }
         }
         
         public void grid_control_total()
         {
-            string query;
             if (string.IsNullOrEmpty(select_subunit))
             {
                 return;
             }
-            else if (select_subunit == "Все")
-            {
-                query = @"select*from total where [date]>={d'" + date_edit_for_SQL.convert(de1) + "'} AND [date]<={d'" + date_edit_for_SQL.convert(de2) + "'}";
-            }
-         //   @"SELECT * FROM [total] join work on work.id_work=total.id_work
-          //           WHERE  [date]>={d'" + ReportGenerating.de1_2 + "'}"
-          //                 + "AND [date]<={d'" + ReportGenerating.de2_2 + "'}";
             else 
-            {                
-                query = @"select*from total where id_subunit_worker=" + select_IdSubunit+ "and [date]>={d'" + date_edit_for_SQL.convert(de1) + "'} AND [date]<={d'" + date_edit_for_SQL.convert(de2) + "'}"; 
-            }            
-            
-            DataTable dt_1 = new DataTable();
-            dt_total_rep= sql.sql_dt(query, "t1"); 
-            gridControl3.DataSource = sql.sql_dt(query, "t1");
+            {
+                dt_total_rep = sql.sql_dt(comandSelectBOSS(), "t1");
+                gridControl3.DataSource = dt_total_rep;
+            }
+        }
+
+        public string comandSelectBOSS()
+        {
+            string comand = comand = @"SELECT* FROM[total] join work on work.id_work = total.id_work
+                             WHERE [date]>='" + de_start + "'"
+                               + "AND [date]<='" + de_end + "'"; ;
+            if (select_subunit == "Все")
+            {
+                for (int i = 0; i < dt_subunit_cmbBox.Rows.Count; i++)
+                {
+                    string idSubunitWorker = dt_subunit_cmbBox.Rows[i]["id_subunit"].ToString();
+                    if (!string.IsNullOrEmpty(idSubunitWorker) && idSubunitWorker != "")
+                    {
+                        if (i == 0)
+                        {
+                            comand += " AND( [id_subunit_worker]=" + idSubunitWorker;
+                        }
+                        else
+                        {
+                            comand += " OR [id_subunit_worker]=" + idSubunitWorker;
+                        }
+                    }
+                }
+                comand += ")";
+            }
+            else
+            {
+                comand += " AND [id_subunit_worker]=" + select_IdSubunit;
+            }
+            return comand;
         }
 
         private void sale_Load(object sender, EventArgs e)
         {
-            cmb_subunit();
+            cmbSubunit_load();
             get_time_dtEdit();
             grid_control_total();
             grid_control_prices();
@@ -261,58 +279,69 @@ namespace JoobTime
 
         private void dateEdit1_EditValueChanged(object sender, EventArgs e)
         {
-            de1 = dEdit_start.DateTime;
+            de_start = dEdit_start.DateTime;
             set_worker();
         }
 
         private void dateEdit2_EditValueChanged(object sender, EventArgs e)
         {
-            de2 = dEdit_end.DateTime;
+            de_end = dEdit_end.DateTime;
             set_worker();
         }
-
-        public void cmb_subunit()
+        
+        public void cmbSubunit_load()
         {
-            string comand = string.Format("select [subunit] from catalog_position where id_tn={0}", Convert.ToInt32(formLogin.id_tn));
-            dt_subunit_cmbBox = sql.sql_dt(comand, "cp");           
-            if (formLogin.id_tn == "1047" || formLogin.id_tn == "0002")
+            string comand = "select cp.subunit,sb.id_subunit from catalog_position cp left join subunit sb on sb.subunit = cp.subunit where id_tn =" + formLogin.id_tn;
+            dt_subunit_cmbBox = sql.sql_dt(comand, "t1");
+            foreach (DataRow row in dt_subunit_cmbBox.Rows)
             {
-                //add_row_in_Subunit("Все");
-                lUp_subunit.Properties.DisplayMember = "subunit";
-                lUp_subunit.Properties.DataSource = dt_subunit_cmbBox;              
-            }
-            else
-            {
-                lUp_subunit.Properties.DisplayMember = "subunit";
                 lUp_subunit.Properties.DataSource = dt_subunit_cmbBox;
-            }            
-            select_idSubunit();
-        }
-
-        public void add_row_in_Subunit(string subunit)
-        {
-            DataRow tt = dt_subunit_cmbBox.NewRow();
-            tt["subunit"] = subunit;
-            dt_subunit_cmbBox.Rows.Add(tt);
-        }
-
-        public void select_idSubunit()
-        {
-            if (string.IsNullOrEmpty(select_subunit))
-            {
-                return;
             }
-            else if (select_subunit == "Все")
-            {
-                select_IdSubunit = "0";                
-            }
-            else 
-            {
-                var comand = "select [id_subunit] from subunit where subunit='" + select_subunit + "'";
-                select_IdSubunit = sql.sql_dt(comand, "t1").Rows[0][0].ToString();
-            }
-
+            lUp_subunit.Text = Properties.Settings_WD.Default.subunit;
         }
+        
+        //public void cmb_subunit()
+        //{
+        //    string comand = string.Format("select [subunit] from catalog_position where id_tn={0}", Convert.ToInt32(formLogin.id_tn));
+        //    dt_subunit_cmbBox = sql.sql_dt(comand, "cp");           
+        //    if (formLogin.id_tn == "1047" || formLogin.id_tn == "0002")
+        //    {
+        //        //add_row_in_Subunit("Все");
+        //        lUp_subunit.Properties.DisplayMember = "subunit";
+        //        lUp_subunit.Properties.DataSource = dt_subunit_cmbBox;              
+        //    }
+        //    else
+        //    {
+        //        lUp_subunit.Properties.DisplayMember = "subunit";
+        //        lUp_subunit.Properties.DataSource = dt_subunit_cmbBox;
+        //    }            
+        //    select_idSubunit();
+        //}
+
+        //public void add_row_in_Subunit(string subunit)
+        //{
+        //    DataRow tt = dt_subunit_cmbBox.NewRow();
+        //    tt["subunit"] = subunit;
+        //    dt_subunit_cmbBox.Rows.Add(tt);
+        //}
+
+        //public void select_idSubunit()
+        //{
+        //    if (string.IsNullOrEmpty(select_subunit))
+        //    {
+        //        return;
+        //    }
+        //    else if (select_subunit == "Все")
+        //    {
+        //        select_IdSubunit = "0";                
+        //    }
+        //    else 
+        //    {
+        //        var comand = "select [id_subunit] from subunit where subunit='" + select_subunit + "'";
+        //        select_IdSubunit = sql.sql_dt(comand, "t1").Rows[0][0].ToString();
+        //    }
+
+        //}
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
@@ -329,14 +358,13 @@ namespace JoobTime
                         grid_control_prices();
                         break;
                     }
-
             }
         }
             
         private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
         {
-            select_subunit = lUp_subunit.Text;
-            select_idSubunit();
+            select_subunit = lUp_subunit.GetColumnValue("subunit").ToString();
+            select_IdSubunit = lUp_subunit.GetColumnValue("id_subunit").ToString();
         }
 
         private void simpleButton3_Click(object sender, EventArgs e)
@@ -362,8 +390,8 @@ namespace JoobTime
             }
             else
             {
-                ReportGenerating.startDate = date_edit_for_SQL.convert(de1);
-                ReportGenerating.endDate = date_edit_for_SQL.convert(de2);
+                ReportGenerating.startDate = date_edit_for_SQL.convert(de_start);
+                ReportGenerating.endDate = date_edit_for_SQL.convert(de_end);
 
                 set_worker();
                 string type_report = type_reports_cmbBox.Text;
