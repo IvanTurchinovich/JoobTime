@@ -124,15 +124,49 @@ namespace JoobTime
             }
             else if (status == "r")
             {
-
-                string idSubunitWorker = _sql.linkToDt(dtCmbBoxSubunit,cmb_subunit.Text,"subunit","id_subunit");
-                string comand = @"SELECT* FROM[total] join work on work.id_work = total.id_work
+                if (cmb_subunit.Text =="Мои записи")
+                {
+                    string comand = @"SELECT* FROM[total] join work on work.id_work = total.id_work
                              WHERE [date]>='" + date_start + "'"
-                            + "AND [date]<='" + date_end + "'"
-                            + "AND [id_subunit_worker]=" + idSubunitWorker;
+                                + "AND [date]<='" + date_end + "'"
+                                + "AND id_tn=" + formLogin.id_tn;
+                    dtTotal = _sql.sql_dt(comand, "t1");
+                    grid_total.DataSource = dtTotal;
+                }
+                else if (cmb_subunit.Text == "Все")
+                {
+                    string comand = @"SELECT* FROM[total] join work on work.id_work = total.id_work
+                             WHERE [date]>='" + date_start + "'"
+                                   + "AND [date]<='" + date_end + "'";
+                    for (int i = 0; i < dtCmbBoxSubunit.Rows.Count; i++)
+                    {
+                        string idSubunitWorker = dtCmbBoxSubunit.Rows[i]["id_subunit"].ToString();
+                        if (!string.IsNullOrEmpty(idSubunitWorker) && idSubunitWorker != "")
+                        {
+                            if (i == 0)
+                            {
+                                comand += " AND( [id_subunit_worker]=" + idSubunitWorker;
+                            }
+                            else
+                            {
+                                comand += " OR [id_subunit_worker]=" + idSubunitWorker;
+                            }
+                        }
+                    }
+                    dtTotal = _sql.sql_dt(comand+")", "t1");
+                    grid_total.DataSource = dtTotal;
+                }
+                else
+                {
+                    string idSubunitWorker = _sql.linkToDt(dtCmbBoxSubunit, cmb_subunit.Text, "subunit", "id_subunit");
+                    string comand = @"SELECT* FROM[total] join work on work.id_work = total.id_work
+                             WHERE [date]>='" + date_start + "'"
+                                + "AND [date]<='" + date_end + "'"
+                                + "AND [id_subunit_worker]=" + idSubunitWorker;
 
-                dtTotal = _sql.sql_dt(comand, "t1");
-                grid_total.DataSource = dtTotal;
+                    dtTotal = _sql.sql_dt(comand, "t1");
+                    grid_total.DataSource = dtTotal;
+                }
             }
         }
 
@@ -238,6 +272,12 @@ namespace JoobTime
                 windowsUIButtonPanel1.Buttons[0].Properties.Checked = false;
                 Properties.Settings_WD.Default.isForm = false;
             }
+            if (status == "s")
+            {
+                grid.Columns["FIO"].Visible = false;
+                grid.Columns["position"].Visible = false;
+                grid.Columns["subunit"].Visible = false;
+            }
         }
 
         private void windowsUIButtonPanel1_ButtonChecked(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
@@ -290,7 +330,7 @@ namespace JoobTime
 
         private void groupButton_CustomButtonChecked(object sender, DevExpress.XtraBars.Docking2010.BaseButtonEventArgs e)
         {
-            groupButton.Size = new Size(42, 613);
+            groupButton.Size = new Size(44, 613);
             groupButton.CustomHeaderButtons[0].Properties.Image = Properties.Resources.forward_16x16;
             groupButton.CustomHeaderButtons[0].Properties.Checked = true;
             groupButton.Text = "      ";
@@ -311,5 +351,9 @@ namespace JoobTime
             groupColumnData(false);
         }
 
+        private void cmb_subunit_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

@@ -172,9 +172,7 @@ namespace JoobTime
             tmEdt_start.TimeSpan = tmEdt_end.TimeSpan;
             tmEdt_end.EditValue = null;
         }
-
         
-
         public void loadTextControl(string addEdit)
         {
             switch (addEdit)
@@ -259,17 +257,18 @@ namespace JoobTime
             string id_work = lUp_work.GetColumnValue("id_work").ToString();
             string other = memoOther.Text;
 
-            string comand = string.Format(@"UPDATE [dbo].[total]
-                                                 SET  [subunit] =    '{0}'
-                                                     ,[id_work] =     {1}
-                                                     ,[work] =       '{2}'
-                                                     ,[date] =       '{3}'
-                                                     ,[time_begin] = '{4}'
-                                                     ,[time_end] =   '{5}'
-                                                     ,[other] =      '{6}'
-                                                     ,[add_time] =   '{7}'
-                                                     ,[time_span] =  '{8}'
-                                               WHERE id=              {9}", subunit, id_work, work, date, time_start, time_end, other, time_add, time_span, total_id);
+            string comand = comandUpdate(subunit, id_work, work, date, time_start, time_end, other, time_add, time_span, total_id);
+                //string.Format(@"UPDATE [dbo].[total]
+                //                                 SET  [subunit] =    '{0}'
+                //                                     ,[id_work] =     {1}
+                //                                     ,[work] =       '{2}'
+                //                                     ,[date] =       '{3}'
+                //                                     ,[time_begin] = '{4}'
+                //                                     ,[time_end] =   '{5}'
+                //                                     ,[other] =      '{6}'
+                //                                     ,[add_time] =   '{7}'
+                //                                     ,[time_span] =  '{8}'
+                //                               WHERE id=              {9}", subunit, id_work, work, date, time_start, time_end, other, time_add, time_span, total_id);
             if (_Sql.UpdateComand(comand))
             {
                 XtraMessageBox.Show("Запись успешно изменена.", "Изменение записи");
@@ -476,19 +475,19 @@ namespace JoobTime
             lUp_numberForm.Visible = false;
             labelControl7.Visible = false;
             labelControl8.Visible = false;
-            MaximumSize = new System.Drawing.Size(this.MaximumSize.Width, 525);
+            MaximumSize = new System.Drawing.Size(this.MaximumSize.Width, 510);
             switch (nameView)
             {
                 case "PBView":
                     lUp_object.Visible = true;
                     labelControl7.Visible = true;
-                    MaximumSize = new System.Drawing.Size(this.MaximumSize.Width, 565);
+                    MaximumSize = new System.Drawing.Size(this.MaximumSize.Width, 550);
                     MinimumSize = new System.Drawing.Size(MinimumSize.Width, MaximumSize.Height);
                     break;
                 case "gridView_konstr":
                     lUp_numberForm.Visible = true;
                     labelControl8.Visible = true;
-                    MaximumSize = new System.Drawing.Size(this.MaximumSize.Width, 565);
+                    MaximumSize = new System.Drawing.Size(this.MaximumSize.Width, 550);
                     MinimumSize = new System.Drawing.Size(MinimumSize.Width, MaximumSize.Height);
                     lUp_numberForm.Location = new System.Drawing.Point(172, 35);
                     labelControl8.Location = new System.Drawing.Point(6, 39);
@@ -568,7 +567,7 @@ namespace JoobTime
 
         private void btn_add_Click(object sender, EventArgs e)
         {
-            if (lUp_subunit.Text != "" && lUp_work.Text != "" && tmEdt_end.Text != "" && tmEdt_start.Text != "" && tmEdt_start.TimeSpan < tmEdt_end.TimeSpan && date_AddRecord.Text != "")
+            if (lUp_subunit.Text != "" && lUp_work.Text != "" && tmEdt_end.Text != "" && tmEdt_start.Text != "" && tmEdt_start.TimeSpan < tmEdt_end.TimeSpan && date_AddRecord.Text != "" && memoOther.Text!="")
             {
                 if (caption_f == "Добавить")
                 {

@@ -14,10 +14,10 @@
   <save_pf>ВФ 141</save_pf>
   <save_obj>
   </save_obj>
-  <save_work_name>Аппаратно-программная поддержка</save_work_name>
-  <save_other>Настройка TeamRender Client на ПК в штабе строительства, настройка TeamViewer на ПК в штабе строительства(переключение проводов в свитче и изменение параметров доступа)</save_other>
+  <save_work_name>Обучение</save_work_name>
+  <save_other>Изучение информации по компонентам DevExpress </save_other>
   <groupExpand>True</groupExpand>
-  <add_size_h>525</add_size_h>
+  <add_size_h>550</add_size_h>
   <add_size_w>618</add_size_w>
-  <gridName>gridView_konstr</gridName>
+  <gridName>gridView1</gridName>
 </Settings>
