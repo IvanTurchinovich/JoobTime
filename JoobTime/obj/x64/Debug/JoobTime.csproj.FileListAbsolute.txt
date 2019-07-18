@@ -147,3 +147,4 @@ C:\Users\tig\source\repos\JoobTime\JoobTime\bin\x64\Debug\de\DevExpress.XtraPivo
 C:\Users\tig\source\repos\JoobTime\JoobTime\bin\x64\Debug\es\DevExpress.XtraPivotGrid.v18.1.resources.dll
 C:\Users\tig\source\repos\JoobTime\JoobTime\bin\x64\Debug\ja\DevExpress.XtraPivotGrid.v18.1.resources.dll
 C:\Users\tig\source\repos\JoobTime\JoobTime\bin\x64\Debug\ru\DevExpress.XtraPivotGrid.v18.1.resources.dll
+C:\Users\tig\source\repos\JoobTime\JoobTime\obj\x64\Debug\JoobTime.tabel.resources

@@ -355,5 +355,11 @@ namespace JoobTime
         {
             
         }
+
+        private void btn_tabel_Click(object sender, EventArgs e)
+        {
+            tabel tb = new tabel(cmb_subunit.Text, dEdit_start.DateTime);
+            tb.ShowDialog();
+        }
     }
 }
