@@ -353,13 +353,19 @@ namespace JoobTime
 
         private void cmb_subunit_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            load_dtTotal();
         }
 
         private void btn_tabel_Click(object sender, EventArgs e)
         {
             tabel tb = new tabel(cmb_subunit.Text, dEdit_start.DateTime);
             tb.ShowDialog();
+        }
+
+        private void btn_prices_Click(object sender, EventArgs e)
+        {
+            sale formSale = new sale();
+            formSale.Show();
         }
     }
 }

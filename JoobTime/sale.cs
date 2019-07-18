@@ -1,0 +1,425 @@
+﻿using System;
+using System.Windows.Forms;
+using System.Data;
+using System.Linq;
+using DevExpress.XtraEditors;
+
+namespace JoobTime
+{
+    public partial class sale : DevExpress.XtraEditors.XtraForm
+    {
+
+        public string id_sale;
+        public string id_work_select;
+        public string id_pres_form;
+        public string id_date_now;
+        public string id_value;
+        public string pres_form_name;
+        public string work_name;
+        //public string difficulty_select;
+      //  public string work_sale;
+        public string select_subunit;
+        public string select_IdSubunit;
+        public string selected_worker_fio;
+        public string selected_worker_id;
+        public string pay_type;
+
+        public DataTable table_sale_difficult;
+        public DataTable dt_pricesForPayment; 
+        public DataTable dt_update_total_price;
+        public DataTable dt_subunit_cmbBox;
+        public DataTable dt_total_rep;
+        public DateTime de1;
+        public DateTime de2;
+
+        Class_sql sql = new Class_sql();
+        class_date date_edit_for_SQL = new class_date();
+       
+
+        public void get_time_dtEdit()
+        {
+            int countday = DateTime.DaysInMonth(DateTime.Today.Year, DateTime.Today.Month);
+            de1 = new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1);
+            de2 = new DateTime(DateTime.Today.Year, DateTime.Today.Month, countday);
+            dEdit_start.DateTime = de1;
+            dEdit_end.DateTime = de2;
+        }
+
+        public void update_totalPrice()
+        {
+            for (int i = 0; i < dt_update_total_price.Rows.Count; i++)
+            {
+                //dt_update_total_price;
+                string difficult = dt_update_total_price.Rows[i]["difficult"].ToString();
+                string price = dt_update_total_price.Rows[i]["price"].ToString();
+                string id = dt_update_total_price.Rows[i]["id_total"].ToString();
+                var comand = "update total set difficult=" + difficult + ", payment=" + price.Replace(',', '.') + " where id=" + id;
+                sql.update_comand(comand);
+            }
+        }
+
+        private void init_dt_update_total_price()
+        {
+            dt_update_total_price = new DataTable();
+            dt_update_total_price.Columns.Add("id_total");
+            dt_update_total_price.Columns.Add("difficult");
+            dt_update_total_price.Columns.Add("price");
+        }
+
+        public void add_row_in_dt_update_total_price(string id, string difficult, string price)
+        {
+            DataRow new_row = dt_update_total_price.NewRow();
+            new_row["id_total"] = id;
+            new_row["difficult"] = difficult;
+            new_row["price"] = price;
+            if (string.IsNullOrEmpty(price) || price.Equals("0"))
+                return;
+            dt_update_total_price.Rows.Add(new_row);
+        }
+
+        public sale()
+        {
+            InitializeComponent();                            
+            init_dt_update_total_price();
+            load_dtPricesForPayment();
+        }
+
+        public void grid_control_prices()
+        {
+            string query = string.Format("select*from work where id_position=6");
+            string command = @"select DISTINCT work,
+            (select DISTINCT price from prices pr where difficulty=1 and pr.id_work=prices.id_work) pr1,
+            (select DISTINCT price from prices pr where difficulty=2 and pr.id_work=prices.id_work) pr2,
+            (select DISTINCT price from prices pr where difficulty=3 and pr.id_work=prices.id_work) pr3,
+            (select DISTINCT price from prices pr where difficulty=4 and pr.id_work=prices.id_work) pr4,
+            (select DISTINCT price from prices pr where difficulty=5 and pr.id_work=prices.id_work) pr5,
+            (select DISTINCT price from prices pr where difficulty=6 and pr.id_work=prices.id_work) pr6,
+            (select DISTINCT price from prices pr where difficulty=7 and pr.id_work=prices.id_work) pr7,
+            (select DISTINCT price from prices pr where difficulty=8 and pr.id_work=prices.id_work) pr8,
+            (select DISTINCT price from prices pr where difficulty=9 and pr.id_work=prices.id_work) pr9,
+            (select DISTINCT price from prices pr where difficulty=10 and pr.id_work=prices.id_work) pr10, work.id_work,
+            case when pay_type=0 then 'Почасовая' when pay_type=1 then 'По расценке' when pay_type=2 then 'Форма' end pay_type_for_user,pay_type
+            from work left join prices on prices.id_work=work.id_work join subunit on 
+			subunit.id_subunit=work.id_position where subunit='" + select_subunit +
+                            "' order by pay_type DESC, work asc";
+            gridControl1.DataSource = sql.bs_query(command, "t1");
+        }
+        
+        public void grid_control_total()
+        {
+            string query;
+            if (string.IsNullOrEmpty(select_subunit))
+            {
+                return;
+            }
+            else if (select_subunit == "Все")
+            {
+                query = @"select*from total where [date]>={d'" + date_edit_for_SQL.convert(de1) + "'} AND [date]<={d'" + date_edit_for_SQL.convert(de2) + "'}";
+            }
+         //   @"SELECT * FROM [total] join work on work.id_work=total.id_work
+          //           WHERE  [date]>={d'" + ReportGenerating.de1_2 + "'}"
+          //                 + "AND [date]<={d'" + ReportGenerating.de2_2 + "'}";
+            else 
+            {                
+                query = @"select*from total where id_subunit_worker=" + select_IdSubunit+ "and [date]>={d'" + date_edit_for_SQL.convert(de1) + "'} AND [date]<={d'" + date_edit_for_SQL.convert(de2) + "'}"; 
+            }            
+            
+            DataTable dt_1 = new DataTable();
+            dt_total_rep= sql.sql_dt(query, "t1"); 
+            gridControl3.DataSource = sql.sql_dt(query, "t1");
+        }
+
+        private void sale_Load(object sender, EventArgs e)
+        {
+            cmb_subunit();
+            get_time_dtEdit();
+            grid_control_total();
+            grid_control_prices();
+            enable_button(xtraTabControl1.SelectedTabPageIndex);
+        }
+
+        public void enable_button(int active_tab_page)
+        {
+            switch (active_tab_page)
+            {
+                case 0:
+                    btn_update.Enabled = true;
+                    btn_renull.Enabled = true;
+                    btn_prices.Enabled = true;
+                    btn_print.Enabled = true;
+                    btn_update_prices.Enabled = false;
+                    dEdit_start.Enabled = true;
+                    dEdit_end.Enabled = true;
+                    type_reports_cmbBox.Enabled = true;
+                    worker_cmbBox.Enabled = true;
+                    lUp_subunit.Enabled = true;
+                    break;
+                case 1:
+                    btn_update.Enabled = false;
+                    btn_renull.Enabled = false;
+                    btn_prices.Enabled = false;
+                    btn_print.Enabled = false;
+                    btn_update_prices.Enabled = true;
+                    dEdit_start.Enabled = false;
+                    dEdit_end.Enabled = false;
+                    type_reports_cmbBox.Enabled = false;
+                    worker_cmbBox.Enabled = false;
+                    lUp_subunit.Enabled = false;
+                    break;
+            }
+        }
+
+        public string load_WorkSale(string difficulty_select)
+        {
+            if (difficulty_select != string.Empty && difficulty_select != "0" && difficulty_select != "")
+            {
+                //var comand = "select [price],[pay_type] from prices where id_work =" + id_work_select + " and difficulty=" + difficulty_select;
+                //table_sale_difficult = sql.sql_dt(comand, "t1");
+                var price = from DataRow row in dt_pricesForPayment.Rows
+                            where row["id_work"].ToString() == id_work_select && row["difficulty"].ToString() == difficulty_select
+                            select row ;
+             
+                if (price.Count()!=0)
+                {
+                    DataRow row_price = price.ElementAt(0);
+                    pay_type = row_price["pay_type"].ToString();
+                    return row_price["price"].ToString();
+                }
+                else
+                {
+                    return "";
+                }
+            }
+            else
+            {
+                return "";
+            }
+        }
+
+        public void load_dtPricesForPayment()
+        {
+            dt_pricesForPayment = sql.sql_dt("select*from prices", "t1");
+        }
+
+        public string sale_to_gridView(string sale)
+        {
+            if (sale != "" && sale != "0" && pay_type == "0")
+            {
+                string time = gridView3.GetFocusedRowCellValue("time_span").ToString();
+                double time_h = TimeSpan.Parse(time).TotalHours;
+                sale = (time_h * double.Parse(sale)).ToString();
+                sale = Math.Round(double.Parse(sale), 2, MidpointRounding.AwayFromZero).ToString();
+                gridView3.SetFocusedRowCellValue("payment", sale);
+                return sale;
+            }
+            else
+            {
+                gridView3.SetFocusedRowCellValue("payment", sale);
+                return null;
+            }
+        }
+
+        private void gridView3_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            if (e.Column.FieldName != "difficult")
+                return;
+            id_work_select = gridView3.GetFocusedRowCellValue("id_work").ToString();
+            string difficulty_select = gridView3.GetFocusedRowCellValue("difficult").ToString();
+            string sale = load_WorkSale(difficulty_select);
+
+            string work_sale = sale_to_gridView(sale);
+            add_row_in_dt_update_total_price(gridView3.GetFocusedRowCellValue("id").ToString(), difficulty_select, work_sale );
+            return;
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            if (select_IdSubunit == "5")
+            {
+                set_price3Dmodels();
+            }
+            update_totalPrice();
+        }
+
+        public void set_price3Dmodels()
+        {
+            DataTable dtUserSubunit = sql.sql_dt("select id_tn, category from worker where id_subunit=5", "t1");
+            for (int i = 0; i < gridView3.RowCount; i++)
+            {
+                string id_tn = gridView3.GetRowCellValue(i, "id_tn").ToString();
+                var category = from  DataRow row in dtUserSubunit.Rows
+                             where row["id_tn"].ToString()==id_tn
+                             select row["category"];
+                string difficult = category.ElementAt(0).ToString();
+                gridView3.SetRowCellValue(i,"difficult", difficult);
+                gridView3.FocusedRowHandle = i;
+                //string work_sale = load_WorkSale(difficult);
+                //sale_to_gridView(work_sale);
+                //add_row_in_dt_update_total_price(gridView3.GetFocusedRowCellValue("id").ToString(), difficult, work_sale);
+            }
+        }
+
+        private void dateEdit1_EditValueChanged(object sender, EventArgs e)
+        {
+            de1 = dEdit_start.DateTime;
+            set_worker();
+        }
+
+        private void dateEdit2_EditValueChanged(object sender, EventArgs e)
+        {
+            de2 = dEdit_end.DateTime;
+            set_worker();
+        }
+
+        public void cmb_subunit()
+        {
+            string comand = string.Format("select [subunit] from catalog_position where id_tn={0}", Convert.ToInt32(formLogin.id_tn));
+            dt_subunit_cmbBox = sql.sql_dt(comand, "cp");           
+            if (formLogin.id_tn == "1047" || formLogin.id_tn == "0002")
+            {
+                //add_row_in_Subunit("Все");
+                lUp_subunit.Properties.DisplayMember = "subunit";
+                lUp_subunit.Properties.DataSource = dt_subunit_cmbBox;              
+            }
+            else
+            {
+                lUp_subunit.Properties.DisplayMember = "subunit";
+                lUp_subunit.Properties.DataSource = dt_subunit_cmbBox;
+            }            
+            select_idSubunit();
+        }
+
+        public void add_row_in_Subunit(string subunit)
+        {
+            DataRow tt = dt_subunit_cmbBox.NewRow();
+            tt["subunit"] = subunit;
+            dt_subunit_cmbBox.Rows.Add(tt);
+        }
+
+        public void select_idSubunit()
+        {
+            if (string.IsNullOrEmpty(select_subunit))
+            {
+                return;
+            }
+            else if (select_subunit == "Все")
+            {
+                select_IdSubunit = "0";                
+            }
+            else 
+            {
+                var comand = "select [id_subunit] from subunit where subunit='" + select_subunit + "'";
+                select_IdSubunit = sql.sql_dt(comand, "t1").Rows[0][0].ToString();
+            }
+
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            switch (xtraTabControl1.SelectedTabPage.Name)
+            {
+                case "xtraTabPage1":
+                    {
+                        grid_control_total();
+                        set_worker();
+                        break;
+                    }
+                case "xtraTabPage2":
+                    {
+                        grid_control_prices();
+                        break;
+                    }
+
+            }
+        }
+            
+        private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            select_subunit = lUp_subunit.Text;
+            select_idSubunit();
+        }
+
+        private void simpleButton3_Click(object sender, EventArgs e)
+        {
+            set_price_zero();
+            grid_control_total();
+        }
+
+        public void set_price_zero()
+        {
+            string id_total=gridView3.GetFocusedRowCellValue("id").ToString();
+            string payment = "null";
+            string difficult = "null";
+            var comand = @"update total set payment=" + payment + " ,difficult=" + difficult + " where id=" + id_total;
+            sql.update_comand(comand);
+        }
+
+        private void simpleButton10_Click(object sender, EventArgs e)
+        {
+            if (type_reports_cmbBox.Text == "" || string.IsNullOrEmpty(type_reports_cmbBox.Text))
+            {
+                XtraMessageBox.Show("Выберите тип отчета","Внимание");
+            }
+            else
+            {
+                ReportGenerating.startDate = date_edit_for_SQL.convert(de1);
+                ReportGenerating.endDate = date_edit_for_SQL.convert(de2);
+
+                set_worker();
+                string type_report = type_reports_cmbBox.Text;
+                ReportGenerating rg = new ReportGenerating();
+                rg.Createreport(Convert.ToInt32(select_IdSubunit), dt_total_rep, type_report, selected_worker_id, selected_worker_fio);
+            }
+        }
+
+        public void set_worker()
+        {
+           worker_cmbBox.Items.Clear();
+           worker_cmbBox.Items.AddRange(load_worker_tocmb_box().AsEnumerable().Select(r => r.Field<string>("FIO")).ToArray());
+        }
+
+        public DataTable load_worker_tocmb_box()
+        {
+            Class_sql sql = new Class_sql();
+            var comand = @"select tabel.id_tn, ttime,concat(Last_name,' ',First_name,' ',Second_name) FIO,position from tabel join worker on tabel.id_tn=worker.id_tn join Position on worker.id_Position=Position.id_position where (select id_Subunit from subunit where subunit='" +
+                lUp_subunit.Text + "') =id_Subunit and" + " tdate between '" + dEdit_start.DateTime.ToString("yyyy-MM-01") +
+                "' and '" + dEdit_start.DateTime.ToString("yyyy-MM-" + DateTime.DaysInMonth(dEdit_start.DateTime.Year, dEdit_start.DateTime.Month)) + "'";            
+           return sql.sql_dt(comand, "table");
+        }
+
+        private void worker_cmbBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            selected_worker_fio = worker_cmbBox.Text;
+            selected_worker_id = sql.sql_dt("select [id_tn] from worker where concat(Last_name,' ',First_name,' ',Second_name)='" + selected_worker_fio+"'", "t1").Rows[0][0].ToString();
+
+        }
+
+        private void xtraTabControl1_SelectedPageChanged(object sender, DevExpress.XtraTab.TabPageChangedEventArgs e)
+        {
+            enable_button(xtraTabControl1.SelectedTabPageIndex);
+        }
+
+        private void prices_update_btn_Click(object sender, EventArgs e)
+        {
+            //for (int i = 0; i < gridView1.RowCount; i++)
+            //{
+            //    string id_work = gridView1.GetRowCellValue(i, "id_work").ToString();
+            //    for (int j = 1;j <= 10; j++)
+            //    {
+            //        string price = gridView1.GetRowCellValue(i, "pr" +j.ToString()).ToString();
+            //        if (price == "" || string.IsNullOrEmpty(price))
+            //        {
+            //            break;
+            //        }
+            //        else
+            //        {
+            //            string comand = "update prices set price="+price+" where id_work="+id_work+" and difficulty="+j;
+            //            sql.update_comand(comand);
+            //        }
+            //    }
+            //}
+
+
+        }
+    }
+}
