@@ -534,5 +534,55 @@ namespace JoobTime
             return check;
         }
 
+        public void priceOPRPWithOvertime()
+        {
+            //DataTable dtOPRP = dt_total_rep;
+            //for (int = 0; i < dtOPRP.Rows.Count; i++)
+            //{
+
+            //}
+        }
+
+        private void simpleButton1_Click_1(object sender, EventArgs e)
+        {
+            //form_saleOPRP fs = new form_saleOPRP();
+            //fs.Show();
+            string comand = @"select ttl.id_tn, ttl.FIO, sum(DATEPART(HH,ttl.time_span))+(sum(DATEPART(MINUTE,ttl.time_span))/60.00) TOTALTIME, tb.ttime,tb.tdate
+                               from total ttl
+                               join tabel tb on ttl.id_tn = tb.id_tn and YEAR(tb.tdate) = YEAR(ttl.date) and MONTH(tb.tdate)= MONTH(ttl.date)
+                              where ttl.id_tn = 9999
+                           group by ttl.[id_tn],ttl.[fio],tb.ttime,tb.tdate";
+            DataTable dt_totalOPRP = sql.sql_dt(comand,"t1");
+            dt_totalOPRP.Columns.Add("overtime");
+            dt_totalOPRP.Columns.Add("sale");
+            for (int i = 0; i < dt_totalOPRP.Rows.Count; i++)
+            {
+                string TimeFact = dt_totalOPRP.Rows[i]["TOTALTIME"].ToString();
+                string hour = TimeFact.Substring(0, TimeFact.IndexOf(','));               
+                string minut = (double.Parse(TimeFact.Remove(0, TimeFact.IndexOf(',')+1).Substring(0, 2))*60).ToString();
+
+
+
+                string timeTabel = dt_totalOPRP.Rows[i]["ttime"].ToString();
+                string hourT= TimeFact.Substring(0, TimeFact.IndexOf(':'));
+                string minutT = (double.Parse(TimeFact.Remove(0, TimeFact.IndexOf(':') + 1).Substring(0, 2)) * 60).ToString();
+
+                TimeSpan tsFact =  new TimeSpan (Convert.ToInt32(hour),Convert.ToInt32(minut),00 );
+                TimeSpan tsTabel =  new TimeSpan(Convert.ToInt32(hourT), Convert.ToInt32(minutT), 00);
+                TimeSpan OverTime = tsFact - tsTabel;
+
+            }
+            gridControl3.DataSource = dt_totalOPRP;
+        }
+
+        private void gridView2_CustomColumnDisplayText(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventArgs e)
+        {
+            if (e.Column.FieldName == "TOTALTIME")
+            {
+                //string TimeStr = e.Value.ToString();
+                //int hour =Convert.ToInt32( TimeStr.Substring(TimeStr.IndexOf('.')));
+                //int minut = Convert.ToInt32(TimeStr.Remove(0, TimeStr.IndexOf('.'))) * 6;
+            }
+        }
     }
 }

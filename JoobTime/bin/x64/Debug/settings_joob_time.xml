@@ -7,17 +7,16 @@
   <admin_login>admin</admin_login>
   <admin_password>74123</admin_password>
   <conection_ip>192.168.76.22,1433</conection_ip>
-  <login_save>9999</login_save>
+  <login_save>5413</login_save>
   <login_save_on>true</login_save_on>
   <group_params>0</group_params>
   <grid_polz>0</grid_polz>
   <save_pf>ВФ 141</save_pf>
   <save_obj>
   </save_obj>
-  <save_work_name>Прочее</save_work_name>
-  <save_other>Разбор неправильной работы функции расчета сдельной оплаты труда с Бавченковым А.
-</save_other>
-  <groupExpand>True</groupExpand>
+  <save_work_name>Разработка ПО</save_work_name>
+  <save_other>Создание функции расчета сдельной оплаты труда отдела по развитию предприятия</save_other>
+  <groupExpand>False</groupExpand>
   <add_size_h>510</add_size_h>
   <add_size_w>1000</add_size_w>
   <gridName>gridView1</gridName>

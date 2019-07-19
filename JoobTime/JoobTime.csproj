@@ -310,6 +310,7 @@
     <None Include="Resources\print_32x32.png" />
     <None Include="Resources\clear_32x32.png" />
     <None Include="Resources\apply_32x32.png" />
+    <None Include="Resources\info_32x32.png" />
     <Content Include="settingsJT.xml" />
   </ItemGroup>
   <ItemGroup>
