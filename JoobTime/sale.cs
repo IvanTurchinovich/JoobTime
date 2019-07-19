@@ -193,20 +193,18 @@ namespace JoobTime
             {
                 //var comand = "select [price],[pay_type] from prices where id_work =" + id_work_select + " and difficulty=" + difficulty_select;
                 //table_sale_difficult = sql.sql_dt(comand, "t1");
-                var price = from DataRow row in dt_pricesForPayment.Rows
-                            where row["id_work"].ToString() == id_work_select && row["difficulty"].ToString() == difficulty_select
-                            select row ;
-             
-                if (price.Count()!=0)
-                {
-                    DataRow row_price = price.ElementAt(0);
-                    pay_type = row_price["pay_type"].ToString();
-                    return row_price["price"].ToString();
-                }
-                else
-                {
+                var type = dt_pricesForPayment.Rows[0]["id_work"].GetType();
+                var price = dt_pricesForPayment.AsEnumerable()
+                    .Where(row => row["id_work"].ToString().Equals(id_work_select) && row["difficulty"].ToString().Equals(difficulty_select))
+                    .FirstOrDefault();
+                //var price = from DataRow row in dt_pricesForPayment.Rows
+                //            where row["id_work"].ToString().Equals(id_work_select)  && row["difficulty"].ToString().Equals(difficulty_select)
+                //            select row ;
+                
+                if (price==null)
                     return "";
-                }
+                pay_type = price["pay_type"].ToString();
+                return price["price"].ToString(); ;
             }
             else
             {
@@ -252,16 +250,27 @@ namespace JoobTime
 
         private void simpleButton2_Click(object sender, EventArgs e)
         {
-            if (select_IdSubunit == "5")
+            switch (select_IdSubunit)
             {
-                set_price3Dmodels();
+                case"5": //3DMODELS
+                    set_price(5);
+                    break;
+                case "3"://OPRP   
+                    set_price(3);
+                    break;
             }
+            
             update_totalPrice();
         }
 
-        public void set_price3Dmodels()
+        public void set_priceOPRP()
         {
-            DataTable dtUserSubunit = sql.sql_dt("select id_tn, category from worker where id_subunit=5", "t1");
+
+        }
+
+        public void set_price(int idSubunit)
+        {
+            DataTable dtUserSubunit = sql.sql_dt("select id_tn, category from worker where id_subunit="+idSubunit, "t1");
             for (int i = 0; i < gridView3.RowCount; i++)
             {
                 string id_tn = gridView3.GetRowCellValue(i, "id_tn").ToString();
@@ -363,7 +372,8 @@ namespace JoobTime
             
         private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
         {
-            select_subunit = lUp_subunit.GetColumnValue("subunit").ToString();
+            select_subunit = lUp_subunit.Text; 
+            if(select_subunit!="Все")
             select_IdSubunit = lUp_subunit.GetColumnValue("id_subunit").ToString();
         }
 
@@ -385,9 +395,7 @@ namespace JoobTime
         private void simpleButton10_Click(object sender, EventArgs e)
         {
             if (type_reports_cmbBox.Text == "" || string.IsNullOrEmpty(type_reports_cmbBox.Text))
-            {
-                XtraMessageBox.Show("Выберите тип отчета","Внимание");
-            }
+            { XtraMessageBox.Show("Выберите тип отчета", "Внимание"); }
             else
             {
                 ReportGenerating.startDate = date_edit_for_SQL.convert(de_start);
@@ -429,25 +437,102 @@ namespace JoobTime
 
         private void prices_update_btn_Click(object sender, EventArgs e)
         {
-            //for (int i = 0; i < gridView1.RowCount; i++)
-            //{
-            //    string id_work = gridView1.GetRowCellValue(i, "id_work").ToString();
-            //    for (int j = 1;j <= 10; j++)
-            //    {
-            //        string price = gridView1.GetRowCellValue(i, "pr" +j.ToString()).ToString();
-            //        if (price == "" || string.IsNullOrEmpty(price))
-            //        {
-            //            break;
-            //        }
-            //        else
-            //        {
-            //            string comand = "update prices set price="+price+" where id_work="+id_work+" and difficulty="+j;
-            //            sql.update_comand(comand);
-            //        }
-            //    }
-            //}
-
-
+            for (int i = 0; i < gridView1.RowCount; i++)
+            {
+                string id_work = gridView1.GetRowCellValue(i, "id_work").ToString();
+                for (int j = 1; j <= 10; j++)
+                {
+                    string price = gridView1.GetRowCellValue(i, "pr" + j.ToString()).ToString();
+                    if (price == "" || string.IsNullOrEmpty(price))
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        string comand = "update prices set price=" + price + " where id_work=" + id_work + " and difficulty=" + j;
+                        sql.update_comand(comand);
+                    }
+                }
+            }
         }
+
+        private void btn_update_prices_Click(object sender, EventArgs e)
+        {
+            updatePrice();
+        }
+
+        public void updatePrice()
+        {
+            for (int i = 0; i < gridView1.RowCount; i++)
+            {
+                string id_work = gridView1.GetRowCellValue(i, "id_work").ToString();
+                for (int j = 1; j <= 10; j++)
+                {
+                    string price = gridView1.GetRowCellValue(i, "pr" + j.ToString()).ToString();
+                    if (price == "" || string.IsNullOrEmpty(price))
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        string comand;
+                        if (checkPrice(j, id_work))
+                        {
+                            comand = "update prices set price=" + price.Replace(',', '.') + " where id_work=" + id_work + " and difficulty=" + j;
+                        }
+                        else
+                        {
+                            int payType = checkPayType(i);
+                            comand = string.Format(@"INSERT INTO [dbo].[prices]
+                                                                ([id_work]
+                                                                ,[difficulty]
+                                                                ,[price]
+                                                                ,[pay_type])
+                                                          VALUES
+                                                                ({0}
+                                                                ,{1}
+                                                                ,'{2}'
+                                                                ,{3})", id_work, j, price.Replace(',', '.'), payType);
+                        }
+                        sql.update_comand(comand);
+                    }
+                }
+            }
+        }
+
+        public int checkPayType(int rowIndex)
+        {
+            string PayType = gridView1.GetRowCellValue(rowIndex, "pay_type_for_user").ToString();
+            int PayTypeForTable;
+            switch (PayType)
+            {
+                case "Почасовая":
+                    PayTypeForTable = 0;
+                    break;
+                case "По расценке":
+                    PayTypeForTable = 1;
+                    break;
+                case "Форма":
+                    PayTypeForTable = 2;
+                    break;
+                default:
+                    PayTypeForTable = 0;
+                    break;
+            }
+            return PayTypeForTable;
+        }
+
+        public bool checkPrice(int difficulty, string id_work)
+        {
+            bool check = true;
+            string comand = "select*from prices where id_work=" + id_work + " and difficulty=" + difficulty;
+            DataTable dt_result = sql.sql_dt(comand,"result");
+            if (dt_result.Rows.Count == 0)
+            {
+                check = false;
+            }
+            return check;
+        }
+
     }
 }

@@ -40,7 +40,8 @@ namespace JoobTime
                 load_dtCmbBoxSubunit();
                 btn_tabel.Visible = true;
                 btn_prices.Visible = true;
-                btn_report.Visible = true; 
+                btn_report.Visible = true;
+                cmb_subunit.Visible = true;
             }
             selectGridView();
             groupButton.CustomHeaderButtons[0].Properties.Checked =Convert.ToBoolean(xlsx_.read_xlsx("groupExpand"));

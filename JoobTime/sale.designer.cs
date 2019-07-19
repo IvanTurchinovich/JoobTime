@@ -167,104 +167,126 @@
             // 
             // gridView3
             // 
-            this.gridView3.Appearance.ColumnFilterButton.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.gridView3.Appearance.ColumnFilterButton.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gridView3.Appearance.ColumnFilterButton.Options.UseFont = true;
             this.gridView3.Appearance.ColumnFilterButton.Options.UseTextOptions = true;
+            this.gridView3.Appearance.ColumnFilterButton.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridView3.Appearance.ColumnFilterButton.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.gridView3.Appearance.ColumnFilterButtonActive.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.gridView3.Appearance.ColumnFilterButtonActive.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gridView3.Appearance.ColumnFilterButtonActive.Options.UseFont = true;
-            this.gridView3.Appearance.CustomizationFormHint.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.gridView3.Appearance.ColumnFilterButtonActive.Options.UseTextOptions = true;
+            this.gridView3.Appearance.ColumnFilterButtonActive.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridView3.Appearance.CustomizationFormHint.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gridView3.Appearance.CustomizationFormHint.Options.UseFont = true;
-            this.gridView3.Appearance.DetailTip.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.gridView3.Appearance.CustomizationFormHint.Options.UseTextOptions = true;
+            this.gridView3.Appearance.CustomizationFormHint.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridView3.Appearance.DetailTip.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gridView3.Appearance.DetailTip.Options.UseFont = true;
-            this.gridView3.Appearance.Empty.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.gridView3.Appearance.DetailTip.Options.UseTextOptions = true;
+            this.gridView3.Appearance.DetailTip.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridView3.Appearance.Empty.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gridView3.Appearance.Empty.Options.UseFont = true;
-            this.gridView3.Appearance.EvenRow.BackColor = System.Drawing.Color.White;
-            this.gridView3.Appearance.EvenRow.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.gridView3.Appearance.EvenRow.Options.UseBackColor = true;
+            this.gridView3.Appearance.Empty.Options.UseTextOptions = true;
+            this.gridView3.Appearance.Empty.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridView3.Appearance.EvenRow.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gridView3.Appearance.EvenRow.Options.UseFont = true;
             this.gridView3.Appearance.EvenRow.Options.UseTextOptions = true;
+            this.gridView3.Appearance.EvenRow.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridView3.Appearance.EvenRow.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.gridView3.Appearance.FilterCloseButton.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.gridView3.Appearance.FilterCloseButton.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gridView3.Appearance.FilterCloseButton.Options.UseFont = true;
-            this.gridView3.Appearance.FilterPanel.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.gridView3.Appearance.FilterCloseButton.Options.UseTextOptions = true;
+            this.gridView3.Appearance.FilterCloseButton.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridView3.Appearance.FilterPanel.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gridView3.Appearance.FilterPanel.Options.UseFont = true;
-            this.gridView3.Appearance.FixedLine.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.gridView3.Appearance.FilterPanel.Options.UseTextOptions = true;
+            this.gridView3.Appearance.FilterPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridView3.Appearance.FixedLine.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gridView3.Appearance.FixedLine.Options.UseFont = true;
-            this.gridView3.Appearance.FocusedCell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(198)))), ((int)(((byte)(255)))));
-            this.gridView3.Appearance.FocusedCell.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.gridView3.Appearance.FocusedCell.Options.UseBackColor = true;
+            this.gridView3.Appearance.FixedLine.Options.UseTextOptions = true;
+            this.gridView3.Appearance.FixedLine.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridView3.Appearance.FocusedCell.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gridView3.Appearance.FocusedCell.Options.UseFont = true;
             this.gridView3.Appearance.FocusedCell.Options.UseTextOptions = true;
             this.gridView3.Appearance.FocusedCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridView3.Appearance.FocusedCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.gridView3.Appearance.FocusedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(198)))), ((int)(((byte)(255)))));
-            this.gridView3.Appearance.FocusedRow.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(171)))), ((int)(((byte)(226)))));
-            this.gridView3.Appearance.FocusedRow.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.gridView3.Appearance.FocusedRow.Options.UseBackColor = true;
+            this.gridView3.Appearance.FocusedRow.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gridView3.Appearance.FocusedRow.Options.UseFont = true;
             this.gridView3.Appearance.FocusedRow.Options.UseTextOptions = true;
             this.gridView3.Appearance.FocusedRow.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridView3.Appearance.FocusedRow.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.gridView3.Appearance.FooterPanel.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.gridView3.Appearance.FooterPanel.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gridView3.Appearance.FooterPanel.Options.UseFont = true;
-            this.gridView3.Appearance.GroupButton.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.gridView3.Appearance.FooterPanel.Options.UseTextOptions = true;
+            this.gridView3.Appearance.FooterPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridView3.Appearance.GroupButton.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gridView3.Appearance.GroupButton.Options.UseFont = true;
-            this.gridView3.Appearance.GroupFooter.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.gridView3.Appearance.GroupButton.Options.UseTextOptions = true;
+            this.gridView3.Appearance.GroupButton.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridView3.Appearance.GroupFooter.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gridView3.Appearance.GroupFooter.Options.UseFont = true;
-            this.gridView3.Appearance.GroupPanel.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.gridView3.Appearance.GroupFooter.Options.UseTextOptions = true;
+            this.gridView3.Appearance.GroupFooter.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridView3.Appearance.GroupPanel.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gridView3.Appearance.GroupPanel.Options.UseFont = true;
-            this.gridView3.Appearance.GroupRow.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.gridView3.Appearance.GroupRow.ForeColor = System.Drawing.Color.Black;
+            this.gridView3.Appearance.GroupPanel.Options.UseTextOptions = true;
+            this.gridView3.Appearance.GroupPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridView3.Appearance.GroupRow.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridView3.Appearance.GroupRow.FontStyleDelta = System.Drawing.FontStyle.Bold;
             this.gridView3.Appearance.GroupRow.Options.UseFont = true;
-            this.gridView3.Appearance.GroupRow.Options.UseForeColor = true;
             this.gridView3.Appearance.GroupRow.Options.UseTextOptions = true;
+            this.gridView3.Appearance.GroupRow.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridView3.Appearance.GroupRow.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.gridView3.Appearance.HeaderPanel.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.gridView3.Appearance.HeaderPanel.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridView3.Appearance.HeaderPanel.FontStyleDelta = System.Drawing.FontStyle.Bold;
             this.gridView3.Appearance.HeaderPanel.Options.UseFont = true;
             this.gridView3.Appearance.HeaderPanel.Options.UseTextOptions = true;
             this.gridView3.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridView3.Appearance.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridView3.Appearance.HideSelectionRow.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.gridView3.Appearance.HideSelectionRow.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gridView3.Appearance.HideSelectionRow.Options.UseFont = true;
             this.gridView3.Appearance.HideSelectionRow.Options.UseTextOptions = true;
+            this.gridView3.Appearance.HideSelectionRow.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridView3.Appearance.HideSelectionRow.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.gridView3.Appearance.HorzLine.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.gridView3.Appearance.HorzLine.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gridView3.Appearance.HorzLine.Options.UseFont = true;
-            this.gridView3.Appearance.OddRow.BackColor = System.Drawing.Color.AliceBlue;
-            this.gridView3.Appearance.OddRow.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.gridView3.Appearance.OddRow.Options.UseBackColor = true;
+            this.gridView3.Appearance.HorzLine.Options.UseTextOptions = true;
+            this.gridView3.Appearance.HorzLine.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridView3.Appearance.OddRow.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gridView3.Appearance.OddRow.Options.UseFont = true;
-            this.gridView3.Appearance.Preview.BackColor = System.Drawing.Color.LightBlue;
-            this.gridView3.Appearance.Preview.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.gridView3.Appearance.Preview.ForeColor = System.Drawing.Color.Black;
-            this.gridView3.Appearance.Preview.Options.UseBackColor = true;
+            this.gridView3.Appearance.OddRow.Options.UseTextOptions = true;
+            this.gridView3.Appearance.OddRow.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridView3.Appearance.Preview.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gridView3.Appearance.Preview.Options.UseFont = true;
-            this.gridView3.Appearance.Preview.Options.UseForeColor = true;
             this.gridView3.Appearance.Preview.Options.UseTextOptions = true;
+            this.gridView3.Appearance.Preview.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridView3.Appearance.Preview.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.gridView3.Appearance.Row.BackColor = System.Drawing.Color.AliceBlue;
-            this.gridView3.Appearance.Row.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.gridView3.Appearance.Row.ForeColor = System.Drawing.Color.Black;
-            this.gridView3.Appearance.Row.Options.UseBackColor = true;
+            this.gridView3.Appearance.Row.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gridView3.Appearance.Row.Options.UseFont = true;
-            this.gridView3.Appearance.Row.Options.UseForeColor = true;
             this.gridView3.Appearance.Row.Options.UseTextOptions = true;
+            this.gridView3.Appearance.Row.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridView3.Appearance.Row.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.gridView3.Appearance.RowSeparator.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.gridView3.Appearance.RowSeparator.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gridView3.Appearance.RowSeparator.Options.UseFont = true;
-            this.gridView3.Appearance.SelectedRow.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.gridView3.Appearance.RowSeparator.Options.UseTextOptions = true;
+            this.gridView3.Appearance.RowSeparator.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridView3.Appearance.SelectedRow.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gridView3.Appearance.SelectedRow.Options.UseFont = true;
             this.gridView3.Appearance.SelectedRow.Options.UseTextOptions = true;
+            this.gridView3.Appearance.SelectedRow.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridView3.Appearance.SelectedRow.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.gridView3.Appearance.TopNewRow.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.gridView3.Appearance.TopNewRow.ForeColor = System.Drawing.Color.White;
+            this.gridView3.Appearance.TopNewRow.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gridView3.Appearance.TopNewRow.Options.UseFont = true;
-            this.gridView3.Appearance.TopNewRow.Options.UseForeColor = true;
-            this.gridView3.Appearance.VertLine.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.gridView3.Appearance.TopNewRow.Options.UseTextOptions = true;
+            this.gridView3.Appearance.TopNewRow.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridView3.Appearance.VertLine.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gridView3.Appearance.VertLine.Options.UseFont = true;
-            this.gridView3.Appearance.ViewCaption.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.gridView3.Appearance.VertLine.Options.UseTextOptions = true;
+            this.gridView3.Appearance.VertLine.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridView3.Appearance.ViewCaption.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gridView3.Appearance.ViewCaption.Options.UseFont = true;
+            this.gridView3.Appearance.ViewCaption.Options.UseTextOptions = true;
+            this.gridView3.Appearance.ViewCaption.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridView3.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.col_date,
             this.col_subunit,
@@ -643,6 +665,7 @@
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView3_CellValueChanged);
             // 
             // gridColumn1
             // 
@@ -888,7 +911,7 @@
             this.btn_update_prices.TabIndex = 35;
             this.btn_update_prices.Text = "Применить \r\nизменения";
             this.btn_update_prices.ToolTip = "Обнулить";
-            this.btn_update_prices.Visible = false;
+            this.btn_update_prices.Click += new System.EventHandler(this.btn_update_prices_Click);
             // 
             // btn_renull
             // 
@@ -904,13 +927,22 @@
             this.btn_renull.TabIndex = 34;
             this.btn_renull.Text = "Обнулить";
             this.btn_renull.ToolTip = "Обнулить";
-            this.btn_renull.Visible = false;
             this.btn_renull.Click += new System.EventHandler(this.simpleButton3_Click);
             // 
             // btn_prices
             // 
+            this.btn_prices.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_prices.Appearance.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btn_prices.Appearance.BorderColor = System.Drawing.Color.Red;
             this.btn_prices.Appearance.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btn_prices.Appearance.Options.UseBackColor = true;
+            this.btn_prices.Appearance.Options.UseBorderColor = true;
             this.btn_prices.Appearance.Options.UseFont = true;
+            this.btn_prices.AppearanceHovered.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btn_prices.AppearanceHovered.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_prices.AppearanceHovered.BorderColor = System.Drawing.Color.Red;
+            this.btn_prices.AppearanceHovered.Options.UseBackColor = true;
+            this.btn_prices.AppearanceHovered.Options.UseBorderColor = true;
             this.btn_prices.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btn_prices.ImageOptions.Image = global::JoobTime.Properties.Resources.currency_32x32;
             this.btn_prices.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleRight;
@@ -921,7 +953,6 @@
             this.btn_prices.TabIndex = 33;
             this.btn_prices.Text = "Оплатить";
             this.btn_prices.ToolTip = "Оплатить";
-            this.btn_prices.Visible = false;
             this.btn_prices.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
             // btn_print
@@ -938,7 +969,6 @@
             this.btn_print.TabIndex = 32;
             this.btn_print.Text = "Печать";
             this.btn_print.ToolTip = "Отчеты";
-            this.btn_print.Visible = false;
             this.btn_print.Click += new System.EventHandler(this.simpleButton10_Click);
             // 
             // worker_cmbBox
@@ -1041,7 +1071,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dEdit_start.Size = new System.Drawing.Size(242, 28);
             this.dEdit_start.TabIndex = 27;
-            this.dEdit_start.EditValueChanged += new System.EventHandler(this.dateEdit2_EditValueChanged);
+            this.dEdit_start.EditValueChanged += new System.EventHandler(this.dateEdit1_EditValueChanged);
             // 
             // dEdit_end
             // 
@@ -1056,7 +1086,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dEdit_end.Size = new System.Drawing.Size(242, 28);
             this.dEdit_end.TabIndex = 28;
-            this.dEdit_end.EditValueChanged += new System.EventHandler(this.dateEdit1_EditValueChanged);
+            this.dEdit_end.EditValueChanged += new System.EventHandler(this.dateEdit2_EditValueChanged);
             // 
             // sale
             // 
