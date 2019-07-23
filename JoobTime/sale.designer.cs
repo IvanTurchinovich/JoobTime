@@ -41,19 +41,21 @@
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            this.gridColumn18 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.gridControl3 = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn16 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn21 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn18 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.CmbBx_category = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
-            this.gridColumn23 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn27 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn16 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn21 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn19 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn20 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemComboBox1 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
+            this.CmbBx_category = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.memoGrid3 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.col_date = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -102,16 +104,14 @@
             this.lUp_subunit = new DevExpress.XtraEditors.LookUpEdit();
             this.dEdit_start = new DevExpress.XtraEditors.DateEdit();
             this.dEdit_end = new DevExpress.XtraEditors.DateEdit();
-            this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn19 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn20 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn23 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.xtraTabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CmbBx_category)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CmbBx_category)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.memoGrid3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
             this.xtraTabPage2.SuspendLayout();
@@ -128,6 +128,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.dEdit_end.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dEdit_end.Properties)).BeginInit();
             this.SuspendLayout();
+            // 
+            // gridColumn18
+            // 
+            this.gridColumn18.Caption = "Переработка";
+            this.gridColumn18.FieldName = "overtime";
+            this.gridColumn18.Name = "gridColumn18";
+            this.gridColumn18.Visible = true;
+            this.gridColumn18.VisibleIndex = 4;
+            this.gridColumn18.Width = 116;
             // 
             // xtraTabControl1
             // 
@@ -310,7 +319,6 @@
             this.gridColumn17,
             this.gridColumn21,
             this.gridColumn18,
-            this.gridColumn23,
             this.gridColumn15,
             this.gridColumn19,
             this.gridColumn20});
@@ -337,6 +345,26 @@
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn16, DevExpress.Data.ColumnSortOrder.Ascending)});
             this.gridView2.CustomColumnDisplayText += new DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventHandler(this.gridView2_CustomColumnDisplayText);
             // 
+            // gridColumn27
+            // 
+            this.gridColumn27.Caption = "Таб. номер";
+            this.gridColumn27.FieldName = "id_tn";
+            this.gridColumn27.MinWidth = 30;
+            this.gridColumn27.Name = "gridColumn27";
+            this.gridColumn27.Width = 109;
+            // 
+            // gridColumn16
+            // 
+            this.gridColumn16.Caption = "ФИО";
+            this.gridColumn16.FieldName = "FIO";
+            this.gridColumn16.MinWidth = 30;
+            this.gridColumn16.Name = "gridColumn16";
+            this.gridColumn16.OptionsColumn.AllowEdit = false;
+            this.gridColumn16.SortMode = DevExpress.XtraGrid.ColumnSortMode.DisplayText;
+            this.gridColumn16.Visible = true;
+            this.gridColumn16.VisibleIndex = 1;
+            this.gridColumn16.Width = 335;
+            // 
             // gridColumn14
             // 
             this.gridColumn14.AppearanceCell.Options.UseTextOptions = true;
@@ -355,38 +383,6 @@
             this.gridColumn14.VisibleIndex = 0;
             this.gridColumn14.Width = 105;
             // 
-            // gridColumn16
-            // 
-            this.gridColumn16.Caption = "ФИО";
-            this.gridColumn16.FieldName = "FIO";
-            this.gridColumn16.MinWidth = 30;
-            this.gridColumn16.Name = "gridColumn16";
-            this.gridColumn16.OptionsColumn.AllowEdit = false;
-            this.gridColumn16.SortMode = DevExpress.XtraGrid.ColumnSortMode.DisplayText;
-            this.gridColumn16.Visible = true;
-            this.gridColumn16.VisibleIndex = 1;
-            this.gridColumn16.Width = 335;
-            // 
-            // gridColumn21
-            // 
-            this.gridColumn21.Caption = "Время фактическое";
-            this.gridColumn21.FieldName = "TOTALTIME";
-            this.gridColumn21.MinWidth = 49;
-            this.gridColumn21.Name = "gridColumn21";
-            this.gridColumn21.OptionsColumn.AllowEdit = false;
-            this.gridColumn21.Visible = true;
-            this.gridColumn21.VisibleIndex = 2;
-            this.gridColumn21.Width = 117;
-            // 
-            // gridColumn18
-            // 
-            this.gridColumn18.Caption = "Переработка";
-            this.gridColumn18.FieldName = "overtime";
-            this.gridColumn18.Name = "gridColumn18";
-            this.gridColumn18.Visible = true;
-            this.gridColumn18.VisibleIndex = 4;
-            this.gridColumn18.Width = 116;
-            // 
             // gridColumn17
             // 
             this.gridColumn17.Caption = "Табельное время";
@@ -395,6 +391,49 @@
             this.gridColumn17.Visible = true;
             this.gridColumn17.VisibleIndex = 3;
             this.gridColumn17.Width = 109;
+            // 
+            // gridColumn21
+            // 
+            this.gridColumn21.Caption = "Время фактическое";
+            this.gridColumn21.FieldName = "totalTime";
+            this.gridColumn21.MinWidth = 49;
+            this.gridColumn21.Name = "gridColumn21";
+            this.gridColumn21.OptionsColumn.AllowEdit = false;
+            this.gridColumn21.Visible = true;
+            this.gridColumn21.VisibleIndex = 2;
+            this.gridColumn21.Width = 117;
+            // 
+            // gridColumn15
+            // 
+            this.gridColumn15.Caption = "Сумма за переработку";
+            this.gridColumn15.FieldName = "sale";
+            this.gridColumn15.Name = "gridColumn15";
+            this.gridColumn15.Visible = true;
+            this.gridColumn15.VisibleIndex = 5;
+            // 
+            // gridColumn19
+            // 
+            this.gridColumn19.Caption = "Сумма за время по табелю";
+            this.gridColumn19.Name = "gridColumn19";
+            this.gridColumn19.Visible = true;
+            this.gridColumn19.VisibleIndex = 6;
+            // 
+            // gridColumn20
+            // 
+            this.gridColumn20.Caption = "ИТОГО";
+            this.gridColumn20.Name = "gridColumn20";
+            this.gridColumn20.Visible = true;
+            this.gridColumn20.VisibleIndex = 7;
+            // 
+            // repositoryItemComboBox1
+            // 
+            this.repositoryItemComboBox1.AutoHeight = false;
+            this.repositoryItemComboBox1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemComboBox1.Items.AddRange(new object[] {
+            "С",
+            "П"});
+            this.repositoryItemComboBox1.Name = "repositoryItemComboBox1";
             // 
             // CmbBx_category
             // 
@@ -412,35 +451,6 @@
             "9",
             "10"});
             this.CmbBx_category.Name = "CmbBx_category";
-            // 
-            // gridColumn23
-            // 
-            this.gridColumn23.Caption = "Расценка";
-            this.gridColumn23.FieldName = "payment";
-            this.gridColumn23.MinWidth = 49;
-            this.gridColumn23.Name = "gridColumn23";
-            this.gridColumn23.OptionsColumn.AllowEdit = false;
-            this.gridColumn23.Visible = true;
-            this.gridColumn23.VisibleIndex = 5;
-            this.gridColumn23.Width = 80;
-            // 
-            // gridColumn27
-            // 
-            this.gridColumn27.Caption = "Таб. номер";
-            this.gridColumn27.FieldName = "id_tn";
-            this.gridColumn27.MinWidth = 30;
-            this.gridColumn27.Name = "gridColumn27";
-            this.gridColumn27.Width = 109;
-            // 
-            // repositoryItemComboBox1
-            // 
-            this.repositoryItemComboBox1.AutoHeight = false;
-            this.repositoryItemComboBox1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemComboBox1.Items.AddRange(new object[] {
-            "С",
-            "П"});
-            this.repositoryItemComboBox1.Name = "repositoryItemComboBox1";
             // 
             // memoGrid3
             // 
@@ -1355,26 +1365,16 @@
             this.dEdit_end.TabIndex = 28;
             this.dEdit_end.EditValueChanged += new System.EventHandler(this.dateEdit2_EditValueChanged);
             // 
-            // gridColumn15
+            // gridColumn23
             // 
-            this.gridColumn15.Caption = "Сумма за переработку";
-            this.gridColumn15.Name = "gridColumn15";
-            this.gridColumn15.Visible = true;
-            this.gridColumn15.VisibleIndex = 6;
-            // 
-            // gridColumn19
-            // 
-            this.gridColumn19.Caption = "Сумма за фактическое время";
-            this.gridColumn19.Name = "gridColumn19";
-            this.gridColumn19.Visible = true;
-            this.gridColumn19.VisibleIndex = 7;
-            // 
-            // gridColumn20
-            // 
-            this.gridColumn20.Caption = "ИТОГО";
-            this.gridColumn20.Name = "gridColumn20";
-            this.gridColumn20.Visible = true;
-            this.gridColumn20.VisibleIndex = 8;
+            this.gridColumn23.Caption = "Расценка";
+            this.gridColumn23.FieldName = "payment";
+            this.gridColumn23.MinWidth = 49;
+            this.gridColumn23.Name = "gridColumn23";
+            this.gridColumn23.OptionsColumn.AllowEdit = false;
+            this.gridColumn23.Visible = true;
+            this.gridColumn23.VisibleIndex = 5;
+            this.gridColumn23.Width = 80;
             // 
             // sale
             // 
@@ -1393,8 +1393,8 @@
             this.xtraTabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CmbBx_category)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CmbBx_category)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.memoGrid3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
             this.xtraTabPage2.ResumeLayout(false);
@@ -1474,11 +1474,11 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn21;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn18;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn17;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn23;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn27;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn15;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn19;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn20;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn23;
     }
 }

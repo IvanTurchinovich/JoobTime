@@ -553,36 +553,45 @@ namespace JoobTime
                               where ttl.id_tn = 9999
                            group by ttl.[id_tn],ttl.[fio],tb.ttime,tb.tdate";
             DataTable dt_totalOPRP = sql.sql_dt(comand,"t1");
-            dt_totalOPRP.Columns.Add("overtime");
+            dt_totalOPRP.Columns.Add("overtime",typeof(string));
             dt_totalOPRP.Columns.Add("sale");
+            dt_totalOPRP.Columns.Add("totalTime",typeof(string));
             for (int i = 0; i < dt_totalOPRP.Rows.Count; i++)
             {
                 string TimeFact = dt_totalOPRP.Rows[i]["TOTALTIME"].ToString();
-                string hour = TimeFact.Substring(0, TimeFact.IndexOf(','));               
-                string minut = (double.Parse(TimeFact.Remove(0, TimeFact.IndexOf(',')+1).Substring(0, 2))*60).ToString();
-
-
-
+                string hour = TimeFact.Substring(0, TimeFact.IndexOf(','));
+               // string minutasd = TimeFact.Remove(0, TimeFact.IndexOf(',') + 1).Substring(0, 2);
+                string minut =Math.Floor((double.Parse(TimeFact.Remove(0, TimeFact.IndexOf(',') + 1).Substring(0, 2)) * 0.6)).ToString();
+                
                 string timeTabel = dt_totalOPRP.Rows[i]["ttime"].ToString();
-                string hourT= TimeFact.Substring(0, TimeFact.IndexOf(':'));
-                string minutT = (double.Parse(TimeFact.Remove(0, TimeFact.IndexOf(':') + 1).Substring(0, 2)) * 60).ToString();
+                string hourT= timeTabel.Substring(0, timeTabel.IndexOf(':'));
+                string minutT = (double.Parse(timeTabel.Remove(0, timeTabel.IndexOf(':') + 1).Substring(0, 2)) * 0.6).ToString();
 
                 TimeSpan tsFact =  new TimeSpan (Convert.ToInt32(hour),Convert.ToInt32(minut),00 );
                 TimeSpan tsTabel =  new TimeSpan(Convert.ToInt32(hourT), Convert.ToInt32(minutT), 00);
-                TimeSpan OverTime = tsFact - tsTabel;
-
+                TimeSpan OverTime= new TimeSpan(00,00,00);
+                if (tsFact > tsTabel)
+                {
+                    OverTime= tsFact - tsTabel;
+                }
+                dt_totalOPRP.Rows[i]["totalTime"] = hour + ":" + minut;
+                dt_totalOPRP.Rows[i]["overtime"] = OverTime.TotalHours.ToString() + ":" + OverTime.Minutes.ToString();
+                dt_totalOPRP.Rows[i]["sale"] = calcPrice(OverTime);
             }
+            dt_totalOPRP.Columns.Remove("TOTALTIME");
             gridControl3.DataSource = dt_totalOPRP;
+        }
+
+        public string calcPrice(TimeSpan overtime)
+        {
+            double sale1Overtime = 4.2;
+            double saleTotalOverTIme =(overtime.TotalMinutes / 60 * sale1Overtime);
+            return saleTotalOverTIme.ToString();
         }
 
         private void gridView2_CustomColumnDisplayText(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventArgs e)
         {
-            if (e.Column.FieldName == "TOTALTIME")
-            {
-                //string TimeStr = e.Value.ToString();
-                //int hour =Convert.ToInt32( TimeStr.Substring(TimeStr.IndexOf('.')));
-                //int minut = Convert.ToInt32(TimeStr.Remove(0, TimeStr.IndexOf('.'))) * 6;
-            }
+           
         }
     }
 }
