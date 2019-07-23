@@ -15,7 +15,7 @@ namespace JoobTime
         public string id_value;
         public string pres_form_name;
         public string work_name;
-        
+
         public string select_subunit;
         public string select_IdSubunit;
         public string selected_worker_fio;
@@ -23,16 +23,17 @@ namespace JoobTime
         public string pay_type;
 
         public DataTable table_sale_difficult;
-        public DataTable dt_pricesForPayment; 
+        public DataTable dt_pricesForPayment;
         public DataTable dt_update_total_price;
         public DataTable dt_subunit_cmbBox;
         public DataTable dt_total_rep;
+        DataTable dt_totalOPRP;
         public DateTime de_start;
         public DateTime de_end;
 
         Class_sql sql = new Class_sql();
         class_date date_edit_for_SQL = new class_date();
-       
+
         public void get_time_dtEdit()
         {
             int countday = DateTime.DaysInMonth(DateTime.Today.Year, DateTime.Today.Month);
@@ -76,7 +77,7 @@ namespace JoobTime
 
         public sale()
         {
-            InitializeComponent();                            
+            InitializeComponent();
             init_dt_update_total_price();
             load_dtPricesForPayment();
         }
@@ -102,14 +103,18 @@ namespace JoobTime
                 gridControl1.DataSource = sql.bs_query(command, "t1");
             }
         }
-        
+
         public void grid_control_total()
         {
             if (string.IsNullOrEmpty(select_subunit))
             {
                 return;
             }
-            else 
+            else if (select_subunit=="Отдел по развитию предприятия")
+            {
+                load_dtOPRP();
+            }
+            else
             {
                 dt_total_rep = sql.sql_dt(comandSelectBOSS(), "t1");
                 gridControl3.DataSource = dt_total_rep;
@@ -200,8 +205,8 @@ namespace JoobTime
                 //var price = from DataRow row in dt_pricesForPayment.Rows
                 //            where row["id_work"].ToString().Equals(id_work_select)  && row["difficulty"].ToString().Equals(difficulty_select)
                 //            select row ;
-                
-                if (price==null)
+
+                if (price == null)
                     return "";
                 pay_type = price["pay_type"].ToString();
                 return price["price"].ToString(); ;
@@ -244,7 +249,7 @@ namespace JoobTime
             string sale = load_WorkSale(difficulty_select);
 
             string work_sale = sale_to_gridView(sale);
-            add_row_in_dt_update_total_price(gridView3.GetFocusedRowCellValue("id").ToString(), difficulty_select, work_sale );
+            add_row_in_dt_update_total_price(gridView3.GetFocusedRowCellValue("id").ToString(), difficulty_select, work_sale);
             return;
         }
 
@@ -252,33 +257,27 @@ namespace JoobTime
         {
             switch (select_IdSubunit)
             {
-                case"5": //3DMODELS
+                case "5": //3DMODELS
                     set_price(5);
                     break;
                 case "3"://OPRP   
-                    set_price(3);
+                    set_priceOPRP();
                     break;
             }
-            
             update_totalPrice();
-        }
-
-        public void set_priceOPRP()
-        {
-
         }
 
         public void set_price(int idSubunit)
         {
-            DataTable dtUserSubunit = sql.sql_dt("select id_tn, category from worker where id_subunit="+idSubunit, "t1");
+            DataTable dtUserSubunit = sql.sql_dt("select id_tn, category from worker where id_subunit=" + idSubunit, "t1");
             for (int i = 0; i < gridView3.RowCount; i++)
             {
                 string id_tn = gridView3.GetRowCellValue(i, "id_tn").ToString();
-                var category = from  DataRow row in dtUserSubunit.Rows
-                             where row["id_tn"].ToString()==id_tn
-                             select row["category"];
+                var category = from DataRow row in dtUserSubunit.Rows
+                               where row["id_tn"].ToString() == id_tn
+                               select row["category"];
                 string difficult = category.ElementAt(0).ToString();
-                gridView3.SetRowCellValue(i,"difficult", difficult);
+                gridView3.SetRowCellValue(i, "difficult", difficult);
                 gridView3.FocusedRowHandle = i;
                 //string work_sale = load_WorkSale(difficult);
                 //sale_to_gridView(work_sale);
@@ -297,7 +296,7 @@ namespace JoobTime
             de_end = dEdit_end.DateTime;
             set_worker();
         }
-        
+
         public void cmbSubunit_load()
         {
             string comand = "select cp.subunit,sb.id_subunit from catalog_position cp left join subunit sb on sb.subunit = cp.subunit where id_tn =" + formLogin.id_tn;
@@ -308,49 +307,6 @@ namespace JoobTime
             }
             lUp_subunit.Text = Properties.Settings_WD.Default.subunit;
         }
-        
-        //public void cmb_subunit()
-        //{
-        //    string comand = string.Format("select [subunit] from catalog_position where id_tn={0}", Convert.ToInt32(formLogin.id_tn));
-        //    dt_subunit_cmbBox = sql.sql_dt(comand, "cp");           
-        //    if (formLogin.id_tn == "1047" || formLogin.id_tn == "0002")
-        //    {
-        //        //add_row_in_Subunit("Все");
-        //        lUp_subunit.Properties.DisplayMember = "subunit";
-        //        lUp_subunit.Properties.DataSource = dt_subunit_cmbBox;              
-        //    }
-        //    else
-        //    {
-        //        lUp_subunit.Properties.DisplayMember = "subunit";
-        //        lUp_subunit.Properties.DataSource = dt_subunit_cmbBox;
-        //    }            
-        //    select_idSubunit();
-        //}
-
-        //public void add_row_in_Subunit(string subunit)
-        //{
-        //    DataRow tt = dt_subunit_cmbBox.NewRow();
-        //    tt["subunit"] = subunit;
-        //    dt_subunit_cmbBox.Rows.Add(tt);
-        //}
-
-        //public void select_idSubunit()
-        //{
-        //    if (string.IsNullOrEmpty(select_subunit))
-        //    {
-        //        return;
-        //    }
-        //    else if (select_subunit == "Все")
-        //    {
-        //        select_IdSubunit = "0";                
-        //    }
-        //    else 
-        //    {
-        //        var comand = "select [id_subunit] from subunit where subunit='" + select_subunit + "'";
-        //        select_IdSubunit = sql.sql_dt(comand, "t1").Rows[0][0].ToString();
-        //    }
-
-        //}
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
@@ -369,12 +325,12 @@ namespace JoobTime
                     }
             }
         }
-            
+
         private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
         {
-            select_subunit = lUp_subunit.Text; 
-            if(select_subunit!="Все")
-            select_IdSubunit = lUp_subunit.GetColumnValue("id_subunit").ToString();
+            select_subunit = lUp_subunit.Text;
+            if (select_subunit != "Все")
+                select_IdSubunit = lUp_subunit.GetColumnValue("id_subunit").ToString();
         }
 
         private void simpleButton3_Click(object sender, EventArgs e)
@@ -385,7 +341,7 @@ namespace JoobTime
 
         public void set_price_zero()
         {
-            string id_total=gridView3.GetFocusedRowCellValue("id").ToString();
+            string id_total = gridView3.GetFocusedRowCellValue("id").ToString();
             string payment = "null";
             string difficult = "null";
             var comand = @"update total set payment=" + payment + " ,difficult=" + difficult + " where id=" + id_total;
@@ -394,6 +350,11 @@ namespace JoobTime
 
         private void simpleButton10_Click(object sender, EventArgs e)
         {
+            if (select_subunit == "Отдел по развитию предприятия")
+            {
+                gridView2.ShowPrintPreview();
+                return;
+            }
             if (type_reports_cmbBox.Text == "" || string.IsNullOrEmpty(type_reports_cmbBox.Text))
             { XtraMessageBox.Show("Выберите тип отчета", "Внимание"); }
             else
@@ -410,8 +371,8 @@ namespace JoobTime
 
         public void set_worker()
         {
-           worker_cmbBox.Items.Clear();
-           worker_cmbBox.Items.AddRange(load_worker_tocmb_box().AsEnumerable().Select(r => r.Field<string>("FIO")).ToArray());
+            worker_cmbBox.Items.Clear();
+            worker_cmbBox.Items.AddRange(load_worker_tocmb_box().AsEnumerable().Select(r => r.Field<string>("FIO")).ToArray());
         }
 
         public DataTable load_worker_tocmb_box()
@@ -419,14 +380,14 @@ namespace JoobTime
             Class_sql sql = new Class_sql();
             var comand = @"select tabel.id_tn, ttime,concat(Last_name,' ',First_name,' ',Second_name) FIO,position from tabel join worker on tabel.id_tn=worker.id_tn join Position on worker.id_Position=Position.id_position where (select id_Subunit from subunit where subunit='" +
                 lUp_subunit.Text + "') =id_Subunit and" + " tdate between '" + dEdit_start.DateTime.ToString("yyyy-MM-01") +
-                "' and '" + dEdit_start.DateTime.ToString("yyyy-MM-" + DateTime.DaysInMonth(dEdit_start.DateTime.Year, dEdit_start.DateTime.Month)) + "'";            
-           return sql.sql_dt(comand, "table");
+                "' and '" + dEdit_start.DateTime.ToString("yyyy-MM-" + DateTime.DaysInMonth(dEdit_start.DateTime.Year, dEdit_start.DateTime.Month)) + "'";
+            return sql.sql_dt(comand, "table");
         }
 
         private void worker_cmbBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             selected_worker_fio = worker_cmbBox.Text;
-            selected_worker_id = sql.sql_dt("select [id_tn] from worker where concat(Last_name,' ',First_name,' ',Second_name)='" + selected_worker_fio+"'", "t1").Rows[0][0].ToString();
+            selected_worker_id = sql.sql_dt("select [id_tn] from worker where concat(Last_name,' ',First_name,' ',Second_name)='" + selected_worker_fio + "'", "t1").Rows[0][0].ToString();
 
         }
 
@@ -526,7 +487,7 @@ namespace JoobTime
         {
             bool check = true;
             string comand = "select*from prices where id_work=" + id_work + " and difficulty=" + difficulty;
-            DataTable dt_result = sql.sql_dt(comand,"result");
+            DataTable dt_result = sql.sql_dt(comand, "result");
             if (dt_result.Rows.Count == 0)
             {
                 check = false;
@@ -536,62 +497,99 @@ namespace JoobTime
 
         public void priceOPRPWithOvertime()
         {
-            //DataTable dtOPRP = dt_total_rep;
-            //for (int = 0; i < dtOPRP.Rows.Count; i++)
-            //{
 
-            //}
         }
 
-        private void simpleButton1_Click_1(object sender, EventArgs e)
+        public void load_dtOPRP()
         {
-            //form_saleOPRP fs = new form_saleOPRP();
-            //fs.Show();
-            string comand = @"select ttl.id_tn, ttl.FIO, sum(DATEPART(HH,ttl.time_span))+(sum(DATEPART(MINUTE,ttl.time_span))/60.00) TOTALTIME, tb.ttime,tb.tdate
+            string comand = @"select ttl.id_tn,ttl.position, ttl.FIO, sum(DATEPART(HH,ttl.time_span))+(sum(DATEPART(MINUTE,ttl.time_span))/60.00) TOTALTIME, tb.ttime,tb.tdate
                                from total ttl
                                join tabel tb on ttl.id_tn = tb.id_tn and YEAR(tb.tdate) = YEAR(ttl.date) and MONTH(tb.tdate)= MONTH(ttl.date)
-                              where ttl.id_tn = 9999
-                           group by ttl.[id_tn],ttl.[fio],tb.ttime,tb.tdate";
-            DataTable dt_totalOPRP = sql.sql_dt(comand,"t1");
-            dt_totalOPRP.Columns.Add("overtime",typeof(string));
-            dt_totalOPRP.Columns.Add("sale");
-            dt_totalOPRP.Columns.Add("totalTime",typeof(string));
+                              where ttl.id_subunit_worker=" + select_IdSubunit+
+                              "and [date] >= '" + de_start + "'"
+                                 + "AND [date]<='" + de_end + "' group by ttl.[id_tn],ttl.[fio],tb.ttime,tb.tdate,ttl.position";
+            dt_totalOPRP = sql.sql_dt(comand, "t1");
+            dt_totalOPRP.Columns.Add("overtime", typeof(string));
+            dt_totalOPRP.Columns.Add("saleOvertime");
+            dt_totalOPRP.Columns.Add("priceH", typeof(string));
+            dt_totalOPRP.Columns.Add("totalTime", typeof(string));
             for (int i = 0; i < dt_totalOPRP.Rows.Count; i++)
             {
                 string TimeFact = dt_totalOPRP.Rows[i]["TOTALTIME"].ToString();
-                string hour = TimeFact.Substring(0, TimeFact.IndexOf(','));
-               // string minutasd = TimeFact.Remove(0, TimeFact.IndexOf(',') + 1).Substring(0, 2);
-                string minut =Math.Floor((double.Parse(TimeFact.Remove(0, TimeFact.IndexOf(',') + 1).Substring(0, 2)) * 0.6)).ToString();
-                
                 string timeTabel = dt_totalOPRP.Rows[i]["ttime"].ToString();
-                string hourT= timeTabel.Substring(0, timeTabel.IndexOf(':'));
-                string minutT = (double.Parse(timeTabel.Remove(0, timeTabel.IndexOf(':') + 1).Substring(0, 2)) * 0.6).ToString();
-
-                TimeSpan tsFact =  new TimeSpan (Convert.ToInt32(hour),Convert.ToInt32(minut),00 );
-                TimeSpan tsTabel =  new TimeSpan(Convert.ToInt32(hourT), Convert.ToInt32(minutT), 00);
-                TimeSpan OverTime= new TimeSpan(00,00,00);
+                TimeSpan tsFact = strngToTmSpn(TimeFact, ',');
+                TimeSpan tsTabel = strngToTmSpn(timeTabel, ':');
+                TimeSpan OverTime = new TimeSpan(00, 00, 00);
                 if (tsFact > tsTabel)
                 {
-                    OverTime= tsFact - tsTabel;
+                    OverTime = tsFact - tsTabel;
                 }
-                dt_totalOPRP.Rows[i]["totalTime"] = hour + ":" + minut;
-                dt_totalOPRP.Rows[i]["overtime"] = OverTime.TotalHours.ToString() + ":" + OverTime.Minutes.ToString();
-                dt_totalOPRP.Rows[i]["sale"] = calcPrice(OverTime);
+                dt_totalOPRP.Rows[i]["totalTime"] = tmSpnToStrng(tsFact);
+                dt_totalOPRP.Rows[i]["overtime"] = tmSpnToStrng(OverTime);
             }
             dt_totalOPRP.Columns.Remove("TOTALTIME");
             gridControl3.DataSource = dt_totalOPRP;
         }
 
+        private void simpleButton1_Click_1(object sender, EventArgs e)
+        {
+           
+        }
+
+        public TimeSpan strngToTmSpn(string time, char symbol)
+        {
+            if (time == "0:0")
+              return new TimeSpan(00, 00, 00);
+            string hour = time.Substring(0, time.IndexOf(symbol));
+            string minut = Math.Round((double.Parse(time.Remove(0, time.IndexOf(symbol) + 1).Substring(0, 2)) * 0.6),0,MidpointRounding.AwayFromZero).ToString();
+            TimeSpan resultTime = new TimeSpan(Convert.ToInt32(hour), Convert.ToInt32(minut), 00);
+            return resultTime;
+        }
+
+        public string tmSpnToStrng(TimeSpan time)
+        {
+            double hoursD = time.TotalHours;
+            string hours = Math.Ceiling(hoursD).ToString();
+            if (time.Minutes < 10)
+                return hours + ":0" + time.Minutes.ToString();
+            return hours + ":" + time.Minutes.ToString();
+        }
+
+        public void set_priceOPRP()
+        {
+            string overtime = gridView2.GetFocusedRowCellValue("overtime").ToString();
+            int dtRowIndex = gridView2.GetFocusedDataSourceRowIndex();
+            dt_totalOPRP.Rows[dtRowIndex]["saleOvertime"] = calcPrice(strngToTmSpn(overtime, ':'));
+
+        }
+
         public string calcPrice(TimeSpan overtime)
         {
-            double sale1Overtime = 4.2;
-            double saleTotalOverTIme =(overtime.TotalMinutes / 60 * sale1Overtime);
+            double sale1Overtime = double.Parse(gridView2.GetFocusedRowCellValue("priceH").ToString());
+            double saleTotalOverTIme = (overtime.TotalMinutes / 60) * sale1Overtime;
             return saleTotalOverTIme.ToString();
         }
 
         private void gridView2_CustomColumnDisplayText(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventArgs e)
         {
-           
+            switch (e.Column.FieldName)
+            {
+                case "priceH":
+                    e.DisplayText = e.Value  + " руб/час";
+                    break;
+                case "saleOvertime":
+                    e.DisplayText = e.Value+ " руб";
+                    break;
+            }
+            
+        }
+
+        private void gridView2_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            if (e.Column.FieldName != "priceH")
+                return;
+            if (e.Value != null)
+                set_priceOPRP();
         }
     }
 }
