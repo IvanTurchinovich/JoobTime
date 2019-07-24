@@ -56,15 +56,9 @@ namespace JoobTime
             if (dtMaxDate.Rows[0][0].ToString() != "" || !string.IsNullOrEmpty(dtMaxDate.Rows[0][0].ToString()))
             {
                 TimeSpan ts = TimeSpan.Parse(dtMaxDate.Rows[0][0].ToString());
-
                 if (ts == TimeSpan.Parse("12:00"))
-                {
-                    tmEdt_start.TimeSpan = TimeSpan.Parse("12:30");
-                }
-                else
-                {
-                    tmEdt_start.TimeSpan = ts;
-                }
+                    ts = TimeSpan.Parse("12:30");
+                tmEdt_start.TimeSpan = ts;
             }
         }
 
@@ -539,8 +533,7 @@ namespace JoobTime
             timeToLabel();
             if (caption_f == "Добавить")
             {
-                Thread dd = new Thread(this.max_time);
-                dd.Start();
+                max_time();
             }
         }
 

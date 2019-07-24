@@ -127,7 +127,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings_WD.settings</DependentUpon>
     </Compile>
-    <Compile Include="ReportOvertimeOPRP.cs">
+    <Compile Include="Report\ReportOvertimeOPRP.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Report\DB.cs" />
@@ -268,7 +268,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="ReportOvertimeOPRP.resx">
+    <EmbeddedResource Include="Report\ReportOvertimeOPRP.resx">
       <DependentUpon>ReportOvertimeOPRP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\EveryDayReport.resx">
@@ -276,6 +276,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Report\EveryDayReportNoForm.resx">
       <DependentUpon>EveryDayReportNoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\report_work_subunit.resx">
+      <DependentUpon>report_work_subunit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\TitleReport.resx">
       <DependentUpon>TitleReport.cs</DependentUpon>

@@ -3,33 +3,34 @@ using System.Windows.Forms;
 using System.Data;
 using System.Linq;
 using DevExpress.XtraEditors;
+using DevExpress.XtraReports.UI;
 
 namespace JoobTime
 {
     public partial class sale : DevExpress.XtraEditors.XtraForm
     {
-        public string id_sale;
-        public string id_work_select;
-        public string id_pres_form;
-        public string id_date_now;
-        public string id_value;
-        public string pres_form_name;
-        public string work_name;
+        string id_sale;
+        string id_work_select;
+        string id_pres_form;
+        string id_date_now;
+        string id_value;
+        string pres_form_name;
+        string work_name;
 
-        public string select_subunit;
-        public string select_IdSubunit;
-        public string selected_worker_fio;
-        public string selected_worker_id;
-        public string pay_type;
+        string select_subunit;
+        string select_IdSubunit;
+        string selected_worker_fio;
+        string selected_worker_id;
+        string pay_type;
 
-        public DataTable table_sale_difficult;
-        public DataTable dt_pricesForPayment;
-        public DataTable dt_update_total_price;
-        public DataTable dt_subunit_cmbBox;
-        public DataTable dt_total_rep;
+        DataTable table_sale_difficult;
+        DataTable dt_pricesForPayment;
+        DataTable dt_update_total_price;
+        DataTable dt_subunit_cmbBox;
+        DataTable dt_total_rep;
         DataTable dt_totalOPRP;
-        public DateTime de_start;
-        public DateTime de_end;
+        DateTime de_start;
+        DateTime de_end;
 
         Class_sql sql = new Class_sql();
         class_date date_edit_for_SQL = new class_date();
@@ -104,20 +105,31 @@ namespace JoobTime
             }
         }
 
+        public void grid_control_newPrices()
+        {
+            switch (select_subunit)
+            {
+                case "Отдел по развитию предприятия":                    
+                    load_dtOPRP();
+                    break;
+                case "3D дизайн":
+                    gridControl_newPrices.MainView = gridView_3dm;
+                    break;
+                case "УП-формообразующие и электроды":
+                    break;
+            }
+        }
+
         public void grid_control_total()
         {
             if (string.IsNullOrEmpty(select_subunit))
             {
                 return;
             }
-            else if (select_subunit=="Отдел по развитию предприятия")
-            {
-                load_dtOPRP();
-            }
             else
             {
                 dt_total_rep = sql.sql_dt(comandSelectBOSS(), "t1");
-                gridControl3.DataSource = dt_total_rep;
+                gridControl_total.DataSource = dt_total_rep;
             }
         }
 
@@ -158,6 +170,7 @@ namespace JoobTime
             get_time_dtEdit();
             grid_control_total();
             grid_control_prices();
+            grid_control_newPrices();
             enable_button(xtraTabControl1.SelectedTabPageIndex);
         }
 
@@ -313,24 +326,31 @@ namespace JoobTime
             switch (xtraTabControl1.SelectedTabPage.Name)
             {
                 case "xtraTabPage1":
-                    {
-                        grid_control_total();
-                        set_worker();
-                        break;
-                    }
-                case "xtraTabPage2":
-                    {
-                        grid_control_prices();
-                        break;
-                    }
+                    grid_control_total();
+                    set_worker();
+                    break;
+                case "xtraTabPage2":                    
+                    grid_control_prices();
+                    break;
+                case "xtraTabPage3":
+                    grid_control_newPrices();
+                    break;
             }
         }
 
         private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
         {
-            select_subunit = lUp_subunit.Text;
-            if (select_subunit != "Все")
-                select_IdSubunit = lUp_subunit.GetColumnValue("id_subunit").ToString();
+            switch (xtraTabControl1.SelectedTabPageIndex)
+            {
+                case 1:
+                    select_subunit = lUp_subunit.Text;
+                    if (select_subunit != "Все")
+                        select_IdSubunit = lUp_subunit.GetColumnValue("id_subunit").ToString();
+                    break;
+                case 3:
+                    select_subunit = lUp_subunit.Text;
+                    break;
+            }
         }
 
         private void simpleButton3_Click(object sender, EventArgs e)
@@ -350,23 +370,39 @@ namespace JoobTime
 
         private void simpleButton10_Click(object sender, EventArgs e)
         {
-            if (select_subunit == "Отдел по развитию предприятия")
+            switch (xtraTabControl1.SelectedTabPageIndex)
             {
-                gridView2.ShowPrintPreview();
-                return;
+                case 3:
+                    if (select_subunit == "Отдел по развитию предприятия")
+                    {
+                        ReportOvertimeOPRP.Fio = formLogin.FIO;
+                        ReportOvertimeOPRP.position = Properties.Settings_WD.Default.position;
+                        ReportOvertimeOPRP rep = new ReportOvertimeOPRP();
+                        rep.DataSource = dt_totalOPRP;
+                        ReportPrintTool print = new ReportPrintTool(rep);
+                        print.ShowPreviewDialog();
+                        return;
+                    }
+                    break;
+                case 1:
+                    if (type_reports_cmbBox.Text == "" || string.IsNullOrEmpty(type_reports_cmbBox.Text))
+                        XtraMessageBox.Show("Выберите тип отчета", "Внимание");
+                    else
+                    {
+                        createReport();
+                    }
+                    break;
             }
-            if (type_reports_cmbBox.Text == "" || string.IsNullOrEmpty(type_reports_cmbBox.Text))
-            { XtraMessageBox.Show("Выберите тип отчета", "Внимание"); }
-            else
-            {
-                ReportGenerating.startDate = date_edit_for_SQL.convert(de_start);
-                ReportGenerating.endDate = date_edit_for_SQL.convert(de_end);
+        }
 
-                set_worker();
-                string type_report = type_reports_cmbBox.Text;
-                ReportGenerating rg = new ReportGenerating();
-                rg.Createreport(Convert.ToInt32(select_IdSubunit), dt_total_rep, type_report, selected_worker_id, selected_worker_fio);
-            }
+        public void createReport()
+        {
+            ReportGenerating.startDate = date_edit_for_SQL.convert(de_start);
+            ReportGenerating.endDate = date_edit_for_SQL.convert(de_end);
+            set_worker();
+            string type_report = type_reports_cmbBox.Text;
+            ReportGenerating rg = new ReportGenerating();
+            rg.Createreport(Convert.ToInt32(select_IdSubunit), dt_total_rep, type_report, selected_worker_id, selected_worker_fio);
         }
 
         public void set_worker()
@@ -502,6 +538,7 @@ namespace JoobTime
 
         public void load_dtOPRP()
         {
+            gridControl_newPrices.MainView = gridView_ORP;
             string comand = @"select ttl.id_tn,ttl.position, ttl.FIO, sum(DATEPART(HH,ttl.time_span))+(sum(DATEPART(MINUTE,ttl.time_span))/60.00) TOTALTIME, tb.ttime,tb.tdate
                                from total ttl
                                join tabel tb on ttl.id_tn = tb.id_tn and YEAR(tb.tdate) = YEAR(ttl.date) and MONTH(tb.tdate)= MONTH(ttl.date)
@@ -528,7 +565,7 @@ namespace JoobTime
                 dt_totalOPRP.Rows[i]["overtime"] = tmSpnToStrng(OverTime);
             }
             dt_totalOPRP.Columns.Remove("TOTALTIME");
-            gridControl3.DataSource = dt_totalOPRP;
+            gridControl_total.DataSource = dt_totalOPRP;
         }
 
         private void simpleButton1_Click_1(object sender, EventArgs e)
@@ -557,16 +594,16 @@ namespace JoobTime
 
         public void set_priceOPRP()
         {
-            string overtime = gridView2.GetFocusedRowCellValue("overtime").ToString();
-            int dtRowIndex = gridView2.GetFocusedDataSourceRowIndex();
+            string overtime = gridView_ORP.GetFocusedRowCellValue("overtime").ToString();
+            int dtRowIndex = gridView_ORP.GetFocusedDataSourceRowIndex();
             dt_totalOPRP.Rows[dtRowIndex]["saleOvertime"] = calcPrice(strngToTmSpn(overtime, ':'));
-
         }
 
         public string calcPrice(TimeSpan overtime)
         {
-            double sale1Overtime = double.Parse(gridView2.GetFocusedRowCellValue("priceH").ToString());
+            double sale1Overtime = double.Parse(gridView_ORP.GetFocusedRowCellValue("priceH").ToString());
             double saleTotalOverTIme = (overtime.TotalMinutes / 60) * sale1Overtime;
+            saleTotalOverTIme = Math.Round(saleTotalOverTIme, 1, MidpointRounding.AwayFromZero);
             return saleTotalOverTIme.ToString();
         }
 
